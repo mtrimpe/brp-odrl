@@ -1,0 +1,33 @@
+nr,label,historic_nr,uri_name,suffix
+1,Persoon,51,persoon,
+2,Ouder1,52,ouder1,Ouder1
+3,Ouder2,53,ouder2,Ouder2
+4,Nationaliteit,54,nationaliteit,
+5,Huwelijk/geregistreerd partnerschap,55,huwelijkPartnerschap,Partner
+6,Overlijden,56,overlijden,
+7,Inschrijving,,inschrijving,
+8,Verblijfplaats,58,verblijfplaats,
+9,Kind,59,kind,Kind
+10,Verblijfstitel,60,verblijfstitel,
+11,Gezagsverhouding,61,gezagsverhouding,
+12,Reisdocument,,reisdocument,
+13,Kiesrecht,,kiesrecht,
+14,Afnemersindicatie,64,afnemersindicatie,
+15,Aanwijzing,,aanwijzing,
+16,Tijdelijk verblijfsadres,66,tijdelijkVerblijfsadres,TijdelijkVerblijf
+17,Contactgegevens,,contactgegevens,
+19,Systeemrubrieken,,systeemrubrieken,
+21,Verwijzing,71,verwijzing,Verwijzing
+51,Persoon (historisch),,persoonHist,
+52,Ouder1 (historisch),,ouder1Hist,
+53,Ouder2 (historisch),,ouder2Hist,
+54,Nationaliteit (historisch),,nationaliteitHist,
+55,Huwelijk/geregistreerd partnerschap (historisch),,huwelijkPartnerschapHist,
+56,Overlijden (historisch),,overlijdenHist,
+58,Verblijfplaats (historisch),,verblijfplaatsHist,
+59,Kind (historisch),,kindHist,
+60,Verblijfstitel (historisch),,verblijfstitelHist,
+61,Gezagsverhouding (historisch),,gezagsverhoudingHist,
+64,Afnemersindicatie (historisch),,afnemersindicatieHist,
+66,Tijdelijk verblijfsadres (historisch),,tijdelijkVerblijfsadresHist,
+71,Verwijzing (historisch),,verwijzingHist,

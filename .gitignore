@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Downloaded source data (auto-downloaded by generate_all.py)
+csv/
+
+# Generated output (regenerate with: python generators/generate_all.py)
+ttl/

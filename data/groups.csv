@@ -1,0 +1,55 @@
+code,label,uri_fragment
+01,Identificatienummers,identificatienummers
+02,Naam,naam
+03,Geboorte,geboorte
+04,Geslacht,geslacht
+05,Nationaliteit,nationaliteit
+06,Huwelijkssluiting/aangaan geregistreerd partnerschap,huwelijkssluiting
+07,Ontbinding huwelijk/geregistreerd partnerschap,ontbindingHuwelijk
+08,Overlijden,overlijden
+09,Gemeente van inschrijving,gemeente
+10,Adreshouding,adreshouding
+11,Adres,adres
+12,Locatie,locatie
+13,Adres buitenland,adresBuitenland
+14,Immigratie,immigratie
+15,Soort verbintenis,soortVerbintenis
+16,Telefoonnummer,telefoon
+17,E-mailadres,email
+18,Einddatum geldigheid,einddatumGeldigheid
+19,Type adres,typeAdres
+20,A-nummerverwijzingen,anummerverwijzingen
+31,Europees kiesrecht,europeesKiesrecht
+32,Gezag minderjarige,gezagMinderjarige
+33,Curateleregister,curatele
+35,Nederlands reisdocument,nederlandsReisdocument
+36,Signalering,signalering
+37,Geldigheid reisdocument,geldigheidReisdocument
+38,Uitsluiting kiesrecht,uitsluitingKiesrecht
+39,Verblijfstitel,verblijfstitel
+40,Afnemersindicatie,afnemersindicatie
+42,Aanwijzing,aanwijzing
+61,Naamgebruik,naamgebruik
+62,Familierechtelijke betrekking,familierechtelijkeBetrekking
+63,Verkrijging nationaliteit,verkrijgingNationaliteit
+64,Verlies nationaliteit,verliesNationaliteit
+65,Bijzonder Nederlanderschap,bijzonderNederlanderschap
+66,Blokkering,blokkering
+67,Opschorting bijhouding,opschortingBijhouding
+68,Eerste inschrijving BRP,eersteInschrijving
+69,PK-gegevens,pkGegevens
+70,Geheim,geheim
+71,Verificatie,verificatie
+72,Adresaangifte,adresaangifte
+73,EU-persoonsnummer,euPersoonsnummer
+75,Document indicatie,documentIndicatie
+80,Synchroniciteit,synchroniciteit
+81,Akte,akte
+82,Document,document
+83,Procedure,procedure
+84,Onjuist,onjuist
+85,Geldigheid,geldigheid
+86,Opneming,opneming
+87,PK-conversie,pkConversie
+88,RNI,rni
+89,Verwijzing / systeem,verwijzingSysteem

@@ -1,0 +1,286 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix odrl:   <http://www.w3.org/ns/odrl/2/> .
+@prefix brp:    <https://data.rijksoverheid.nl/brp/def#> .
+
+# =============================================================================
+# BRP-ODRL Ontologie
+#
+# Modelleert het autorisatiedomein van de Basisregistratie Personen (BRP)
+# conform het Logisch Ontwerp BRP 2024.Q2 en ODRL 2.2.
+# =============================================================================
+
+<https://data.rijksoverheid.nl/brp/def>
+    a owl:Ontology ;
+    owl:versionIRI <https://data.rijksoverheid.nl/brp/def/2024Q2> ;
+    dcterms:title "BRP Autorisatie Ontologie"@nl ;
+    dcterms:description """Ontologie voor het modelleren van BRP autorisatiebesluiten
+als ODRL policies, gebaseerd op het Logisch Ontwerp BRP 2024.Q2."""@nl ;
+    dcterms:creator "Rijksdienst voor Identiteitsgegevens (RvIG)" ;
+    dcterms:issued "2024-04-22"^^xsd:date ;
+    owl:imports <http://www.w3.org/ns/odrl/2/> .
+
+# =============================================================================
+# ODRL Profile: BRP-specifieke acties
+# =============================================================================
+
+brp:spontaneVerstrekking
+    a odrl:Action ;
+    rdfs:label "Spontane gegevensverstrekking"@nl ;
+    rdfs:comment """Push-gebaseerde verstrekking: bij wijziging van een sleutelrubriek
+op een persoonslijst die aan de voorwaarderegel voldoet, worden gegevens
+automatisch aan de afnemer verstrekt (LO-BRP §3.1.2.2)."""@nl ;
+    odrl:includedIn odrl:distribute .
+
+brp:conditioneleVerstrekking
+    a odrl:Action ;
+    rdfs:label "Conditionele gegevensverstrekking"@nl ;
+    rdfs:comment """Spontane verstrekking met conditionele trigger (Rubriek 35.95.43)."""@nl ;
+    odrl:includedIn brp:spontaneVerstrekking .
+
+brp:selectieVerstrekking
+    a odrl:Action ;
+    rdfs:label "Selectieverstrekking"@nl ;
+    rdfs:comment """Periodieke of eenmalige selectie: PL'en die aan de
+voorwaarderegel voldoen worden geselecteerd en verstrekt (LO-BRP §3.1.2.2)."""@nl ;
+    odrl:includedIn odrl:distribute .
+
+brp:adHocVerstrekking
+    a odrl:Action ;
+    rdfs:label "Ad hoc gegevensverstrekking"@nl ;
+    rdfs:comment """Op verzoek (zoekvraag) van de afnemer worden gegevens verstrekt
+van PL'en die aan de voorwaarderegel voldoen (LO-BRP §3.1.2.2)."""@nl ;
+    odrl:includedIn odrl:distribute .
+
+brp:adHocPlaatsing
+    a odrl:Action ;
+    rdfs:label "Ad hoc plaatsing afnemersindicatie"@nl ;
+    rdfs:comment """De afnemer mag ad hoc een afnemersindicatie op een PL plaatsen,
+mits de PL aan de voorwaarderegel ad hoc voldoet (Rubriek 35.95.62)."""@nl ;
+    odrl:includedIn odrl:use .
+
+brp:adresVraag
+    a odrl:Action ;
+    rdfs:label "Adresvraag"@nl ;
+    rdfs:comment """De afnemer mag gegevens opvragen van ingeschrevenen op een adres,
+mits een PL aan de voorwaarderegel ad hoc voldoet (Rubriek 35.95.66)."""@nl ;
+    odrl:includedIn brp:adHocVerstrekking .
+
+# =============================================================================
+# ODRL Profile: BRP-specifieke operators (afgeleid van voorwaardenregels)
+# =============================================================================
+
+brp:ga1  a odrl:Operator ; rdfs:label "Gelijk aan (minimaal één voorkomen)"@nl .
+brp:gaa  a odrl:Operator ; rdfs:label "Gelijk aan (alle voorkomens)"@nl .
+brp:oga1 a odrl:Operator ; rdfs:label "Ongelijk aan (minimaal één voorkomen)"@nl .
+brp:ogaa a odrl:Operator ; rdfs:label "Ongelijk aan (alle voorkomens)"@nl .
+brp:gd1  a odrl:Operator ; rdfs:label "Groter dan (minimaal één voorkomen)"@nl .
+brp:kd1  a odrl:Operator ; rdfs:label "Kleiner dan (minimaal één voorkomen)"@nl .
+brp:kda  a odrl:Operator ; rdfs:label "Kleiner dan (alle voorkomens)"@nl .
+brp:kdog1 a odrl:Operator ; rdfs:label "Kleiner dan of gelijk aan (minimaal één voorkomen)"@nl .
+brp:kdoga a odrl:Operator ; rdfs:label "Kleiner dan of gelijk aan (alle voorkomens)"@nl .
+brp:gdog1 a odrl:Operator ; rdfs:label "Groter dan of gelijk aan (minimaal één voorkomen)"@nl .
+brp:kv   a odrl:Operator ; rdfs:label "Komt voor"@nl .
+brp:knv  a odrl:Operator ; rdfs:label "Komt niet voor"@nl .
+
+# =============================================================================
+# Kernklassen
+# =============================================================================
+
+brp:Afnemer a owl:Class ;
+    rdfs:label "Afnemer"@nl ;
+    rdfs:comment """Een organisatie die geautoriseerd is om gegevens uit de BRP
+te ontvangen (Rubriek 35.95.10)."""@nl .
+
+brp:Autorisatiebesluit a owl:Class ;
+    rdfs:subClassOf odrl:Policy ;
+    rdfs:label "Autorisatiebesluit"@nl ;
+    rdfs:comment """Een besluit dat vastlegt welke gegevens een afnemer onder welke
+voorwaarden mag ontvangen. Wordt gemodelleerd als ODRL Policy."""@nl .
+
+brp:Categorie a owl:Class ;
+    rdfs:label "Categorie"@nl ;
+    rdfs:comment "Een categorie op de persoonslijst (01-17 actueel, 51-66 historisch)."@nl .
+
+brp:Groep a owl:Class ;
+    rdfs:label "Groep"@nl ;
+    rdfs:comment "Een thematische groep binnen een categorie."@nl .
+
+brp:Element a owl:Class ;
+    rdfs:label "Element"@nl ;
+    rdfs:comment "Een individueel gegevenselement op de persoonslijst (rubriek)."@nl .
+
+brp:Medium a owl:Class ;
+    rdfs:label "Medium"@nl .
+
+brp:Verstrekkingsbeperking a owl:Class ;
+    rdfs:label "Verstrekkingsbeperking"@nl .
+
+brp:Selectiesoort a owl:Class ;
+    rdfs:label "Selectiesoort"@nl .
+
+brp:ConditioneleVerstrekking a owl:Class ;
+    rdfs:label "Conditionele verstrekking"@nl .
+
+brp:Nationaliteit a owl:Class ;
+    rdfs:label "Nationaliteit"@nl ;
+    rdfs:comment "Een nationaliteit uit Tabel 32."@nl .
+
+brp:Land a owl:Class ;
+    rdfs:label "Land"@nl ;
+    rdfs:comment "Een land uit Tabel 34."@nl .
+
+brp:Gemeente a owl:Class ;
+    rdfs:label "Gemeente"@nl ;
+    rdfs:comment "Een gemeente uit Tabel 33."@nl .
+
+brp:VerblijfstitelType a owl:Class ;
+    rdfs:label "Verblijfstitel type"@nl ;
+    rdfs:comment "Een verblijfstitel uit Tabel 56."@nl .
+
+# =============================================================================
+# Properties
+# =============================================================================
+
+brp:afnemersindicatie a owl:DatatypeProperty ;
+    rdfs:domain brp:Afnemer ;
+    rdfs:range xsd:string ;
+    rdfs:label "Afnemersindicatie"@nl .
+
+brp:indicatieGeheimhoudingAfnemer a owl:DatatypeProperty ;
+    rdfs:domain brp:Autorisatiebesluit ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "Indicatie geheimhouding"@nl ;
+    rdfs:comment "Rubriek 35.95.12."@nl .
+
+brp:bijzondereBetrekkingKindVerstrekken a owl:DatatypeProperty ;
+    rdfs:domain brp:Autorisatiebesluit ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "Bijzondere betrekking kind verstrekken"@nl ;
+    rdfs:comment "Rubriek 35.95.14."@nl .
+
+brp:voorwaarderegel a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "Voorwaarderegel"@nl ;
+    rdfs:comment "De voorwaarderegel in BRP-syntax (LO-BRP §3.1.3)."@nl .
+
+brp:rubrieknummer a owl:DatatypeProperty ;
+    rdfs:domain brp:Element ;
+    rdfs:range xsd:string ;
+    rdfs:label "Rubrieknummer"@nl .
+
+brp:behoortTotGroep a owl:ObjectProperty ;
+    rdfs:domain brp:Element ;
+    rdfs:range brp:Groep ;
+    rdfs:label "behoort tot groep"@nl .
+
+brp:behoortTotCategorie a owl:ObjectProperty ;
+    rdfs:domain brp:Groep ;
+    rdfs:range brp:Categorie ;
+    rdfs:label "behoort tot categorie"@nl .
+
+brp:historischeVariantVan a owl:ObjectProperty ;
+    rdfs:label "historische variant van"@nl .
+
+brp:medium a owl:ObjectProperty ;
+    rdfs:range brp:Medium ;
+    rdfs:label "Medium"@nl .
+
+brp:verstrekkingsbeperking a owl:ObjectProperty ;
+    rdfs:domain brp:Autorisatiebesluit ;
+    rdfs:range brp:Verstrekkingsbeperking ;
+    rdfs:label "Verstrekkingsbeperking"@nl .
+
+brp:selectiesoort a owl:ObjectProperty ;
+    rdfs:range brp:Selectiesoort ;
+    rdfs:label "Selectiesoort"@nl .
+
+brp:selectieperiode a owl:DatatypeProperty ;
+    rdfs:range xsd:duration ;
+    rdfs:label "Selectieperiode"@nl .
+
+brp:conditioneleVerstrekking a owl:ObjectProperty ;
+    rdfs:range brp:ConditioneleVerstrekking ;
+    rdfs:label "Conditionele verstrekking"@nl .
+
+brp:versie a owl:DatatypeProperty ;
+    rdfs:domain brp:Autorisatiebesluit ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Versie"@nl .
+
+# =============================================================================
+# Medium instanties
+# =============================================================================
+
+brp:MediumNetwerk a brp:Medium ;
+    rdfs:label "Netwerk (Berichtendienst / Webservices / API's)"@nl ;
+    rdf:value "N" .
+
+brp:MediumAnders a brp:Medium ;
+    rdfs:label "Alternatief medium"@nl ;
+    rdf:value "A" .
+
+# =============================================================================
+# Verstrekkingsbeperking instanties (Rubriek 35.95.13)
+# =============================================================================
+
+brp:VerstrekkingsbeperkingBeperkt a brp:Verstrekkingsbeperking ;
+    rdfs:label "Beperkt zichtbaar"@nl ;
+    rdf:value 1 .
+
+brp:VerstrekkingsbeperkingVerborgen a brp:Verstrekkingsbeperking ;
+    rdfs:label "Verborgen voor burger"@nl ;
+    rdf:value 2 .
+
+# =============================================================================
+# Selectiesoort instanties (Rubriek 35.95.52)
+# =============================================================================
+
+brp:SelectiesoortVerstrekking a brp:Selectiesoort ;
+    rdfs:label "Selectieverstrekking"@nl ;
+    rdfs:comment """Gegevens van PL'en die aan de voorwaarderegel voldoen worden
+geselecteerd en verstrekt aan de afnemer."""@nl ;
+    rdf:value "0" .
+
+brp:SelectiesoortPlaatsing a brp:Selectiesoort ;
+    rdfs:label "Plaatsing afnemersindicatie via selectie"@nl ;
+    rdfs:comment """Bij PL'en die aan de voorwaarderegel voldoen wordt een
+afnemersindicatie geplaatst (waarna spontane verstrekking volgt)."""@nl ;
+    rdf:value "1" .
+
+brp:SelectiesoortLogischVerwijderen a brp:Selectiesoort ;
+    rdfs:label "Logisch verwijderen afnemersindicatie via selectie"@nl ;
+    rdfs:comment """Bij geselecteerde PL'en wordt de afnemersindicatie van de
+afnemer logisch verwijderd (gemarkeerd als inactief)."""@nl ;
+    rdf:value "2" .
+
+brp:SelectiesoortVoorwaardelijkVerwijderen a brp:Selectiesoort ;
+    rdfs:label "Voorwaardelijk fysiek verwijderen afnemersindicatie"@nl ;
+    rdfs:comment """Bij geselecteerde PL'en wordt de afnemersindicatie fysiek
+verwijderd, mits aan de voorwaarden is voldaan."""@nl ;
+    rdf:value "3" .
+
+brp:SelectiesoortOnvoorwaardelijkVerwijderen a brp:Selectiesoort ;
+    rdfs:label "Onvoorwaardelijk fysiek verwijderen afnemersindicatie"@nl ;
+    rdfs:comment """Bij geselecteerde PL'en wordt de afnemersindicatie
+onvoorwaardelijk fysiek verwijderd."""@nl ;
+    rdf:value "4" .
+
+# =============================================================================
+# Conditionele verstrekking instanties (Rubriek 35.95.43)
+# =============================================================================
+
+brp:SpontaanPlaatsingAfnemersindicatie a brp:ConditioneleVerstrekking ;
+    rdfs:label "Automatisch afnemersindicatie plaatsen"@nl ;
+    rdfs:comment """Bij wijziging van sleutelrubrieken wordt automatisch een
+afnemersindicatie bij de persoonslijst geplaatst."""@nl ;
+    rdf:value "0" .
+
+brp:SpontaanConditioneelBericht a brp:ConditioneleVerstrekking ;
+    rdfs:label "Conditioneel gegevensbericht versturen"@nl ;
+    rdfs:comment """Bij wijziging van sleutelrubrieken wordt een conditioneel
+gegevensbericht aan de afnemer verstuurd."""@nl ;
+    rdf:value "1" .

@@ -1,0 +1,116 @@
+gg_ee,label,uri_name,value_type,comment
+01.10,A-nummer,anummer,,"Het administratienummer (A-nummer), bedoeld in artikel 4.9 van de Wet BRP. Een uniek 10-cijferig nummer dat een persoonslijst identificeert."
+01.20,Burgerservicenummer,burgerservicenummer,,"Het burgerservicenummer (BSN), bedoeld in artikel 1.1 van de Wet algemene bepalingen burgerservicenummer."
+02.10,Voornamen,voornamen,,"De voornamen, gescheiden door spaties, voorafgaand aan de geslachtsnaam."
+02.20,Adellijke titel/predicaat,adellijkeTitelPredicaat,,Een code uit Tabel 38 (Adellijke titel/predicaat) die aangeeft welke titel of welk predicaat tot de naam behoort.
+02.30,Voorvoegsel geslachtsnaam,voorvoegselGeslachtsnaam,,"Het deel van de geslachtsnaam dat voorkomt in Tabel 36 (Voorvoegseltabel), voorafgaand aan de rest van de geslachtsnaam."
+02.40,Geslachtsnaam,geslachtsnaam,,De geslachtsnaam waarvan eventueel aanwezige voorvoegsels en adellijke titel/predicaat zijn afgesplitst.
+03.10,Geboortedatum,geboortedatum,,De datum waarop de persoon is geboren.
+03.20,Geboorteplaats,geboorteplaats,,Een code uit Tabel 33 (Gemeententabel) of een buitenlandse plaatsbepaling die aangeeft waar de persoon is geboren.
+03.30,Geboorteland,geboorteland,land,Een code uit Tabel 34 (Landentabel) die het land aangeeft waar de persoon is geboren.
+04.10,Geslachtsaanduiding,geslachtsaanduiding,,"Een aanduiding die aangeeft of de ingeschrevene een man (M), vrouw (V) of onbekend (O) is."
+05.10,Nationaliteit,nationaliteit,nationaliteit,Een code uit Tabel 32 (Nationaliteitentabel) die aangeeft welke nationaliteit de ingeschrevene bezit.
+06.10,Datum huwelijkssluiting/aangaan geregistreerd partnerschap,datumHuwelijkssluiting,,De datum waarop het huwelijk is voltrokken of het partnerschap is aangegaan.
+06.20,Plaats huwelijkssluiting/aangaan geregistreerd partnerschap,plaatsHuwelijkssluiting,,Een code of plaatsbepaling die aangeeft waar het huwelijk is voltrokken of het partnerschap is aangegaan.
+06.30,Land huwelijkssluiting/aangaan geregistreerd partnerschap,landHuwelijkssluiting,land,Een code uit Tabel 34 (Landentabel) die het land aangeeft waar het huwelijk is voltrokken of het partnerschap is aangegaan.
+07.10,Datum ontbinding huwelijk/geregistreerd partnerschap,datumOntbindingHuwelijk,,De datum waarop het huwelijk of geregistreerd partnerschap is ontbonden.
+07.20,Plaats ontbinding huwelijk/geregistreerd partnerschap,plaatsOntbindingHuwelijk,,Een code of plaatsbepaling die aangeeft waar het huwelijk of geregistreerd partnerschap is ontbonden.
+07.30,Land ontbinding huwelijk/geregistreerd partnerschap,landOntbindingHuwelijk,land,Een code uit Tabel 34 (Landentabel) die aangeeft in welk land het huwelijk of geregistreerd partnerschap is ontbonden.
+07.40,Reden ontbinding huwelijk/geregistreerd partnerschap,redenOntbindingHuwelijk,,"Een code die de reden van ontbinding aangeeft (bijv. overlijden, echtscheiding)."
+08.10,Datum overlijden,datumOverlijden,,De datum waarop de ingeschrevene is overleden.
+08.20,Plaats overlijden,plaatsOverlijden,,Een code of plaatsbepaling die aangeeft waar de ingeschrevene is overleden.
+08.30,Land overlijden,landOverlijden,land,Een code uit Tabel 34 (Landentabel) die aangeeft in welk land de ingeschrevene is overleden.
+09.10,Gemeente van inschrijving,gemeenteVanInschrijving,gemeente,Een 4-cijferige code uit Tabel 33 (Gemeententabel) van de gemeente waar de ingeschrevene staat ingeschreven.
+09.20,Datum inschrijving,datumInschrijving,,De datum waarop de ingeschrijving in de huidige gemeente is ingegaan.
+10.10,Functie adres,functieAdres,,Geeft aan of het adres een woonadres (W) of een briefadres (B) betreft.
+10.20,Gemeentedeel,gemeentedeel,,De aanduiding van het deel van de gemeente waar het adres zich bevindt.
+10.30,Datum aanvang adreshouding,datumAanvangAdreshouding,,De datum waarop de adreshouding op het huidige adres is aangevangen.
+11.10,Straatnaam,straatnaam,,De naam van de straat conform de BAG.
+11.15,Naam openbare ruimte,naamOpenbareRuimte,,De naam van de openbare ruimte conform de BAG.
+11.20,Huisnummer,huisnummer,,Het huisnummer conform de BAG.
+11.30,Huisletter,huisletter,,De huisletter conform de BAG.
+11.40,Huisnummertoevoeging,huisnummertoevoeging,,De huisnummertoevoeging conform de BAG.
+11.50,Aanduiding bij huisnummer,aanduidingBijHuisnummer,,"Een aanduiding bij het huisnummer (by = tegenover, to = naast)."
+11.60,Postcode,postcode,,De postcode van het adres (4 cijfers + 2 letters).
+11.70,Woonplaatsnaam,woonplaatsnaam,,De naam van de woonplaats conform de BAG.
+11.80,Identificatiecode verblijfplaats,identificatiecodeVerblijfplaats,,De identificatiecode verblijfplaats (nummeraanduiding-ID) conform de BAG.
+11.90,Identificatiecode nummeraanduiding,identificatiecodeNummeraanduiding,,De identificatiecode nummeraanduiding conform de BAG.
+12.10,Locatiebeschrijving,locatiebeschrijving,,Een beschrijving van de locatie als er geen BAG-adres beschikbaar is.
+13.10,Land adres buitenland,landAdresBuitenland,land,Een code uit Tabel 34 (Landentabel) van het land waar het buitenlands adres zich bevindt.
+13.20,Datum aanvang adres buitenland,datumAanvangAdresBuitenland,,De datum waarop het verblijf op het buitenlands adres is aangevangen.
+13.30,Regel 1 adres buitenland,regel1AdresBuitenland,,Eerste regel van het buitenlands adres.
+13.40,Regel 2 adres buitenland,regel2AdresBuitenland,,Tweede regel van het buitenlands adres.
+13.50,Regel 3 adres buitenland,regel3AdresBuitenland,,Derde regel van het buitenlands adres.
+14.10,Land vanwaar ingeschreven,landVanwaarIngeschreven,land,Een code uit Tabel 34 (Landentabel) van het land vanwaar de ingeschrevene is geimmigreerd.
+14.20,Datum vestiging in Nederland,datumVestigingInNederland,,De datum waarop de ingeschrevene zich voor het eerst in Nederland heeft gevestigd.
+15.10,Soort verbintenis,soortVerbintenis,,Geeft aan of het een huwelijk (H) of geregistreerd partnerschap (P) betreft.
+16.10,Telefoonnummer,telefoonnummer,,Het telefoonnummer waarop de ingeschrevene bereikbaar is.
+16.20,Verificatie-indicatie telefoon,verificatieIndicatieTelefoon,,Verificatie-indicatie bij het telefoonnummer.
+16.30,Geldig vanaf telefoon,geldigVanafTelefoon,,Datum vanaf wanneer het telefoonnummer geldig is.
+17.10,E-mailadres,emailadres,,Het e-mailadres van de ingeschrevene.
+17.20,Verificatie-indicatie e-mail,verificatieIndicatieEmail,,Verificatie-indicatie bij het e-mailadres.
+17.30,Geldig vanaf e-mail,geldigVanafEmail,,Datum vanaf wanneer het e-mailadres geldig is.
+18.10,Einddatum geldigheid,einddatumGeldigheid,,Einddatum geldigheid van het tijdelijk verblijfsadres.
+19.10,Type adres,typeAdres,,Type adres van het tijdelijk verblijfsadres.
+20.10,Vorig A-nummer,vorigAnummer,,Het vorige A-nummer van de ingeschrevene (bij hernummering).
+20.20,Volgend A-nummer,volgendAnummer,,Het volgende A-nummer van de ingeschrevene (bij hernummering).
+31.10,Aanduiding Europees kiesrecht,aanduidingEuropeesKiesrecht,,Aanduiding Europees kiesrecht: of de ingeschrevene deelneemt aan EP-verkiezingen in Nederland.
+31.20,Datum verzoek/mededeling Europees kiesrecht,datumVerzoekEuropeesKiesrecht,,Datum van het verzoek of de mededeling betreffende Europees kiesrecht.
+31.30,Einddatum uitsluiting Europees kiesrecht,einddatumUitsluitingEuropeesKiesrecht,,Einddatum uitsluiting Europees kiesrecht.
+31.40,Adres EU-lidstaat van herkomst,adresEULidstaatVanHerkomst,,Adres in de EU-lidstaat van herkomst.
+31.50,Plaats EU-lidstaat van herkomst,plaatsEULidstaatVanHerkomst,,Plaats in de EU-lidstaat van herkomst.
+31.60,Land EU-lidstaat van herkomst,landEULidstaatVanHerkomst,,Land (EU-lidstaat) van herkomst.
+32.10,Indicatie gezag minderjarige,indicatieGezagMinderjarige,,Indicatie gezag minderjarige: wie het gezag over de minderjarige uitoefent.
+33.10,Indicatie curateleregister,indicatieCurateleregister,,Indicatie of de ingeschrevene onder curatele is gesteld.
+35.10,Soort Nederlands reisdocument,soortNederlandsReisdocument,,Soort Nederlands reisdocument (code uit Tabel 48).
+35.20,Nummer Nederlands reisdocument,nummerNederlandsReisdocument,,Het nummer van het Nederlandse reisdocument.
+35.30,Datum uitgifte Nederlands reisdocument,datumUitgifteNederlandsReisdocument,,De datum waarop het reisdocument is uitgegeven.
+35.40,Autoriteit van afgifte Nederlands reisdocument,autoriteitVanAfgifteNederlandsReisdocument,,De autoriteit die het reisdocument heeft afgegeven.
+35.50,Datum einde geldigheid Nederlands reisdocument,datumEindeGeldigheidNederlandsReisdocument,,De datum waarop de geldigheid van het reisdocument eindigt.
+35.60,Datum inhouding/vermissing Nederlands reisdocument,datumInhoudingVermissingNederlandsReisdocument,,De datum van inhouding of vermissing van het reisdocument.
+35.70,Aanduiding inhouding/vermissing Nederlands reisdocument,aanduidingInhoudingVermissingNederlandsReisdocument,,Aanduiding of het reisdocument is ingehouden (I) of vermist (V).
+35.80,Lengte houder,lengteHouder,,De lengte van de houder in centimeters.
+36.10,Signalering met betrekking tot verstrekken Nederlands reisdocument,signaleringSreisdocument,,Signalering met betrekking tot het verstrekken van een Nederlands reisdocument.
+37.10,Geldig vanaf reisdocument,geldigVanafReisdocument,,Datum geldig vanaf van het reisdocument.
+38.10,Aanduiding uitgesloten kiesrecht,aanduidingUitgeslotenKiesrecht,,Aanduiding of de ingeschrevene is uitgesloten van het kiesrecht.
+38.20,Einddatum uitsluiting kiesrecht,einddatumUitsluitingKiesrecht,,Einddatum van de uitsluiting van het kiesrecht.
+39.10,Aanduiding verblijfstitel,aanduidingVerblijfstitel,verblijfstitel,De aanduiding van de verblijfstitel (code uit Tabel 56).
+39.20,Datum einde verblijfstitel,datumEindeVerblijfstitel,,De datum waarop de verblijfstitel eindigt.
+39.30,Ingangsdatum verblijfstitel,ingangsdatumVerblijfstitel,,De ingangsdatum van de verblijfstitel.
+40.10,Afnemersindicatie,afnemersindicatie,afnemer,De afnemersindicatie die bij een persoonslijst is geplaatst.
+42.10,Aanwijzing,aanwijzing,,Aanwijzing op de persoonslijst.
+61.10,Aanduiding naamgebruik,aanduidingNaamgebruik,,"Aanduiding naamgebruik: hoe de naam in het maatschappelijk verkeer wordt gebruikt (E, P, V, N)."
+62.10,Datum ingang familierechtelijke betrekking,datumIngangFamilierechtelijkeBetrekking,,De datum waarop de familierechtelijke betrekking met de ouder is ingegaan.
+63.10,Reden opname nationaliteit,redenOpnameNationaliteit,,Reden van opname van de nationaliteit (code uit Tabel 37).
+64.10,Reden beeindiging nationaliteit,redenBeeindigingNationaliteit,,Reden van beeindiging van de nationaliteit (code uit Tabel 37).
+65.10,Aanduiding bijzonder Nederlanderschap,aanduidingBijzonderNederlanderschap,,Aanduiding bijzonder Nederlanderschap: B (behandeld als Nederlander) of V (vastgesteld niet-Nederlander).
+66.20,Datum ingang blokkering PL,datumIngangBlokkeringPL,,De datum waarop de blokkering van de persoonslijst is ingegaan.
+67.10,Datum opschorting bijhouding,datumOpschortingBijhouding,,De datum waarop de bijhouding van de persoonslijst is opgeschort.
+67.20,Omschrijving reden opschorting bijhouding,omschrijvingRedenOpschortingBijhouding,,"De reden waarom de bijhouding is opgeschort (O=overlijden, E=emigratie, M=ministerieel besluit, F=fout, R=reset)."
+68.10,Datum eerste inschrijving GBA/BRP,datumEersteInschrijvingBRP,,De datum waarop de persoonslijst voor het eerst in de GBA/BRP is ingeschreven.
+69.10,Gemeente waar de PK zich bevindt,gemeenteWaarDePKZichBevindt,,De gemeente waar de persoonskaart (PK) zich bevindt.
+70.10,Indicatie geheim,indicatieGeheim,,"Indicatie geheim: geeft aan of de ingeschrevene om geheimhouding heeft verzocht (0=niet geheim, 1-7=wel geheim)."
+71.10,Datum verificatie,datumVerificatie,,
+71.20,Omschrijving verificatie,omschrijvingVerificatie,,
+72.10,Omschrijving aangifte adreshouding,omschrijvingAangifteAdreshouding,,Omschrijving van de aangifte adreshouding (code uit Tabel 49).
+73.10,EU-persoonsnummer,euPersoonsnummer,,Het EU-persoonsnummer van de ingeschrevene.
+75.10,Indicatie document,indicatieDocument,,Indicatie of er een brondocument aanwezig is.
+80.10,Versienummer,versienummer,,Het versienummer van de persoonslijst voor synchronisatiedoeleinden.
+80.20,Datumtijdstempel,datumtijdstempel,,De datumtijdstempel van de laatste wijziging.
+81.10,Registergemeente akte,registergemeenteAkte,,
+81.20,Aktenummer,aktenummer,,
+82.10,Gemeente document,gemeenteDocument,,
+82.20,Datum document,datumDocument,,
+82.30,Beschrijving document,beschrijvingDocument,,
+83.10,Aanduiding gegevens in onderzoek,aanduidingGegevensInOnderzoek,,
+83.20,Datum ingang onderzoek,datumIngangOnderzoek,,
+83.30,Datum einde onderzoek,datumEindeOnderzoek,,
+84.10,Indicatie onjuist dan wel strijdigheid met de openbare orde,indicatieOnjuist,,Indicatie dat het gegeven onjuist is of in strijd met de openbare orde.
+85.10,Ingangsdatum geldigheid,ingangsdatumGeldigheid,,De ingangsdatum geldigheid van de gegevensgroep.
+86.10,Datum van opneming,datumVanOpneming,,De datum waarop het gegeven in de administratie is opgenomen.
+87.10,PK-gegevens meegeconverteerd,pkGegevensMeegeconverteerd,,Indicatie of PK-gegevens volledig zijn meegeconverteerd naar de GBA.
+88.10,RNI-deelnemer,rniDeelnemer,,De RNI-deelnemer (Registratie Niet-Ingezetenen) die het gegeven heeft aangeleverd.
+88.20,Omschrijving verdrag,omschrijvingVerdrag,,Omschrijving van het verdrag op basis waarvan het gegeven is opgenomen.
+89.10,Registratie betrekking,registratieBetrekking,,Registratie betrekking: geeft aan of het kind levenloos geboren is (L).
+89.20,Selectiedatum,selectiedatum,,De selectiedatum: peildatum voor selectie-voorwaarderegels.
+89.30,Vandaagdatum,vandaagdatum,,De vandaagdatum: peildatum 'vandaag' voor spontane en ad hoc voorwaarderegels.
