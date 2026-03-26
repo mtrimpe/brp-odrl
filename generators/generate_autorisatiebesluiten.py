@@ -16,11 +16,21 @@ import csv
 import os
 import re
 import sys
-import brp_elementen as be
+
+from rdflib import BNode, Literal, URIRef
+from rdflib.collection import Collection
+
+import informatiemodel_graph as im
+from namespaces import (
+    new_graph, save,
+    BRP, BRPAFN, BRPAUT, BRPNAT, BRPLAND, BRPVBT,
+    GEM, ODRL, TPL, RDF, RDFS, XSD, DCTERMS, PROV,
+)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(BASE_DIR, "csv", "tabel35_autorisatietabel.csv")
-OUTPUT_PATH = os.path.join(BASE_DIR, "ttl", "autorisatiebesluiten.ttl")
+OUTPUT_PATH_ACTUEEL = os.path.join(BASE_DIR, "ttl", "autorisatiebesluiten-actueel.ttl")
+OUTPUT_PATH_HISTORISCH = os.path.join(BASE_DIR, "ttl", "autorisatiebesluiten-historisch.ttl")
 
 # Column indices (0-based) from the Excel headers
 COL_VERSIE = 0
@@ -50,8 +60,6 @@ COL_PLAATSING = 23
 COL_AFN_VERSTR = 24
 COL_ADRESVRAAG = 25
 COL_MED_ADHOC = 26
-
-
 
 
 # =============================================================================
@@ -127,18 +135,18 @@ def _lookup_label(value, value_type):
     return str(value)
 
 
-# Operator mapping: BRP operator -> (brp: ODRL Operator, Dutch description)
+# Operator mapping: BRP operator -> (brp: ODRL Operator URIRef, Dutch description)
 OPERATOR_MAP = {
-    "GA1": ("brp:ga1", "gelijk aan"),
-    "GAA": ("brp:gaa", "gelijk aan (alle voorkomens)"),
-    "OGA1": ("brp:oga1", "ongelijk aan"),
-    "OGAA": ("brp:ogaa", "ongelijk aan (alle voorkomens)"),
-    "GD1": ("brp:gd1", "groter dan"),
-    "KD1": ("brp:kd1", "kleiner dan"),
-    "KDA": ("brp:kda", "kleiner dan (alle voorkomens)"),
-    "KDOG1": ("brp:kdog1", "kleiner dan of gelijk aan"),
-    "KDOGA": ("brp:kdoga", "kleiner dan of gelijk aan (alle voorkomens)"),
-    "GDOG1": ("brp:gdog1", "groter dan of gelijk aan"),
+    "GA1": (BRP.ga1, "gelijk aan"),
+    "GAA": (BRP.gaa, "gelijk aan (alle voorkomens)"),
+    "OGA1": (BRP.oga1, "ongelijk aan"),
+    "OGAA": (BRP.ogaa, "ongelijk aan (alle voorkomens)"),
+    "GD1": (BRP.gd1, "groter dan"),
+    "KD1": (BRP.kd1, "kleiner dan"),
+    "KDA": (BRP.kda, "kleiner dan (alle voorkomens)"),
+    "KDOG1": (BRP.kdog1, "kleiner dan of gelijk aan"),
+    "KDOGA": (BRP.kdoga, "kleiner dan of gelijk aan (alle voorkomens)"),
+    "GDOG1": (BRP.gdog1, "groter dan of gelijk aan"),
 }
 
 
@@ -325,7 +333,7 @@ class Parser:
             if len(terms) == 1:
                 left = terms[0]
             else:
-                odrl_op = "odrl:and" if logical_op == "ENVWD" else "odrl:or"
+                odrl_op = "and" if logical_op == "ENVWD" else "or"
                 left = {
                     "type": "logical",
                     "operator": odrl_op,
@@ -352,7 +360,7 @@ class Parser:
             return {
                 "type": "constraint",
                 "leftOperand": rub[1],
-                "operator": "brp:kv",
+                "operator": "kv",
                 "comment": f"KV {rub[1]}",
             }
         elif tok[0] == TOK_KNV:
@@ -361,7 +369,7 @@ class Parser:
             return {
                 "type": "constraint",
                 "leftOperand": rub[1],
-                "operator": "brp:knv",
+                "operator": "knv",
                 "comment": f"KNV {rub[1]}",
             }
         elif tok[0] == TOK_LIJST:
@@ -376,13 +384,13 @@ class Parser:
                 "brpOperator": op[1],
             }
             if len(values) == 1:
-                result["operator"] = OPERATOR_MAP[op[1]][0]
+                result["operator"] = op[1]  # store raw BRP op name
                 result["rightOperand"] = values[0]
             else:
                 if vgl_type == "OFVGL":
-                    result["operator"] = "odrl:isAnyOf"
+                    result["operator"] = "isAnyOf"
                 else:  # ENVGL
-                    result["operator"] = "odrl:isAllOf"
+                    result["operator"] = "isAllOf"
                 result["rightOperand"] = values
             return result
         else:
@@ -399,7 +407,7 @@ class Parser:
         return {
             "type": "constraint",
             "leftOperand": rub[1],
-            "operator": "brp:lijst",
+            "operator": "lijst",
             "brpOperator": op[1],
             "comment": f"LIJST ({kolom[1]} {op[1]} {rub[1]})",
             "kolom": kolom[1],
@@ -471,6 +479,11 @@ def parse_voorwaarderegel(expr):
     return parser.parse()
 
 
+# =============================================================================
+# Constraint tree -> rdflib subgraph
+# =============================================================================
+
+
 def _format_offset_duration(offset_str, sign="-"):
     """Convert a BRP date offset to xsd:duration.
 
@@ -515,23 +528,14 @@ def _format_offset_duration(offset_str, sign="-"):
         return "P" + "".join(parts)
 
 
-def constraint_to_turtle(node, indent="        "):
-    """Convert a parsed constraint tree to Turtle string."""
-    lines = []
-    _constraint_to_lines(node, indent, lines)
-    return "\n".join(lines)
+def _elm_ref(rubrieknummer):
+    """Convert a rubrieknummer to a URIRef, using informatiemodel.ttl."""
+    return im.elm_ref(rubrieknummer)
 
 
 def _elm_label(rub):
     """Get a readable Dutch label for a rubrieknummer."""
-    rub_base = rub.split("@")[0] if "@" in rub else rub
-    try:
-        return be.ELEMENTS[rub_base[3:]][0]  # strip CC. prefix
-    except (KeyError, IndexError):
-        try:
-            return be.rubriek_to_label(rub_base)
-        except (KeyError, ValueError):
-            return rub_base
+    return im.elm_label(rub)
 
 
 def _duration_to_dutch(duration_str):
@@ -569,10 +573,6 @@ def _is_age_constraint(left_rub, right):
 def _age_meaning(brp_op, duration_str):
     """Describe what a geboortedatum comparison means in age terms."""
     dur = _duration_to_dutch(duration_str)
-    # geboortedatum KDOG1 vandaag-3j = geboren <= vandaag-3j = minimaal 3j oud
-    # geboortedatum GD1 vandaag-23j = geboren > vandaag-23j = maximaal 23j oud
-    # geboortedatum GA1 vandaag-18j = geboren op vandaag-18j = precies 18j
-    # geboortedatum KD1 vandaag-65j = geboren < vandaag-65j = ouder dan 65j
     age_map = {
         "KDOG1": f"minimaal {dur} oud",
         "KDOGA": f"minimaal {dur} oud",
@@ -596,7 +596,7 @@ def _describe_right(right, value_type=None):
         )
         dur_dutch = _duration_to_dutch(duration)
         is_rubriek = re.match(r"\d{2}\.\d{2}\.\d{2}", ref_base)
-        sign = "+" if right.get("sign") == "+" else "−"
+        sign = "+" if right.get("sign") == "+" else "\u2212"
         if is_rubriek:
             return f"{_elm_label(ref_base)} {sign} {dur_dutch}"
         else:
@@ -626,18 +626,18 @@ def _build_comment(node):
     vtype = _value_type_for_rub(left_rub)
 
     # KV / KNV
-    if operator == "brp:kv":
+    if operator == "kv":
         return f"{left_label} is aanwezig"
-    if operator == "brp:knv":
+    if operator == "knv":
         return f"{left_label} is niet aanwezig"
-    if operator == "brp:lijst":
+    if operator == "lijst":
         return f"{left_label} komt voor in selectielijst"
 
     # isAnyOf / isAllOf
-    if operator == "odrl:isAnyOf":
+    if operator == "isAnyOf":
         right_desc = _describe_right(right, vtype)
         return f"{left_label} is een van: {right_desc}"
-    if operator == "odrl:isAllOf":
+    if operator == "isAllOf":
         right_desc = _describe_right(right, vtype)
         return f"{left_label} is alle van: {right_desc}"
 
@@ -650,7 +650,7 @@ def _build_comment(node):
         dur_dutch = _duration_to_dutch(duration)
         ref_label = _elm_label(right["reference"])
         op_desc = OPERATOR_MAP.get(brp_op, (None, brp_op))[1]
-        base = f"{left_label} {op_desc} {ref_label} − {dur_dutch}"
+        base = f"{left_label} {op_desc} {ref_label} \u2212 {dur_dutch}"
         if age:
             return f"{base} ({age})"
         return base
@@ -667,112 +667,122 @@ def _build_comment(node):
     return f"{left_label} {op_desc} {right_desc}"
 
 
-def _constraint_to_lines(node, indent, lines):
-    """Recursively convert constraint tree to Turtle lines."""
+def _value_type_for_rub(left_rub):
+    """Determine the value type for a rubriek, using informatiemodel.ttl."""
+    if not left_rub:
+        return None
+    return im.element_value_type(left_rub)
+
+
+def _value_to_rdf(v, value_type=None):
+    """Convert a parsed value to an rdflib URIRef or Literal."""
+    if isinstance(v, dict) and v.get("type") == "dateCalc":
+        duration = _format_offset_duration(v["offset"], v.get("sign", "-"))
+        return Literal(duration, datatype=XSD.duration)
+    if isinstance(v, str) and re.match(r"\d{2}\.\d{2}\.\d{2}", v):
+        return _elm_ref(v.split("@")[0])
+    if isinstance(v, str) and re.match(r"\d+$", v):
+        if value_type == "gemeente" and len(v) == 4:
+            return GEM[f"gm{v}"]
+        if value_type == "nationaliteit" and len(v) == 4:
+            return BRPNAT[v]
+        if value_type == "land" and len(v) == 4:
+            return BRPLAND[v]
+        if value_type == "verblijfstitel" and len(v) <= 2:
+            return BRPVBT[v]
+        if value_type == "afnemer":
+            return BRPAFN[v.strip()]
+    return Literal(v)
+
+
+def _operator_ref(op_name):
+    """Resolve a parsed operator name to an rdflib URIRef.
+
+    op_name is a short key like "kv", "knv", "lijst", "isAnyOf", "isAllOf",
+    or a BRP operator name like "GA1" that maps via OPERATOR_MAP.
+    """
+    if op_name in ("kv", "knv", "lijst"):
+        return BRP[op_name]
+    if op_name in ("isAnyOf", "isAllOf"):
+        return ODRL[op_name]
+    # BRP comparison operator (GA1, GD1, etc.)
+    entry = OPERATOR_MAP.get(op_name)
+    if entry:
+        return entry[0]
+    return BRP[op_name]
+
+
+def _add_constraint(g, node):
+    """Recursively add a constraint tree to graph g. Returns the BNode."""
     if node["type"] == "logical":
-        lines.append(f"{indent}[")
-        lines.append(f"{indent}    a odrl:LogicalConstraint ;")
-        op = node["operator"]
-        lines.append(f"{indent}    {op} (")
-        for operand in node["operands"]:
-            _constraint_to_lines(operand, indent + "        ", lines)
-        lines.append(f"{indent}    )")
-        lines.append(f"{indent}]")
+        bnode = BNode()
+        g.add((bnode, RDF.type, ODRL.LogicalConstraint))
+        operand_nodes = [_add_constraint(g, op) for op in node["operands"]]
+        list_head = BNode()
+        Collection(g, list_head, operand_nodes)
+        op_name = node["operator"]  # "and" or "or"
+        g.add((bnode, ODRL[op_name], list_head))
+        return bnode
+
     elif node["type"] == "constraint":
+        bnode = BNode()
+        g.add((bnode, RDF.type, ODRL.Constraint))
+
         left_rub = node["leftOperand"]
         left_rub_base = left_rub.split("@")[0] if "@" in left_rub else left_rub
-        operator = node["operator"]
-
-        lines.append(f"{indent}[")
-        lines.append(f"{indent}    a odrl:Constraint ;")
-        lines.append(f"{indent}    odrl:leftOperand {elm_uri(left_rub_base)} ;")
+        g.add((bnode, ODRL.leftOperand, _elm_ref(left_rub_base)))
 
         if "@" in left_rub:
             scope = left_rub.split("@")[1]
-            lines.append(f'{indent}    brp:scope "{scope}" ;')
+            g.add((bnode, BRP.scope, Literal(scope)))
 
-        lines.append(f"{indent}    odrl:operator {operator} ;")
+        operator = node["operator"]
+        g.add((bnode, ODRL.operator, _operator_ref(operator)))
 
         vtype = _value_type_for_rub(left_rub)
         right = node.get("rightOperand")
+
         if right is not None:
             if isinstance(right, list):
-                formatted = [_format_value(v, value_type=vtype) for v in right]
-                lines.append(
-                    f"{indent}    odrl:rightOperand ( {' '.join(formatted)} ) ;"
-                )
+                # Multiple values (OFVGL / ENVGL) -> rdf:List via Collection
+                rdf_values = [_value_to_rdf(v, value_type=vtype) for v in right]
+                list_head = BNode()
+                Collection(g, list_head, rdf_values)
+                g.add((bnode, ODRL.rightOperand, list_head))
             elif isinstance(right, dict) and right.get("type") == "dateCalc":
                 ref = right["reference"]
                 ref_base = ref.split("@")[0] if "@" in ref else ref
                 duration = _format_offset_duration(
                     right["offset"], right.get("sign", "-")
                 )
+                g.add((bnode, ODRL.rightOperand,
+                       Literal(duration, datatype=XSD.duration)))
                 is_raw = right.get("rawDate", False)
                 is_rubriek = re.match(r"\d{2}\.\d{2}\.\d{2}", ref_base)
-
-                lines.append(
-                    f'{indent}    odrl:rightOperand "{duration}"^^xsd:duration ;'
-                )
                 if is_rubriek:
-                    lines.append(
-                        f"{indent}    odrl:rightOperandReference {elm_uri(ref_base)} ;"
-                    )
+                    g.add((bnode, ODRL.rightOperandReference,
+                           _elm_ref(ref_base)))
                 elif is_raw:
-                    lines.append(
-                        f'{indent}    brp:peilDatum "{ref_base}" ;'
-                    )
+                    g.add((bnode, BRP.peilDatum, Literal(ref_base)))
                 if right.get("sign") == "+":
-                    lines.append(
-                        f'{indent}    brp:dateCalcSign "+" ;'
-                    )
+                    g.add((bnode, BRP.dateCalcSign, Literal("+")))
             elif isinstance(right, str) and re.match(
                 r"\d{2}\.\d{2}\.\d{2}", right
             ):
                 right_base = right.split("@")[0]
-                lines.append(
-                    f"{indent}    odrl:rightOperandReference {elm_uri(right_base)} ;"
-                )
+                g.add((bnode, ODRL.rightOperandReference,
+                       _elm_ref(right_base)))
             else:
-                lines.append(
-                    f"{indent}    odrl:rightOperand {_format_value(right, value_type=vtype)} ;"
-                )
+                g.add((bnode, ODRL.rightOperand,
+                       _value_to_rdf(right, value_type=vtype)))
 
         comment = _build_comment(node)
         if comment:
-            lines.append(f'{indent}    rdfs:comment "{_escape(comment)}"@nl')
-        lines.append(f"{indent}]")
+            g.add((bnode, RDFS.comment, Literal(comment, lang="nl")))
 
+        return bnode
 
-def _value_type_for_rub(left_rub):
-    """Determine the value type for a rubriek, using brp_elementen."""
-    if not left_rub:
-        return None
-    return be.element_value_type(left_rub)
-
-
-def _format_value(v, value_type=None):
-    """Format a value for Turtle output."""
-    if isinstance(v, dict) and v.get("type") == "dateCalc":
-        duration = _format_offset_duration(v["offset"], v.get("sign", "-"))
-        return f'"{duration}"^^xsd:duration'
-    if isinstance(v, str) and re.match(r"\d{2}\.\d{2}\.\d{2}", v):
-        return elm_uri(v.split("@")[0])
-    if isinstance(v, str) and re.match(r"\d+$", v):
-        if value_type == "gemeente" and len(v) == 4:
-            return f"gem:gm{v}"
-        if value_type == "nationaliteit" and len(v) == 4:
-            return f"brpnat:{v}"
-        if value_type == "land" and len(v) == 4:
-            return f"brpland:{v}"
-        if value_type == "verblijfstitel" and len(v) <= 2:
-            return f"brpvbt:{v}"
-        if value_type == "afnemer":
-            return f"brpafn:{v.strip()}"
-    return f'"{v}"'
-
-
-def _escape(s):
-    return str(s).replace("\\", "\\\\").replace('"', '\\"')
+    raise ValueError(f"Unknown node type: {node['type']}")
 
 
 # =============================================================================
@@ -780,23 +790,9 @@ def _escape(s):
 # =============================================================================
 
 
-def elm_uri(rubrieknummer):
-    """Convert a rubrieknummer to brpelm: URI using meaningful names."""
-    rub = rubrieknummer.split("@")[0]  # strip scope
-    try:
-        return f"brpelm:{be.rubriek_to_uri(rub)}"
-    except (KeyError, ValueError):
-        return f"brpelm:{rub}"
-
-
 def format_date(d):
     s = str(d)
     return f"{s[:4]}-{s[4:6]}-{s[6:8]}T00:00:00"
-
-
-def format_date_short(d):
-    s = str(d)
-    return f"{s[:4]}-{s[4:6]}-{s[6:8]}"
 
 
 def format_afn(afn_ind):
@@ -809,406 +805,336 @@ def rubrieken_to_targets(rub_str):
     return [r.strip() for r in str(rub_str).split("#") if r.strip()]
 
 
-def escape_ttl(s):
-    return str(s).replace("\\", "\\\\").replace('"', '\\"')
+def _add_constraint_block(g, perm_node, vwr_expr):
+    """Parse a voorwaarderegel and add the ODRL constraint to the graph.
 
-
-def write_rubrieken_block(f, rubrieken, indent="        "):
-    if not rubrieken:
-        return
-    elms = [elm_uri(r) for r in rubrieken]
-    f.write(f"{indent}odrl:target ")
-    for i, elm in enumerate(elms):
-        suffix = " ;" if i == len(elms) - 1 else ","
-        if i == 0:
-            f.write(elm + suffix)
-        elif i % 6 == 0:
-            f.write(f"\n{indent}            {elm}{suffix}")
-        else:
-            f.write(f" {elm}{suffix}")
-    f.write("\n")
-
-
-def write_constraint_block(f, vwr_expr, indent="        "):
-    """Parse a voorwaarderegel and write the ODRL constraint block."""
+    Returns True if parsing succeeded, False otherwise.
+    """
     if not vwr_expr or not str(vwr_expr).strip():
-        return False
+        return None  # no expression -> no constraint attempted
     vwr_str = str(vwr_expr).strip()
+    g.add((perm_node, BRP.voorwaarderegel, Literal(vwr_str)))
     try:
         tree = parse_voorwaarderegel(vwr_str)
-        turtle = constraint_to_turtle(tree, indent + "    ")
-        f.write(
-            f'\n{indent}brp:voorwaarderegel """{escape_ttl(vwr_str)}""" ;\n'
-        )
-        f.write(f"\n{indent}odrl:constraint\n")
-        f.write(turtle)
-        f.write(" ;\n")
+        constraint_node = _add_constraint(g, tree)
+        g.add((perm_node, ODRL.constraint, constraint_node))
         return True
     except Exception as e:
         print(f"  WARNING: Could not parse: {e}", file=sys.stderr)
         print(f"  Expression: {vwr_str[:100]}", file=sys.stderr)
-        f.write(
-            f'\n{indent}brp:voorwaarderegel """{escape_ttl(vwr_str)}""" ;\n'
-        )
         return False
 
 
+RVIG = URIRef("https://identifier.overheid.nl/tooi/id/oorg/oorg10103")
+BRP_PROFILE = URIRef("https://data.rijksoverheid.nl/brp/def")
+
+
 def generate_autorisatiebesluiten(all_afnemers):
-    """Generate the main autorisatiebesluiten TTL file."""
+    """Generate autorisatiebesluiten TTL files (actueel + historisch)."""
     parse_ok = 0
     parse_fail = 0
 
-    with open(OUTPUT_PATH, "w") as f:
-        f.write("""@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:    <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct:    <http://purl.org/dc/terms/> .
-@prefix odrl:   <http://www.w3.org/ns/odrl/2/> .
-@prefix tpl:    <http://www.w3.org/ns/odrl/2/temporal/> .
-@prefix prov:   <http://www.w3.org/ns/prov#> .
-@prefix brp:    <https://data.rijksoverheid.nl/brp/def#> .
-@prefix brpelm: <https://data.rijksoverheid.nl/brp/element/> .
-@prefix brpafn: <https://data.rijksoverheid.nl/brp/afnemer/> .
-@prefix brpaut: <https://data.rijksoverheid.nl/brp/autorisatie/> .
-@prefix gem:    <https://identifier.overheid.nl/tooi/id/gemeente/> .
-@prefix brpnat: <https://data.rijksoverheid.nl/brp/nationaliteit/> .
-@prefix brpland: <https://data.rijksoverheid.nl/brp/land/> .
-@prefix brpvbt: <https://data.rijksoverheid.nl/brp/verblijfstitel/> .
+    g_act = new_graph()
+    g_hist = new_graph()
 
-# =============================================================================
-# BRP Autorisatiebesluiten met ODRL Temporal Profile
-#
-# Alle versies (historisch en actief) van alle autorisatiebesluiten uit
-# Tabel 35 (Autorisatietabel BRP), gemodelleerd met het ODRL Temporal Profile.
-#
-# Elke afnemer heeft een tpl:TemporalSet als duurzame container, met per
-# versie een odrl:Set die de geldigheidsperiode vastlegt via
-# tpl:effectiveFrom / tpl:effectiveTo.
-#
-# Voorwaarderegels uit de BRP-syntax (LO-BRP §3.1.3) zijn automatisch
-# geparsed en vertaald naar ODRL 2.2 Constraints en LogicalConstraints.
-#
-# URI-patroon: brpaut:{afnemersindicatie}-v{versie}
-#
-# Bronnen:
-# - Tabel35_Autorisatietabel.xlsx
-# - ODRL Temporal Profile: https://w3c.github.io/odrl/profile-temporal/
-# - Logisch Ontwerp BRP 2024.Q2, Hoofdstuk 3
-# =============================================================================
+    def g_for(is_active):
+        return g_act if is_active else g_hist
 
-""")
+    # Helper: add to both graphs (for shared resources like containers)
+    def g_both(triple):
+        g_act.add(triple)
+        g_hist.add(triple)
 
-        # Sort afnemers by indicatie
-        sorted_afnemers = sorted(all_afnemers.keys())
+    sorted_afnemers = sorted(all_afnemers.keys())
 
-        # Afnemers staan in brp-afnemers.ttl (generate_afnemers.py)
+    for afn_idx, afn in enumerate(sorted_afnemers):
+        rows = all_afnemers[afn]
+        afn_str = format_afn(afn)
+        latest_naam = rows[-1][COL_AFN_NAAM]
 
-        # Write temporal containers + versions per afnemer
-        for afn_idx, afn in enumerate(sorted_afnemers):
-            rows = all_afnemers[afn]
-            afn_str = format_afn(afn)
-            latest_naam = rows[-1][COL_AFN_NAAM]
-            n_versions = len(rows)
-
-            if afn_idx % 200 == 0:
-                print(
-                    f"  Processing afnemer {afn_idx + 1}/{len(sorted_afnemers)}"
-                    f" ({afn_str})..."
-                )
-
-            f.write(
-                f"\n# --- {escape_ttl(latest_naam)}"
-                f" ({afn_str}, {n_versions} versies) ---\n\n"
+        if afn_idx % 200 == 0:
+            print(
+                f"  Processing afnemer {afn_idx + 1}/{len(sorted_afnemers)}"
+                f" ({afn_str})..."
             )
 
-            # Temporal container
-            version_uris = [
-                f"brpaut:{afn_str}-v{row[COL_VERSIE]}" for row in rows
-            ]
-            f.write(f"brpaut:{afn_str} a tpl:TemporalSet ;\n")
-            f.write(f"    odrl:uid brpaut:{afn_str} ;\n")
-            f.write(
-                "    odrl:profile <https://data.rijksoverheid.nl/brp/def> ;\n"
-            )
-            f.write(
-                f'    dct:title "Autorisatiebesluit'
-                f" {escape_ttl(latest_naam)}\"@nl ;\n"
-            )
-            f.write("    dct:hasPart\n")
-            for i, uri in enumerate(version_uris):
-                suffix = " ." if i == len(version_uris) - 1 else " ,"
-                f.write(f"        {uri}{suffix}\n")
+        # Temporal container (in both graphs)
+        container = BRPAUT[afn_str]
+        g_both((container, RDF.type, TPL.TemporalSet))
+        g_both((container, ODRL.uid, container))
+        g_both((container, ODRL.profile, BRP_PROFILE))
+        g_both((container, DCTERMS.title,
+               Literal(f"Autorisatiebesluit {latest_naam}", lang="nl")))
 
-            # Each version
-            for row in rows:
-                versie = row[COL_VERSIE]
-                naam = row[COL_AFN_NAAM]
-                ingang = row[COL_INGANG]
-                einde = row[COL_EINDE]
-                geheim = row[COL_GEHEIM]
-                verstr_bep = row[COL_VERSTR_BEP]
-                bijz_kind = row[COL_BIJZ_KIND]
+        for row in rows:
+            version_uri = BRPAUT[f"{afn_str}-v{row[COL_VERSIE]}"]
+            is_act = row[COL_EINDE] is None or str(row[COL_EINDE]).strip() == ""
+            g_for(is_act).add((container, DCTERMS.hasPart, version_uri))
 
-                is_active = einde is None or str(einde).strip() == ""
-                uri = f"brpaut:{afn_str}-v{versie}"
+        # Each version
+        prev_uri = None
+        for row in rows:
+            versie = row[COL_VERSIE]
+            naam = row[COL_AFN_NAAM]
+            ingang = row[COL_INGANG]
+            einde = row[COL_EINDE]
+            geheim = row[COL_GEHEIM]
+            verstr_bep = row[COL_VERSTR_BEP]
+            bijz_kind = row[COL_BIJZ_KIND]
 
-                f.write(f"\n{uri} a odrl:Set, brp:Autorisatiebesluit ;\n")
-                f.write(f"    prov:specializationOf brpaut:{afn_str} ;\n")
-                f.write(
-                    f'    dct:title "Autorisatiebesluit'
-                    f" {escape_ttl(naam)} (versie {versie})\"@nl ;\n"
-                )
-                f.write(f"    brp:versie {versie} ;\n")
-                f.write(
-                    f'    tpl:effectiveFrom'
-                    f' "{format_date(ingang)}"^^xsd:dateTime ;\n'
-                )
-                if not is_active:
-                    f.write(
-                        f'    tpl:effectiveTo'
-                        f' "{format_date(einde)}"^^xsd:dateTime ;\n'
-                    )
+            is_active = einde is None or str(einde).strip() == ""
+            uri = BRPAUT[f"{afn_str}-v{versie}"]
+            g = g_for(is_active)
 
-                # Boolean indicaties: alleen schrijven als true
-                if geheim:
-                    f.write(
-                        "    brp:indicatieGeheimhoudingAfnemer true ;\n"
-                    )
-                if bijz_kind:
-                    f.write(
-                        "    brp:bijzondereBetrekkingKindVerstrekken true ;\n"
-                    )
+            g.add((uri, RDF.type, ODRL.Set))
+            g.add((uri, RDF.type, BRP.Autorisatiebesluit))
+            g.add((uri, PROV.specializationOf, container))
+            g.add((uri, DCTERMS.title,
+                   Literal(f"Autorisatiebesluit {naam} (versie {versie})",
+                           lang="nl")))
+            if prev_uri:
+                g.add((uri, PROV.wasRevisionOf, prev_uri))
+            prev_uri = uri
+            g.add((uri, TPL.effectiveFrom,
+                   Literal(format_date(ingang), datatype=XSD.dateTime)))
+            if not is_active:
+                g.add((uri, TPL.effectiveTo,
+                       Literal(format_date(einde), datatype=XSD.dateTime)))
 
-                # Verstrekkingsbeperking: alleen schrijven als niet "Geen" (0)
-                vb = int(verstr_bep) if verstr_bep else 0
-                if vb == 1:
-                    f.write(
-                        "    brp:verstrekkingsbeperking"
-                        " brp:VerstrekkingsbeperkingBeperkt ;\n"
-                    )
-                elif vb == 2:
-                    f.write(
-                        "    brp:verstrekkingsbeperking"
-                        " brp:VerstrekkingsbeperkingVerborgen ;\n"
-                    )
+            # Boolean indicaties
+            if geheim:
+                g.add((uri, BRP.indicatieGeheimhoudingAfnemer,
+                       Literal(True)))
+            if bijz_kind:
+                g.add((uri, BRP.bijzondereBetrekkingKindVerstrekken,
+                       Literal(True)))
 
-                # Collect permissions
-                permissions = []
+            # Verstrekkingsbeperking
+            vb = int(verstr_bep) if verstr_bep else 0
+            if vb == 1:
+                g.add((uri, BRP.verstrekkingsbeperking,
+                       BRP.VerstrekkingsbeperkingBeperkt))
+            elif vb == 2:
+                g.add((uri, BRP.verstrekkingsbeperking,
+                       BRP.VerstrekkingsbeperkingVerborgen))
 
-                rub_spont = row[COL_RUB_SPONT]
-                if rub_spont and str(rub_spont).strip():
-                    permissions.append((
-                        "spontaan",
-                        rub_spont,
-                        row[COL_VWR_SPONT],
-                        row[COL_MED_SPONT],
-                        row[COL_SLEUTEL],
-                        row[COL_COND_VERSTR],
-                    ))
+            # Collect permissions
+            permissions = []
 
-                rub_sel = row[COL_RUB_SEL]
-                vwr_sel = row[COL_VWR_SEL]
-                if (rub_sel and str(rub_sel).strip()) or (
-                    vwr_sel and str(vwr_sel).strip()
-                ):
-                    permissions.append((
-                        "selectie",
-                        rub_sel,
-                        vwr_sel,
-                        row[COL_MED_SEL],
-                        row[COL_SEL_SOORT],
-                        row[COL_SEL_PERIODE],
-                    ))
+            rub_spont = row[COL_RUB_SPONT]
+            if rub_spont and str(rub_spont).strip():
+                permissions.append((
+                    "spontaan",
+                    rub_spont,
+                    row[COL_VWR_SPONT],
+                    row[COL_MED_SPONT],
+                    row[COL_SLEUTEL],
+                    row[COL_COND_VERSTR],
+                ))
 
-                rub_adhoc = row[COL_RUB_ADHOC]
-                if rub_adhoc and str(rub_adhoc).strip():
-                    permissions.append((
-                        "adhoc",
-                        rub_adhoc,
-                        row[COL_VWR_ADHOC],
-                        row[COL_MED_ADHOC],
-                        row[COL_PLAATSING],
-                        row[COL_ADRESVRAAG],
-                    ))
+            rub_sel = row[COL_RUB_SEL]
+            vwr_sel = row[COL_VWR_SEL]
+            if (rub_sel and str(rub_sel).strip()) or (
+                vwr_sel and str(vwr_sel).strip()
+            ):
+                permissions.append((
+                    "selectie",
+                    rub_sel,
+                    vwr_sel,
+                    row[COL_MED_SEL],
+                    row[COL_SEL_SOORT],
+                    row[COL_SEL_PERIODE],
+                    row[COL_BER_AAND],
+                    row[COL_EERSTE_SEL],
+                ))
 
-                if not permissions:
-                    f.write(
-                        '    rdfs:comment "Geen koppelvlakken'
-                        ' gedefinieerd in deze versie."@nl .\n'
-                    )
-                    continue
+            rub_adhoc = row[COL_RUB_ADHOC]
+            if rub_adhoc and str(rub_adhoc).strip():
+                permissions.append((
+                    "adhoc",
+                    rub_adhoc,
+                    row[COL_VWR_ADHOC],
+                    row[COL_MED_ADHOC],
+                    row[COL_PLAATSING],
+                    row[COL_ADRESVRAAG],
+                    row[COL_AFN_VERSTR],
+                ))
 
-                for pi, perm in enumerate(permissions):
-                    is_last_perm = pi == len(permissions) - 1
-                    ptype = perm[0]
+            if not permissions:
+                g.add((uri, RDFS.comment,
+                       Literal("Geen koppelvlakken gedefinieerd in deze versie.",
+                               lang="nl")))
+                continue
 
-                    f.write("\n    odrl:permission [\n")
-                    f.write("        a odrl:Permission ;\n")
-                    f.write(f"        odrl:assignee brpafn:{afn_str} ;\n")
-                    f.write(
-                        "        odrl:assigner"
-                        " <https://data.rijksoverheid.nl/brp/org/RvIG> ;\n"
-                    )
+            for perm in permissions:
+                ptype = perm[0]
+                perm_node = BNode()
+                g.add((uri, ODRL.permission, perm_node))
+                g.add((perm_node, RDF.type, ODRL.Permission))
+                g.add((perm_node, ODRL.assignee, BRPAFN[afn_str]))
+                g.add((perm_node, ODRL.assigner, RVIG))
 
-                    if ptype == "spontaan":
-                        rub, vwr, med, sleutel, cond = perm[1:]
-                        f.write(
-                            "        odrl:action"
-                            " brp:spontaneVerstrekking ;\n"
+                if ptype == "spontaan":
+                    rub, vwr, med, sleutel, cond = perm[1:]
+                    g.add((perm_node, ODRL.action, BRP.spontaneVerstrekking))
+
+                    for r in rubrieken_to_targets(rub):
+                        g.add((perm_node, ODRL.target, _elm_ref(r)))
+
+                    if med and str(med).strip():
+                        med_uri = BRP.MediumNetwerk if str(med).strip() == "N" else BRP.MediumAnders
+                        g.add((perm_node, BRP.medium, med_uri))
+
+                    if sleutel and str(sleutel).strip():
+                        for s in str(sleutel).split("#"):
+                            if s.strip():
+                                g.add((perm_node, BRP.sleutelrubriek,
+                                       _elm_ref(s.strip())))
+
+                    if cond is not None and str(cond).strip() != "":
+                        cond_uri = (
+                            BRP.SpontaanConditioneelBericht
+                            if str(cond).strip() == "1"
+                            else BRP.SpontaanPlaatsingAfnemersindicatie
                         )
-                        rubrieken = rubrieken_to_targets(rub)
-                        write_rubrieken_block(f, rubrieken)
-                        if med and str(med).strip():
-                            med_uri = "brp:MediumNetwerk" if str(med).strip() == "N" else "brp:MediumAnders"
-                            f.write(f'        brp:medium {med_uri} ;\n')
-                        if sleutel and str(sleutel).strip():
-                            sleutels = [
-                                s.strip()
-                                for s in str(sleutel).split("#")
-                                if s.strip()
-                            ]
-                            sleutel_elms = ", ".join(
-                                [elm_uri(s) for s in sleutels]
-                            )
-                            f.write(
-                                f"        brp:sleutelrubriek"
-                                f" {sleutel_elms} ;\n"
-                            )
-                        if cond is not None and str(cond).strip() != "":
-                            cond_uri = (
-                                "brp:SpontaanConditioneelBericht"
-                                if str(cond).strip() == "1"
-                                else "brp:SpontaanPlaatsingAfnemersindicatie"
-                            )
-                            f.write(
-                                f"        brp:conditioneleVerstrekking"
-                                f" {cond_uri} ;\n"
-                            )
-                        if vwr and str(vwr).strip():
-                            ok = write_constraint_block(f, vwr)
-                            if ok:
-                                parse_ok += 1
-                            else:
-                                parse_fail += 1
+                        g.add((perm_node, BRP.conditioneleVerstrekking,
+                               cond_uri))
 
-                    elif ptype == "selectie":
-                        rub, vwr, med, sel_soort, sel_periode = perm[1:]
-                        f.write(
-                            "        odrl:action"
-                            " brp:selectieVerstrekking ;\n"
-                        )
-                        rubrieken = rubrieken_to_targets(rub)
-                        if rubrieken:
-                            write_rubrieken_block(f, rubrieken)
-                        if med and str(med).strip():
-                            med_uri = "brp:MediumNetwerk" if str(med).strip() == "N" else "brp:MediumAnders"
-                            f.write(f'        brp:medium {med_uri} ;\n')
-                        if sel_soort is not None and str(sel_soort).strip() != "":
-                            ss_map = {
-                                "0": "brp:SelectiesoortVerstrekking",
-                                "1": "brp:SelectiesoortPlaatsing",
-                                "2": "brp:SelectiesoortLogischVerwijderen",
-                                "3": "brp:SelectiesoortVoorwaardelijkVerwijderen",
-                                "4": "brp:SelectiesoortOnvoorwaardelijkVerwijderen",
-                            }
-                            ss_uri = ss_map.get(
-                                str(sel_soort).strip(),
-                                f'"{sel_soort}"',
-                            )
-                            f.write(
-                                f"        brp:selectiesoort {ss_uri} ;\n"
-                            )
-                        if sel_periode is not None and str(sel_periode).strip() != "":
-                            maanden = int(str(sel_periode).strip())
+                    if vwr and str(vwr).strip():
+                        ok = _add_constraint_block(g, perm_node, vwr)
+                        if ok is True:
+                            parse_ok += 1
+                        elif ok is False:
+                            parse_fail += 1
+
+                elif ptype == "selectie":
+                    rub, vwr, med, sel_soort, sel_periode, ber_aand, eerste_sel = perm[1:]
+
+                    # Determine sub-action based on selectiesoort
+                    ss_action_map = {
+                        "0": BRP.selectieGegevensVerstrekking,
+                        "1": BRP.selectiePlaatsingIndicatie,
+                        "2": BRP.selectieLogischVerwijderen,
+                        "3": BRP.selectieVoorwaardelijkVerwijderen,
+                        "4": BRP.selectieOnvoorwaardelijkVerwijderen,
+                    }
+                    ss_str = str(sel_soort).strip() if sel_soort is not None else ""
+                    action_uri = ss_action_map.get(ss_str, BRP.selectieVerstrekking)
+
+                    # Build action with temporal refinements
+                    action_node = BNode()
+                    g.add((action_node, RDF.value, action_uri))
+
+                    # Eerste selectiedatum als refinement
+                    has_eerste = eerste_sel is not None and str(eerste_sel).strip()
+                    has_periode = sel_periode is not None and str(sel_periode).strip()
+                    maanden = int(str(sel_periode).strip()) if has_periode else 0
+
+                    if has_eerste:
+                        d = str(eerste_sel).strip()
+                        if len(d) >= 8:
+                            datum_ref = BNode()
+                            g.add((datum_ref, RDF.type, ODRL.Constraint))
+                            g.add((datum_ref, ODRL.leftOperand, ODRL.dateTime))
+                            # Eenmalig (P0M) = exact op deze datum; periodiek = vanaf deze datum
                             if maanden == 0:
-                                f.write(
-                                    '        brp:selectieperiode'
-                                    ' "P0M"^^xsd:duration ;\n'
-                                )
-                                f.write(
-                                    "        rdfs:comment"
-                                    ' "Eenmalige selectie"@nl ;\n'
-                                )
+                                g.add((datum_ref, ODRL.operator, ODRL.eq))
+                                g.add((datum_ref, RDFS.comment,
+                                       Literal("Eenmalige selectie op deze datum", lang="nl")))
                             else:
-                                f.write(
-                                    f'        brp:selectieperiode'
-                                    f' "P{maanden}M"^^xsd:duration ;\n'
-                                )
-                        if vwr and str(vwr).strip():
-                            ok = write_constraint_block(f, vwr)
-                            if ok:
-                                parse_ok += 1
-                            else:
-                                parse_fail += 1
+                                g.add((datum_ref, ODRL.operator, ODRL.gteq))
+                                g.add((datum_ref, RDFS.comment,
+                                       Literal("Selectie mag pas vanaf deze datum", lang="nl")))
+                            g.add((datum_ref, ODRL.rightOperand,
+                                   Literal(f"{d[:4]}-{d[4:6]}-{d[6:8]}",
+                                           datatype=XSD.date)))
+                            g.add((action_node, ODRL.refinement, datum_ref))
 
-                    elif ptype == "adhoc":
-                        rub, vwr, med, plaatsing, adresvraag = perm[1:]
-                        f.write(
-                            "        odrl:action brp:adHocVerstrekking ;\n"
-                        )
-                        rubrieken = rubrieken_to_targets(rub)
-                        write_rubrieken_block(f, rubrieken)
-                        if med and str(med).strip():
-                            med_uri = "brp:MediumNetwerk" if str(med).strip() == "N" else "brp:MediumAnders"
-                            f.write(f'        brp:medium {med_uri} ;\n')
-                        if plaatsing and int(plaatsing):
-                            f.write(
-                                "        odrl:action brp:adHocPlaatsing ;\n"
-                            )
-                        if adresvraag and int(adresvraag):
-                            f.write(
-                                "        odrl:action brp:adresVraag ;\n"
-                            )
-                        if vwr and str(vwr).strip():
-                            ok = write_constraint_block(f, vwr)
-                            if ok:
-                                parse_ok += 1
-                            else:
-                                parse_fail += 1
+                    # Selectieperiode als refinement (alleen als > 0)
+                    if has_periode and maanden > 0:
+                        interval_ref = BNode()
+                        g.add((interval_ref, RDF.type, ODRL.Constraint))
+                        g.add((interval_ref, ODRL.leftOperand, ODRL.timeInterval))
+                        g.add((interval_ref, ODRL.operator, ODRL.eq))
+                        g.add((interval_ref, ODRL.rightOperand,
+                               Literal(f"P{maanden}M", datatype=XSD.duration)))
+                        g.add((interval_ref, RDFS.comment,
+                               Literal(f"Selectie wordt elke {maanden} maanden herhaald",
+                                       lang="nl")))
+                        g.add((action_node, ODRL.refinement, interval_ref))
 
-                    if is_last_perm:
-                        f.write("    ] .\n")
-                    else:
-                        f.write("    ] ;\n")
+                    g.add((perm_node, ODRL.action, action_node))
 
-        # Bundle
-        f.write("""
-# =============================================================================
-# Bundel: alle temporale autorisatiebesluiten
-# =============================================================================
+                    for r in rubrieken_to_targets(rub):
+                        g.add((perm_node, ODRL.target, _elm_ref(r)))
 
-brpaut:autorisatiebesluiten
-    a tpl:TemporalSet ;
-    odrl:uid brpaut:autorisatiebesluiten ;
-    odrl:profile <https://data.rijksoverheid.nl/brp/def> ;
-    dct:title "BRP Autorisatiebesluiten (Temporaal)"@nl ;
-    dct:description \"\"\"Alle versies (historisch en actief) van alle
-autorisatiebesluiten uit Tabel 35, gemodelleerd met het ODRL Temporal Profile.
-Elke afnemer is een tpl:TemporalSet met dct:hasPart verwijzingen naar de
-individuele versies (odrl:Set) met tpl:effectiveFrom/tpl:effectiveTo.
-Voorwaarderegels zijn vertaald naar ODRL Constraints.\"\"\"@nl ;
-    dct:issued "2024-04-22"^^xsd:date ;
-    odrl:assigner <https://data.rijksoverheid.nl/brp/org/RvIG> ;
-    dct:hasPart
-""")
-        for i, afn in enumerate(sorted_afnemers):
-            suffix = " ." if i == len(sorted_afnemers) - 1 else " ,"
-            f.write(f"        brpaut:{format_afn(afn)}{suffix}\n")
+                    if med and str(med).strip():
+                        med_uri = BRP.MediumNetwerk if str(med).strip() == "N" else BRP.MediumAnders
+                        g.add((perm_node, BRP.medium, med_uri))
 
-        f.write("""
-# =============================================================================
-# Provenance: Tabel 35 als bron
-# =============================================================================
 
-brpaut:tabel35
-    a prov:Entity ;
-    dct:title "Tabel 35 - Autorisatietabel BRP"@nl ;
-    dct:source <https://publicaties.rvig.nl/Landelijke_tabellen> .
-""")
+                    if ber_aand is not None and str(ber_aand).strip() != "":
+                        ba = str(ber_aand).strip()
+                        if ba == "1":
+                            g.add((perm_node, BRP.berichtaanduiding,
+                                   BRP.BerichtaanduidingVulbericht))
+                        elif ba == "0":
+                            g.add((perm_node, BRP.berichtaanduiding,
+                                   BRP.BerichtaanduidingGeen))
 
+                    if vwr and str(vwr).strip():
+                        ok = _add_constraint_block(g, perm_node, vwr)
+                        if ok is True:
+                            parse_ok += 1
+                        elif ok is False:
+                            parse_fail += 1
+
+                elif ptype == "adhoc":
+                    rub, vwr, med, plaatsing, adresvraag, afn_verstr = perm[1:]
+                    g.add((perm_node, ODRL.action, BRP.adHocVerstrekking))
+
+                    for r in rubrieken_to_targets(rub):
+                        g.add((perm_node, ODRL.target, _elm_ref(r)))
+
+                    if med and str(med).strip():
+                        med_uri = BRP.MediumNetwerk if str(med).strip() == "N" else BRP.MediumAnders
+                        g.add((perm_node, BRP.medium, med_uri))
+
+                    if plaatsing and int(plaatsing):
+                        g.add((perm_node, ODRL.action, BRP.adHocPlaatsing))
+
+                    if adresvraag and int(adresvraag):
+                        g.add((perm_node, ODRL.action, BRP.adresVraag))
+
+                    # Afnemersverstrekkingen: andere afnemers wiens indicaties
+                    # deze afnemer mag opvragen
+                    if afn_verstr and str(afn_verstr).strip():
+                        for a in str(afn_verstr).split("#"):
+                            a = a.strip()
+                            if a:
+                                g.add((perm_node, BRP.afnemersverstrekkingen,
+                                       BRPAFN[a]))
+
+                    if vwr and str(vwr).strip():
+                        ok = _add_constraint_block(g, perm_node, vwr)
+                        if ok is True:
+                            parse_ok += 1
+                        elif ok is False:
+                            parse_fail += 1
+
+    # Bundle in both graphs
+    bundle = BRPAUT.autorisatiebesluiten
+    for gb in (g_act, g_hist):
+        gb.add((bundle, RDF.type, TPL.TemporalSet))
+        gb.add((bundle, ODRL.uid, bundle))
+        gb.add((bundle, ODRL.profile, BRP_PROFILE))
+        gb.add((bundle, ODRL.assigner, RVIG))
+        for afn in sorted_afnemers:
+            gb.add((bundle, DCTERMS.hasPart, BRPAUT[format_afn(afn)]))
+
+    save(g_act, OUTPUT_PATH_ACTUEEL)
+    save(g_hist, OUTPUT_PATH_HISTORISCH)
     return parse_ok, parse_fail
-
 
 
 def _read_tabel35():
@@ -1232,7 +1158,8 @@ def _read_tabel35():
                 continue
             # Convert numeric columns to int where expected
             typed = list(r)
-            for i in [COL_VERSIE, COL_AFN_IND, COL_INGANG, COL_EINDE,
+            # COL_AFN_IND stays as string to preserve leading zeros
+            for i in [COL_VERSIE, COL_INGANG, COL_EINDE,
                        COL_GEHEIM, COL_VERSTR_BEP, COL_BIJZ_KIND,
                        COL_PLAATSING, COL_ADRESVRAAG]:
                 if i < len(typed) and typed[i].strip():
@@ -1264,7 +1191,7 @@ def main():
     n_rows = sum(len(rows) for rows in all_afnemers.values())
     print(f"  {n_afnemers} afnemers, {n_rows} tabelregels")
 
-    print(f"\nGenerating {OUTPUT_PATH}...")
+    print(f"\nGenerating autorisatiebesluiten...")
     parse_ok, parse_fail = generate_autorisatiebesluiten(all_afnemers)
 
     print(f"\nVoorwaarderegels parsed: {parse_ok} OK, {parse_fail} failed")

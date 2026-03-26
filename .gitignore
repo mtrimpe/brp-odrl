@@ -3,6 +3,12 @@ __pycache__/
 *.pyc
 .venv/
 
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+
 # Downloaded source data (auto-downloaded by generate_all.py)
 csv/
 

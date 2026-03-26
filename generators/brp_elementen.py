@@ -26,8 +26,8 @@ def _load_categories():
     hist_to_actual = {}
     suffix_map = {}
     for row in _load_csv("categories.csv"):
-        nr = int(row["nr"])
-        hist = int(row["historic_nr"]) if row["historic_nr"] else None
+        nr = row["nr"]  # string: "01", "PA", etc.
+        hist = row["historic_nr"] if row["historic_nr"] else None
         cats[nr] = (row["label"], hist, row["uri_name"])
         suffix_map[nr] = row["suffix"]
         if hist:
@@ -59,7 +59,7 @@ def _load_elements():
 def _load_category_elements():
     cat_elms = {}
     for row in _load_csv("category_elements.csv"):
-        nr = int(row["cat_nr"])
+        nr = row["cat_nr"]  # string
         cat_elms.setdefault(nr, []).append(row["gg_ee"])
     return cat_elms
 
@@ -72,12 +72,20 @@ CATEGORY_ELEMENTS = _load_category_elements()
 _ACTUAL_TO_HISTORIC = {v: k for k, v in _HISTORIC_TO_ACTUAL.items()}
 
 
+def _cat_str(cat_nr):
+    """Format a category key for use in rubrieknummer. Numeric cats get zero-padded."""
+    s = str(cat_nr)
+    if s.isdigit() and len(s) < 2:
+        return s.zfill(2)
+    return s
+
+
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
 def categorie_to_uri(cat_nr):
-    return CATEGORIES[cat_nr][2]
+    return CATEGORIES[_normalize_cat(cat_nr)][2]
 
 
 def groep_to_uri(cat_nr, grp_code):
@@ -88,21 +96,34 @@ def groep_to_uri(cat_nr, grp_code):
 
 def element_value_type(rubrieknummer):
     base = rubrieknummer.split("@")[0] if "@" in rubrieknummer else rubrieknummer
-    gg_ee = base[3:] if len(base) > 5 else base
+    parts = base.split(".")
+    if len(parts) == 3:
+        gg_ee = f"{parts[1]}.{parts[2]}"
+    else:
+        gg_ee = base
     return ELEMENT_VALUE_TYPES.get(gg_ee)
 
 
 def _is_historic(cat_nr):
-    return cat_nr in _HISTORIC_TO_ACTUAL
+    return _normalize_cat(cat_nr) in _HISTORIC_TO_ACTUAL
 
 
 def _actual_category(cat_nr):
-    return _HISTORIC_TO_ACTUAL.get(cat_nr, cat_nr)
+    n = _normalize_cat(cat_nr)
+    return _HISTORIC_TO_ACTUAL.get(n, n)
+
+
+def _normalize_cat(cat_nr):
+    """Normalize category key: strip leading zeros from numeric cats."""
+    s = str(cat_nr)
+    if s.isdigit():
+        return str(int(s))
+    return s
 
 
 def _category_suffix(cat_nr):
     actual = _actual_category(cat_nr)
-    suffix = _CATEGORY_SUFFIX.get(actual, "")
+    suffix = _CATEGORY_SUFFIX.get(_normalize_cat(actual), "")
     if _is_historic(cat_nr):
         suffix += "Hist"
     return suffix
@@ -112,7 +133,7 @@ def rubriek_to_uri(rubrieknummer):
     parts = rubrieknummer.split(".")
     if len(parts) != 3:
         raise ValueError(f"Invalid rubrieknummer: {rubrieknummer}")
-    cat_nr = int(parts[0])
+    cat_nr = parts[0]
     gg_ee = f"{parts[1]}.{parts[2]}"
     if gg_ee not in ELEMENTS:
         raise KeyError(f"Unknown element: {gg_ee}")
@@ -124,7 +145,7 @@ def rubriek_to_label(rubrieknummer):
     parts = rubrieknummer.split(".")
     if len(parts) != 3:
         raise ValueError(f"Invalid rubrieknummer: {rubrieknummer}")
-    cat_nr = int(parts[0])
+    cat_nr = parts[0]
     gg_ee = f"{parts[1]}.{parts[2]}"
     if gg_ee not in ELEMENTS:
         raise KeyError(f"Unknown element: {gg_ee}")
@@ -139,11 +160,11 @@ def rubriek_to_label(rubrieknummer):
 def all_rubrieken():
     result = []
     for cat_nr, elements in CATEGORY_ELEMENTS.items():
-        cat_str = f"{cat_nr:02d}"
+        cat_str = _cat_str(cat_nr)
         for gg_ee in elements:
             result.append(f"{cat_str}.{gg_ee}")
         if cat_nr in _ACTUAL_TO_HISTORIC:
-            hist_str = f"{_ACTUAL_TO_HISTORIC[cat_nr]:02d}"
+            hist_str = _cat_str(_ACTUAL_TO_HISTORIC[cat_nr])
             for gg_ee in elements:
                 result.append(f"{hist_str}.{gg_ee}")
     return sorted(result)
@@ -172,5 +193,3 @@ if __name__ == "__main__":
     print(f"Categories: {len(CATEGORIES)}")
     print(f"Groups: {len(GROUPS)}")
     print(f"Elements: {len(ELEMENTS)}")
-    print(f"Value types: {len(ELEMENT_VALUE_TYPES)}")
-    print(f"Comments: {len(ELEMENT_COMMENTS)}")

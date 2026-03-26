@@ -17,6 +17,7 @@ import urllib.request
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_DIR = os.path.join(BASE_DIR, "csv")
+TTL_DIR = os.path.join(BASE_DIR, "ttl")
 GEN_DIR = os.path.join(BASE_DIR, "generators")
 
 # RvIG download URLs for Landelijke Tabellen
@@ -35,6 +36,7 @@ GENERATORS = [
     "generate_afnemers.py",
     "generate_autorisatiebesluiten.py",
     "generate_dcat.py",
+    "validate.py",
 ]
 
 
@@ -97,8 +99,17 @@ def run_generator(script):
     print()
 
 
+def clean_ttl():
+    """Remove all generated TTL files."""
+    os.makedirs(TTL_DIR, exist_ok=True)
+    for fn in os.listdir(TTL_DIR):
+        if fn.endswith(".ttl"):
+            os.remove(os.path.join(TTL_DIR, fn))
+
+
 def main():
     clean = "--clean" in sys.argv
+    clean_ttl()
     ensure_sources(clean=clean)
     for script in GENERATORS:
         run_generator(script)

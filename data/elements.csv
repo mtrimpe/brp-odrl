@@ -114,3 +114,20 @@ gg_ee,label,uri_name,value_type,comment
 89.10,Registratie betrekking,registratieBetrekking,,Registratie betrekking: geeft aan of het kind levenloos geboren is (L).
 89.20,Selectiedatum,selectiedatum,,De selectiedatum: peildatum voor selectie-voorwaarderegels.
 89.30,Vandaagdatum,vandaagdatum,,De vandaagdatum: peildatum 'vandaag' voor spontane en ad hoc voorwaarderegels.
+NM.01,Voorletters,voorletters,,Initialen van de ingeschrevene afgeleid van de voornamen.
+NM.02,Volledige naam,volledigeNaam,,"Volledige naam inclusief adellijke titel/predicaat, afgeleid van naam- en geslachtsvelden."
+NM.03,Aanhef,aanhef,,"Aanhef voor brieven, afgeleid van naam, geslacht en partnernaam."
+NM.04,Aanspreekvorm,aanspreekvorm,,Vorm van aanspreken onderdeel van de aanschrijfwijze.
+NM.05,Aanspreeknaam,aanspreeknaam,,Naamdeel van de aanschrijfwijze.
+NM.06,Naamgebruik in lopende tekst,naamgebruikInLopendeTekst,,Naam voor gebruik in lopende tekst.
+AD.01,Adressering,adressering,,"Volledige adresseringsinformatie (aanhef, aanschrijfwijze, adresregels)."
+GL.01,Leeftijd,leeftijd,,Leeftijd in jaren afgeleid van de geboortedatum.
+GZ.01,Gezagsrelaties,gezagsrelaties,,Gezags- en voogdijrelaties vanuit de gezagsmodule.
+HP.01,Voorletters partner,voorlettersPartner,,Initialen van de partner afgeleid van de voornamen.
+KD.01,Voorletters kind,voorlettersKind,,Initialen van het kind afgeleid van de voornamen.
+OU.01,Voorletters ouder,voorlettersOuder,,Initialen van de ouder afgeleid van de voornamen.
+VP.03,Adresregel 1,adresregel1,,Eerste adresregel voor adressering afgeleid van verblijfplaatsgegevens.
+VP.04,Adresregel 2,adresregel2,,Tweede adresregel (postcode + woonplaats) afgeleid van verblijfplaatsgegevens.
+VP.07,Verblijfplaatshistorie,verblijfplaatshistorie,,Historische verblijfplaatsinformatie op een peildatum of over een periode.
+BW.01,Bewoningen,bewoningen,,Informatie over wie op een adres woonde gedurende een periode.
+AD.02,Elektronische adressering,elektronischeAdressering,,Elektronische adresseringsinformatie van de ingeschrevene.

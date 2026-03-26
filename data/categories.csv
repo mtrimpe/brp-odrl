@@ -1,22 +1,22 @@
 nr,label,historic_nr,uri_name,suffix
-1,Persoon,51,persoon,
+1,Persoon,51,persoon,Persoon
 2,Ouder1,52,ouder1,Ouder1
 3,Ouder2,53,ouder2,Ouder2
-4,Nationaliteit,54,nationaliteit,
+4,Nationaliteit,54,nationaliteit,Nationaliteit
 5,Huwelijk/geregistreerd partnerschap,55,huwelijkPartnerschap,Partner
-6,Overlijden,56,overlijden,
-7,Inschrijving,,inschrijving,
-8,Verblijfplaats,58,verblijfplaats,
+6,Overlijden,56,overlijden,Overlijden
+7,Inschrijving,,inschrijving,Inschrijving
+8,Verblijfplaats,58,verblijfplaats,Verblijfplaats
 9,Kind,59,kind,Kind
-10,Verblijfstitel,60,verblijfstitel,
-11,Gezagsverhouding,61,gezagsverhouding,
-12,Reisdocument,,reisdocument,
-13,Kiesrecht,,kiesrecht,
-14,Afnemersindicatie,64,afnemersindicatie,
-15,Aanwijzing,,aanwijzing,
+10,Verblijfstitel,60,verblijfstitel,Verblijfstitel
+11,Gezagsverhouding,61,gezagsverhouding,Gezagsverhouding
+12,Reisdocument,,reisdocument,Reisdocument
+13,Kiesrecht,,kiesrecht,Kiesrecht
+14,Afnemersindicatie,64,afnemersindicatie,Afnemersindicatie
+15,Aanwijzing,,aanwijzing,Aanwijzing
 16,Tijdelijk verblijfsadres,66,tijdelijkVerblijfsadres,TijdelijkVerblijf
-17,Contactgegevens,,contactgegevens,
-19,Systeemrubrieken,,systeemrubrieken,
+17,Contactgegevens,,contactgegevens,Contactgegevens
+19,Systeemrubrieken,,systeemrubrieken,Systeem
 21,Verwijzing,71,verwijzing,Verwijzing
 51,Persoon (historisch),,persoonHist,
 52,Ouder1 (historisch),,ouder1Hist,
@@ -31,3 +31,7 @@ nr,label,historic_nr,uri_name,suffix
 64,Afnemersindicatie (historisch),,afnemersindicatieHist,
 66,Tijdelijk verblijfsadres (historisch),,tijdelijkVerblijfsadresHist,
 71,Verwijzing (historisch),,verwijzingHist,
+PA,Persoon actueel,,persoonActueel,PersoonActueel
+PH,Persoon (historie),,persoonHistorie,PersoonHistorie
+PX,Persoon,,persoonActueelEnHistorisch,PersoonActueelEnHistorisch
+AX,Adres in periode,,adresInPeriode,AdresInPeriode

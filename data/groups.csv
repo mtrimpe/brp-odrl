@@ -53,3 +53,12 @@ code,label,uri_fragment
 87,PK-conversie,pkConversie
 88,RNI,rni
 89,Verwijzing / systeem,verwijzingSysteem
+NM,Naam (API),naam
+AD,Adressering (API),adressering
+GL,Leeftijd (API),leeftijd
+GZ,Gezag (API),gezag
+HP,Partner (API),partner
+KD,Kind (API),kind
+OU,Ouder (API),ouder
+VP,Verblijfplaats (API),verblijfplaats
+BW,Bewoning (API),bewoning

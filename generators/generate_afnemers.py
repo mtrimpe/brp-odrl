@@ -9,6 +9,10 @@ and naam. Uses the latest version's naam for each afnemer.
 import csv
 import os
 
+from rdflib import Literal
+
+from namespaces import new_graph, save, BRP, BRPAFN, RDF, RDFS
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(BASE_DIR, "csv", "tabel35_autorisatietabel.csv")
 OUTPUT_PATH = os.path.join(BASE_DIR, "ttl", "afnemers.ttl")
@@ -29,14 +33,6 @@ def _read_csv(path):
         return [r for r in csv.reader(f) if any(c.strip() for c in r)]
 
 
-def format_afn(afn_ind):
-    return str(afn_ind).strip()
-
-
-def escape_ttl(s):
-    return str(s).replace("\\", "\\\\").replace('"', '\\"')
-
-
 def main():
     print("Reading Tabel 35...")
     rows = _read_csv(CSV_PATH)
@@ -52,26 +48,17 @@ def main():
     print(f"  {len(sorted_afnemers)} afnemers")
 
     print(f"Generating {OUTPUT_PATH}...")
-    with open(OUTPUT_PATH, "w") as f:
-        f.write("""@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix brp:  <https://data.rijksoverheid.nl/brp/def#> .
-@prefix brpafn: <https://data.rijksoverheid.nl/brp/afnemer/> .
+    g = new_graph()
 
-# =============================================================================
-# BRP Afnemers
-#
-# Alle afnemers uit Tabel 35 (Autorisatietabel BRP).
-# Bron: https://publicaties.rvig.nl/Landelijke_tabellen
-# =============================================================================
+    for afn in sorted_afnemers:
+        naam = afnemers[afn]
+        afn_str = str(afn).strip()
+        subj = BRPAFN[afn_str]
+        g.add((subj, RDF.type, BRP.Afnemer))
+        g.add((subj, BRP.afnemersindicatie, Literal(afn_str)))
+        g.add((subj, RDFS.label, Literal(naam, lang="nl")))
 
-""")
-        for afn in sorted_afnemers:
-            naam = afnemers[afn]
-            afn_str = format_afn(afn)
-            f.write(f"brpafn:{afn_str} a brp:Afnemer ;\n")
-            f.write(f'    brp:afnemersindicatie "{afn_str}" ;\n')
-            f.write(f'    rdfs:label "{escape_ttl(naam)}"@nl .\n\n')
-
+    save(g, OUTPUT_PATH)
     print(f"Generated {OUTPUT_PATH} ({len(sorted_afnemers)} afnemers)")
 
 
