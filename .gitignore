@@ -9,8 +9,10 @@ __pycache__/
 # macOS
 .DS_Store
 
-# Downloaded source data (auto-downloaded by generate_all.py)
+# Gedownloade brondata (wordt automatisch opgehaald bij generatie)
 csv/
 
-# Generated output (regenerate with: python generators/generate_all.py)
-ttl/
+# Grote gegenereerde bestanden (> 100 MB GitHub limiet)
+# Regenereer met: make generate
+ttl/autorisatiebesluiten-historisch.ttl
+ttl/combined.ttl

@@ -35,6 +35,7 @@ GENERATORS = [
     "generate_informatiemodel.py",
     "generate_afnemers.py",
     "generate_autorisatiebesluiten.py",
+    "generate_autorisatiebesluiten_compact.py",
     "generate_dcat.py",
     "validate.py",
 ]

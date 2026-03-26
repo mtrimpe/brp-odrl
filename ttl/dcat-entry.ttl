@@ -1,0 +1,119 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix brpaut: <https://data.rijksoverheid.nl/brp/autorisatie/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.rijksoverheid.nl/brp/catalogus> a dcat:Catalog ;
+    dct:description "Catalogus van de Basisregistratie Personen (BRP) met autorisatiebesluiten als ODRL policies. Bevat de dataset BRP en de bijbehorende verstrekkingsvoorzieningen als DCAT DataServices."@nl ;
+    dct:language <http://publications.europa.eu/resource/authority/language/NLD> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:title "BRP Autorisatiecatalogus"@nl ;
+    dcat:dataset <https://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl> ;
+    dcat:service <https://data.rijksoverheid.nl/brp/service/adhoc>,
+        <https://data.rijksoverheid.nl/brp/service/selectie>,
+        <https://data.rijksoverheid.nl/brp/service/spontaan> .
+
+<https://data.rijksoverheid.nl/brp/contact/rvig> a vcard:Organization ;
+    vcard:fn "Rijksdienst voor Identiteitsgegevens"@nl ;
+    vcard:hasEmail <mailto:info@rvig.nl> ;
+    vcard:hasURL <https://www.rvig.nl/brp> .
+
+<https://data.rijksoverheid.nl/brp/distributie/gbav> a dcat:Distribution ;
+    dcatap:applicableLegislation <https://wetten.overheid.nl/BWBR0033715> ;
+    dct:conformsTo <https://data.rijksoverheid.nl/brp/def> ;
+    dct:description "De centrale verstrekkingsvoorziening van de BRP (GBA-V). Alle gegevensverstrekking — ad hoc, spontaan en selectie — loopt via deze voorziening. Toegang is uitsluitend voor geautoriseerde afnemers op basis van een autorisatiebesluit conform de Wet BRP."@nl ;
+    dct:license <http://standaarden.overheid.nl/owms/terms/geslotenlicentie> ;
+    dct:rights [ a dct:RightsStatement ;
+            rdfs:label "Toegang uitsluitend voor geautoriseerde afnemers op basis van een autorisatiebesluit conform de Wet BRP. Welke rubrieken via welk koppelvlak verstrekt mogen worden is per afnemer vastgelegd in de autorisatietabel (Tabel 35)."@nl ] ;
+    dct:title "BRP Verstrekkingsvoorziening (GBA-V)"@nl ;
+    dcat:accessService <https://data.rijksoverheid.nl/brp/service/adhoc>,
+        <https://data.rijksoverheid.nl/brp/service/selectie>,
+        <https://data.rijksoverheid.nl/brp/service/spontaan> ;
+    dcat:accessURL <https://www.rvig.nl/brp> ;
+    odrl:hasPolicy brpaut:autorisatiebesluiten .
+
+<https://identifier.overheid.nl/tooi/id/organisatie/koop> a foaf:Organization ;
+    foaf:name "Kennis- en Exploitatiecentrum voor Officiele Overheidspublicaties"@nl .
+
+<https://data.rijksoverheid.nl/brp/service/adhoc> a dcat:DataService ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
+    dct:conformsTo <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:description "Zoekvraag-gebaseerde verstrekking van persoonsgegevens op verzoek van een geautoriseerde afnemer. Geimplementeerd als de HaalCentraal BRP Bevragen API."@nl ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:title "BRP Ad hoc gegevensverstrekking"@nl ;
+    dcat:endpointURL <https://brp.basisregistraties.overheid.nl/haalcentraal/api/brp> ;
+    dcat:servesDataset <https://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl> .
+
+<https://data.rijksoverheid.nl/brp/service/selectie> a dcat:DataService ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
+    dct:description "Periodieke of eenmalige selectie van persoonslijsten die aan de voorwaarderegel voldoen. Geselecteerde gegevens worden verstrekt of afnemersindicaties worden geplaatst/verwijderd."@nl ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:title "BRP Selectieverstrekking"@nl ;
+    dcat:endpointURL <https://brp.basisregistraties.overheid.nl/selectie> ;
+    dcat:servesDataset <https://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl> .
+
+<https://data.rijksoverheid.nl/brp/service/spontaan> a dcat:DataService ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
+    dct:description "Push-gebaseerde verstrekking van persoonsgegevens. Bij wijziging van sleutelrubrieken op een persoonslijst die aan de voorwaarderegel voldoet, worden gegevens automatisch aan de afnemer verstrekt via de Berichtendienst."@nl ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:title "BRP Spontane gegevensverstrekking"@nl ;
+    dcat:endpointURL <https://brp.basisregistraties.overheid.nl/berichtendienst> ;
+    dcat:servesDataset <https://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl> .
+
+<https://wetten.overheid.nl/BWBR0033715> a eli:LegalResource ;
+    eli:id_local "BWBR0033715" ;
+    dct:title "Wet basisregistratie personen"@nl .
+
+<https://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl> a dcat:Dataset ;
+    dcatap:applicableLegislation <https://wetten.overheid.nl/BWBR0033715> ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
+    dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/DAILY> ;
+    dct:conformsTo <https://data.rijksoverheid.nl/brp/def> ;
+    dct:creator <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:description "De Nederlandse overheid registreert persoonsgegevens in de Basisregistratie Personen (BRP). Alle overheidsinstellingen en bestuursorganen zijn verplicht voor hun taken gebruik te maken van deze gegevens. De BRP bevat persoonsgegevens van inwoners van Nederland (ingezetenen) en van personen die Nederland hebben verlaten of die korter dan 4 maanden in Nederland wonen. De BRP is GEEN open data."@nl ;
+    dct:identifier "http://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl" ;
+    dct:issued "2014-01-06"^^xsd:date ;
+    dct:language <http://publications.europa.eu/resource/authority/language/NLD> ;
+    dct:modified "2022-04-05"^^xsd:date ;
+    dct:provenance [ a dct:ProvenanceStatement ;
+            rdfs:label "De BRP is de opvolger van de Gemeentelijke Basisadministratie persoonsgegevens (GBA). Op 6 januari 2014 is de Wet BRP in werking getreden ter vervanging van de Wet GBA."@nl ] ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/organisatie/koop> ;
+    dct:relation <https://www.stelselcatalogus.nl/registraties/brp> ;
+    dct:spatial <http://publications.europa.eu/resource/authority/country/NLD> ;
+    dct:temporal [ a dct:PeriodOfTime ;
+            dcat:startDate "2014-01-06"^^xsd:date ] ;
+    dct:title "Basisregistratie Personen (BRP)"@nl ;
+    dct:type <http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset> ;
+    adms:status <http://publications.europa.eu/resource/authority/dataset-status/COMPLETED> ;
+    dcat:contactPoint <https://data.rijksoverheid.nl/brp/contact/rvig> ;
+    dcat:distribution <https://data.rijksoverheid.nl/brp/distributie/gbav> ;
+    dcat:keyword "Adres"@nl,
+        "Adres buitenland"@nl,
+        "BRP"@nl,
+        "Basisregistratie"@nl,
+        "Briefadres in Nederland"@nl,
+        "Identiteit"@nl,
+        "Kind"@nl,
+        "Natuurlijk persoon"@nl,
+        "Ouder"@nl,
+        "Partner"@nl,
+        "Persoonsgegevens"@nl,
+        "Woonadres in Nederland"@nl ;
+    dcat:landingPage <https://www.rvig.nl/basisregistratie-personen> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>,
+        <http://standaarden.overheid.nl/owms/terms/Bestuur> ;
+    foaf:page <https://data.overheid.nl/dataset/basisregistratie-personen-bpr-donl>,
+        <https://www.digitaleoverheid.nl/dossiers/brp/>,
+        <https://www.rvig.nl/brp> .
+
+<https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
+    foaf:homepage <https://www.rvig.nl> ;
+    foaf:name "Rijksdienst voor Identiteitsgegevens"@nl .
+

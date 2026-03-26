@@ -1,0 +1,1143 @@
+@prefix brp: <https://data.rijksoverheid.nl/brp/def#> .
+@prefix brpnat: <https://data.rijksoverheid.nl/brp/nationaliteit/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+brpnat:0000 a brp:Nationaliteit ;
+    rdfs:label "Onbekend"@nl ;
+    skos:notation "0000" ;
+    brp:tabel "32" .
+
+brpnat:0001 a brp:Nationaliteit ;
+    rdfs:label "Nederlandse"@nl ;
+    skos:notation "0001" ;
+    brp:tabel "32" .
+
+brpnat:0002 a brp:Nationaliteit ;
+    rdfs:label "Behandeld als Nederlander"@nl ;
+    dct:valid "2007-04-01"^^xsd:date ;
+    skos:notation "0002" ;
+    brp:datumEinde "2007-04-01"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0027 a brp:Nationaliteit ;
+    rdfs:label "Slowaakse"@nl ;
+    dct:valid "1993-01-01"^^xsd:date ;
+    skos:notation "0027" ;
+    brp:tabel "32" .
+
+brpnat:0028 a brp:Nationaliteit ;
+    rdfs:label "Tsjechische"@nl ;
+    dct:valid "1993-01-01"^^xsd:date ;
+    skos:notation "0028" ;
+    brp:tabel "32" .
+
+brpnat:0029 a brp:Nationaliteit ;
+    rdfs:label "Burger van Bosnië-Herzegovina"@nl ;
+    dct:valid "1992-04-06"^^xsd:date ;
+    skos:notation "0029" ;
+    brp:tabel "32" .
+
+brpnat:0030 a brp:Nationaliteit ;
+    rdfs:label "Georgische"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0030" ;
+    brp:tabel "32" .
+
+brpnat:0031 a brp:Nationaliteit ;
+    rdfs:label "Turkmeense"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0031" ;
+    brp:tabel "32" .
+
+brpnat:0032 a brp:Nationaliteit ;
+    rdfs:label "Tadzjiekse"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0032" ;
+    brp:tabel "32" .
+
+brpnat:0033 a brp:Nationaliteit ;
+    rdfs:label "Oezbeekse"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0033" ;
+    brp:tabel "32" .
+
+brpnat:0034 a brp:Nationaliteit ;
+    rdfs:label "Oekraïense"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0034" ;
+    brp:tabel "32" .
+
+brpnat:0035 a brp:Nationaliteit ;
+    rdfs:label "Kirgizische"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0035" ;
+    brp:tabel "32" .
+
+brpnat:0036 a brp:Nationaliteit ;
+    rdfs:label "Moldavische"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0036" ;
+    brp:tabel "32" .
+
+brpnat:0037 a brp:Nationaliteit ;
+    rdfs:label "Kazachse"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0037" ;
+    brp:tabel "32" .
+
+brpnat:0038 a brp:Nationaliteit ;
+    rdfs:label "Belarussische"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0038" ;
+    brp:tabel "32" .
+
+brpnat:0039 a brp:Nationaliteit ;
+    rdfs:label "Azerbeidzjaanse"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0039" ;
+    brp:tabel "32" .
+
+brpnat:0040 a brp:Nationaliteit ;
+    rdfs:label "Armeense"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0040" ;
+    brp:tabel "32" .
+
+brpnat:0041 a brp:Nationaliteit ;
+    rdfs:label "Russische"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:notation "0041" ;
+    brp:tabel "32" .
+
+brpnat:0042 a brp:Nationaliteit ;
+    rdfs:label "Sloveense"@nl ;
+    dct:valid "1992-01-15"^^xsd:date ;
+    skos:notation "0042" ;
+    brp:tabel "32" .
+
+brpnat:0043 a brp:Nationaliteit ;
+    rdfs:label "Kroatische"@nl ;
+    dct:valid "1992-01-15"^^xsd:date ;
+    skos:notation "0043" ;
+    brp:tabel "32" .
+
+brpnat:0044 a brp:Nationaliteit ;
+    rdfs:label "Letse"@nl ;
+    dct:valid "1991-08-28"^^xsd:date ;
+    skos:notation "0044" ;
+    brp:tabel "32" .
+
+brpnat:0045 a brp:Nationaliteit ;
+    rdfs:label "Estische"@nl ;
+    dct:valid "1991-08-28"^^xsd:date ;
+    skos:notation "0045" ;
+    brp:tabel "32" .
+
+brpnat:0046 a brp:Nationaliteit ;
+    rdfs:label "Litouwse"@nl ;
+    dct:valid "1991-08-28"^^xsd:date ;
+    skos:notation "0046" ;
+    brp:tabel "32" .
+
+brpnat:0047 a brp:Nationaliteit ;
+    rdfs:label "Marshalleilandse"@nl ;
+    skos:notation "0047" ;
+    brp:tabel "32" .
+
+brpnat:0048 a brp:Nationaliteit ;
+    rdfs:label "Myanmarese"@nl ;
+    skos:notation "0048" ;
+    brp:tabel "32" .
+
+brpnat:0049 a brp:Nationaliteit ;
+    rdfs:label "Namibische"@nl ;
+    skos:notation "0049" ;
+    brp:tabel "32" .
+
+brpnat:0050 a brp:Nationaliteit ;
+    rdfs:label "Albanese"@nl ;
+    skos:notation "0050" ;
+    brp:tabel "32" .
+
+brpnat:0051 a brp:Nationaliteit ;
+    rdfs:label "Andorrese"@nl ;
+    skos:notation "0051" ;
+    brp:tabel "32" .
+
+brpnat:0052 a brp:Nationaliteit ;
+    rdfs:label "Belgische"@nl ;
+    skos:notation "0052" ;
+    brp:tabel "32" .
+
+brpnat:0053 a brp:Nationaliteit ;
+    rdfs:label "Bulgaarse"@nl ;
+    skos:notation "0053" ;
+    brp:tabel "32" .
+
+brpnat:0054 a brp:Nationaliteit ;
+    rdfs:label "Deense"@nl ;
+    skos:notation "0054" ;
+    brp:tabel "32" .
+
+brpnat:0055 a brp:Nationaliteit ;
+    rdfs:label "Burger van de Bondsrepubliek Duitsland"@nl ;
+    skos:notation "0055" ;
+    brp:tabel "32" .
+
+brpnat:0056 a brp:Nationaliteit ;
+    rdfs:label "Finse"@nl ;
+    skos:notation "0056" ;
+    brp:tabel "32" .
+
+brpnat:0057 a brp:Nationaliteit ;
+    rdfs:label "Franse"@nl ;
+    skos:notation "0057" ;
+    brp:tabel "32" .
+
+brpnat:0058 a brp:Nationaliteit ;
+    rdfs:label "Jemenitische"@nl ;
+    dct:valid "1990-05-22"^^xsd:date ;
+    skos:notation "0058" ;
+    brp:tabel "32" .
+
+brpnat:0059 a brp:Nationaliteit ;
+    rdfs:label "Griekse"@nl ;
+    skos:notation "0059" ;
+    brp:tabel "32" .
+
+brpnat:0060 a brp:Nationaliteit ;
+    rdfs:label "Brits burger"@nl ;
+    skos:notation "0060" ;
+    brp:tabel "32" .
+
+brpnat:0061 a brp:Nationaliteit ;
+    rdfs:label "Hongaarse"@nl ;
+    skos:notation "0061" ;
+    brp:tabel "32" .
+
+brpnat:0062 a brp:Nationaliteit ;
+    rdfs:label "Ierse"@nl ;
+    skos:notation "0062" ;
+    brp:tabel "32" .
+
+brpnat:0063 a brp:Nationaliteit ;
+    rdfs:label "IJslandse"@nl ;
+    skos:notation "0063" ;
+    brp:tabel "32" .
+
+brpnat:0064 a brp:Nationaliteit ;
+    rdfs:label "Italiaanse"@nl ;
+    skos:notation "0064" ;
+    brp:tabel "32" .
+
+brpnat:0065 a brp:Nationaliteit ;
+    rdfs:label "Joegoslavische"@nl ;
+    skos:notation "0065" ;
+    brp:datumEinde "2004-02-01"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0066 a brp:Nationaliteit ;
+    rdfs:label "Liechtensteinse"@nl ;
+    skos:notation "0066" ;
+    brp:tabel "32" .
+
+brpnat:0067 a brp:Nationaliteit ;
+    rdfs:label "Luxemburgse"@nl ;
+    skos:notation "0067" ;
+    brp:tabel "32" .
+
+brpnat:0068 a brp:Nationaliteit ;
+    rdfs:label "Maltese"@nl ;
+    skos:notation "0068" ;
+    brp:tabel "32" .
+
+brpnat:0069 a brp:Nationaliteit ;
+    rdfs:label "Monegaskische"@nl ;
+    skos:notation "0069" ;
+    brp:tabel "32" .
+
+brpnat:0070 a brp:Nationaliteit ;
+    rdfs:label "Noorse"@nl ;
+    skos:notation "0070" ;
+    brp:tabel "32" .
+
+brpnat:0071 a brp:Nationaliteit ;
+    rdfs:label "Oostenrijkse"@nl ;
+    skos:notation "0071" ;
+    brp:tabel "32" .
+
+brpnat:0072 a brp:Nationaliteit ;
+    rdfs:label "Poolse"@nl ;
+    skos:notation "0072" ;
+    brp:tabel "32" .
+
+brpnat:0073 a brp:Nationaliteit ;
+    rdfs:label "Portugese"@nl ;
+    skos:notation "0073" ;
+    brp:tabel "32" .
+
+brpnat:0074 a brp:Nationaliteit ;
+    rdfs:label "Roemeense"@nl ;
+    skos:notation "0074" ;
+    brp:tabel "32" .
+
+brpnat:0075 a brp:Nationaliteit ;
+    rdfs:label "Burger van de Sovjet-Unie"@nl ;
+    skos:notation "0075" ;
+    brp:datumEinde "1991-12-31"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0076 a brp:Nationaliteit ;
+    rdfs:label "San Marinese"@nl ;
+    skos:notation "0076" ;
+    brp:tabel "32" .
+
+brpnat:0077 a brp:Nationaliteit ;
+    rdfs:label "Spaanse"@nl ;
+    skos:notation "0077" ;
+    brp:tabel "32" .
+
+brpnat:0078 a brp:Nationaliteit ;
+    rdfs:label "Tsjecho-Slowaakse"@nl ;
+    skos:notation "0078" ;
+    brp:datumEinde "1993-01-01"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0079 a brp:Nationaliteit ;
+    rdfs:label "Vaticaanse"@nl ;
+    skos:notation "0079" ;
+    brp:tabel "32" .
+
+brpnat:0080 a brp:Nationaliteit ;
+    rdfs:label "Zweedse"@nl ;
+    skos:notation "0080" ;
+    brp:tabel "32" .
+
+brpnat:0081 a brp:Nationaliteit ;
+    rdfs:label "Zwitserse"@nl ;
+    skos:notation "0081" ;
+    brp:tabel "32" .
+
+brpnat:0082 a brp:Nationaliteit ;
+    rdfs:label "Oost-Duitse"@nl ;
+    skos:notation "0082" ;
+    brp:datumEinde "1990-10-03"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0083 a brp:Nationaliteit ;
+    rdfs:label "Brits onderdaan"@nl ;
+    skos:notation "0083" ;
+    brp:tabel "32" .
+
+brpnat:0084 a brp:Nationaliteit ;
+    rdfs:label "Eritrese"@nl ;
+    dct:valid "1993-05-28"^^xsd:date ;
+    skos:notation "0084" ;
+    brp:tabel "32" .
+
+brpnat:0085 a brp:Nationaliteit ;
+    rdfs:label "Brits overzees burger"@nl ;
+    skos:notation "0085" ;
+    brp:tabel "32" .
+
+brpnat:0086 a brp:Nationaliteit ;
+    rdfs:label "Macedonische"@nl ;
+    dct:valid "1993-04-19"^^xsd:date ;
+    skos:notation "0086" ;
+    brp:datumEinde "2019-02-12"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0087 a brp:Nationaliteit ;
+    rdfs:label "Kosovaarse"@nl ;
+    dct:valid "2008-06-15"^^xsd:date ;
+    skos:notation "0087" ;
+    brp:tabel "32" .
+
+brpnat:0088 a brp:Nationaliteit ;
+    rdfs:label "Macedonische/Burger van Noord-Macedonië"@nl ;
+    dct:valid "2019-02-12"^^xsd:date ;
+    skos:notation "0088" ;
+    brp:tabel "32" .
+
+brpnat:0100 a brp:Nationaliteit ;
+    rdfs:label "Algerijnse"@nl ;
+    skos:notation "0100" ;
+    brp:tabel "32" .
+
+brpnat:0101 a brp:Nationaliteit ;
+    rdfs:label "Angolese"@nl ;
+    skos:notation "0101" ;
+    brp:tabel "32" .
+
+brpnat:0104 a brp:Nationaliteit ;
+    rdfs:label "Burundese"@nl ;
+    skos:notation "0104" ;
+    brp:tabel "32" .
+
+brpnat:0105 a brp:Nationaliteit ;
+    rdfs:label "Botswaanse"@nl ;
+    skos:notation "0105" ;
+    brp:tabel "32" .
+
+brpnat:0106 a brp:Nationaliteit ;
+    rdfs:label "Burkinese"@nl ;
+    skos:notation "0106" ;
+    brp:tabel "32" .
+
+brpnat:0108 a brp:Nationaliteit ;
+    rdfs:label "Centraal-Afrikaanse"@nl ;
+    skos:notation "0108" ;
+    brp:tabel "32" .
+
+brpnat:0109 a brp:Nationaliteit ;
+    rdfs:label "Comorese"@nl ;
+    skos:notation "0109" ;
+    brp:tabel "32" .
+
+brpnat:0110 a brp:Nationaliteit ;
+    rdfs:label "Burger van Congo"@nl ;
+    skos:notation "0110" ;
+    brp:tabel "32" .
+
+brpnat:0111 a brp:Nationaliteit ;
+    rdfs:label "Beninse"@nl ;
+    skos:notation "0111" ;
+    brp:tabel "32" .
+
+brpnat:0112 a brp:Nationaliteit ;
+    rdfs:label "Egyptische"@nl ;
+    skos:notation "0112" ;
+    brp:tabel "32" .
+
+brpnat:0113 a brp:Nationaliteit ;
+    rdfs:label "Equatoriaal-Guinese"@nl ;
+    skos:notation "0113" ;
+    brp:tabel "32" .
+
+brpnat:0114 a brp:Nationaliteit ;
+    rdfs:label "Ethiopische"@nl ;
+    skos:notation "0114" ;
+    brp:tabel "32" .
+
+brpnat:0115 a brp:Nationaliteit ;
+    rdfs:label "Djiboutiaanse"@nl ;
+    skos:notation "0115" ;
+    brp:tabel "32" .
+
+brpnat:0116 a brp:Nationaliteit ;
+    rdfs:label "Gabonese"@nl ;
+    skos:notation "0116" ;
+    brp:tabel "32" .
+
+brpnat:0117 a brp:Nationaliteit ;
+    rdfs:label "Gambiaanse"@nl ;
+    skos:notation "0117" ;
+    brp:tabel "32" .
+
+brpnat:0118 a brp:Nationaliteit ;
+    rdfs:label "Ghanese"@nl ;
+    skos:notation "0118" ;
+    brp:tabel "32" .
+
+brpnat:0119 a brp:Nationaliteit ;
+    rdfs:label "Guinese"@nl ;
+    skos:notation "0119" ;
+    brp:tabel "32" .
+
+brpnat:0120 a brp:Nationaliteit ;
+    rdfs:label "Ivoriaanse"@nl ;
+    skos:notation "0120" ;
+    brp:tabel "32" .
+
+brpnat:0121 a brp:Nationaliteit ;
+    rdfs:label "Kaapverdische"@nl ;
+    skos:notation "0121" ;
+    brp:tabel "32" .
+
+brpnat:0122 a brp:Nationaliteit ;
+    rdfs:label "Kameroense"@nl ;
+    skos:notation "0122" ;
+    brp:tabel "32" .
+
+brpnat:0123 a brp:Nationaliteit ;
+    rdfs:label "Kenyaanse"@nl ;
+    skos:notation "0123" ;
+    brp:tabel "32" .
+
+brpnat:0124 a brp:Nationaliteit ;
+    rdfs:label "Zaïrese"@nl ;
+    skos:notation "0124" ;
+    brp:datumEinde "1997-07-15"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0125 a brp:Nationaliteit ;
+    rdfs:label "Lesothaanse"@nl ;
+    skos:notation "0125" ;
+    brp:tabel "32" .
+
+brpnat:0126 a brp:Nationaliteit ;
+    rdfs:label "Liberiaanse"@nl ;
+    skos:notation "0126" ;
+    brp:tabel "32" .
+
+brpnat:0127 a brp:Nationaliteit ;
+    rdfs:label "Libische"@nl ;
+    skos:notation "0127" ;
+    brp:tabel "32" .
+
+brpnat:0128 a brp:Nationaliteit ;
+    rdfs:label "Malagassische"@nl ;
+    skos:notation "0128" ;
+    brp:tabel "32" .
+
+brpnat:0129 a brp:Nationaliteit ;
+    rdfs:label "Malawische"@nl ;
+    skos:notation "0129" ;
+    brp:tabel "32" .
+
+brpnat:0130 a brp:Nationaliteit ;
+    rdfs:label "Malinese"@nl ;
+    skos:notation "0130" ;
+    brp:tabel "32" .
+
+brpnat:0131 a brp:Nationaliteit ;
+    rdfs:label "Marokkaanse"@nl ;
+    skos:notation "0131" ;
+    brp:tabel "32" .
+
+brpnat:0132 a brp:Nationaliteit ;
+    rdfs:label "Mauritaanse"@nl ;
+    skos:notation "0132" ;
+    brp:tabel "32" .
+
+brpnat:0133 a brp:Nationaliteit ;
+    rdfs:label "Mauritiaanse"@nl ;
+    skos:notation "0133" ;
+    brp:tabel "32" .
+
+brpnat:0134 a brp:Nationaliteit ;
+    rdfs:label "Mozambikaanse"@nl ;
+    skos:notation "0134" ;
+    brp:tabel "32" .
+
+brpnat:0135 a brp:Nationaliteit ;
+    rdfs:label "Swazische"@nl ;
+    skos:notation "0135" ;
+    brp:datumEinde "2018-04-19"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0136 a brp:Nationaliteit ;
+    rdfs:label "Nigerese"@nl ;
+    skos:notation "0136" ;
+    brp:tabel "32" .
+
+brpnat:0137 a brp:Nationaliteit ;
+    rdfs:label "Nigeriaanse"@nl ;
+    skos:notation "0137" ;
+    brp:tabel "32" .
+
+brpnat:0138 a brp:Nationaliteit ;
+    rdfs:label "Ugandese"@nl ;
+    skos:notation "0138" ;
+    brp:tabel "32" .
+
+brpnat:0139 a brp:Nationaliteit ;
+    rdfs:label "Guinee-Bissause"@nl ;
+    skos:notation "0139" ;
+    brp:tabel "32" .
+
+brpnat:0140 a brp:Nationaliteit ;
+    rdfs:label "Zuid-Afrikaanse"@nl ;
+    skos:notation "0140" ;
+    brp:tabel "32" .
+
+brpnat:0141 a brp:Nationaliteit ;
+    rdfs:label "Eswatinische"@nl ;
+    dct:valid "2018-04-19"^^xsd:date ;
+    skos:notation "0141" ;
+    brp:tabel "32" .
+
+brpnat:0142 a brp:Nationaliteit ;
+    rdfs:label "Zimbabwaanse"@nl ;
+    skos:notation "0142" ;
+    brp:tabel "32" .
+
+brpnat:0143 a brp:Nationaliteit ;
+    rdfs:label "Rwandese"@nl ;
+    skos:notation "0143" ;
+    brp:tabel "32" .
+
+brpnat:0144 a brp:Nationaliteit ;
+    rdfs:label "Burger van São Tomé en Principe"@nl ;
+    skos:notation "0144" ;
+    brp:tabel "32" .
+
+brpnat:0145 a brp:Nationaliteit ;
+    rdfs:label "Senegalese"@nl ;
+    skos:notation "0145" ;
+    brp:tabel "32" .
+
+brpnat:0147 a brp:Nationaliteit ;
+    rdfs:label "Sierra Leoonse"@nl ;
+    skos:notation "0147" ;
+    brp:tabel "32" .
+
+brpnat:0148 a brp:Nationaliteit ;
+    rdfs:label "Soedanese"@nl ;
+    skos:notation "0148" ;
+    brp:tabel "32" .
+
+brpnat:0149 a brp:Nationaliteit ;
+    rdfs:label "Somalische"@nl ;
+    skos:notation "0149" ;
+    brp:tabel "32" .
+
+brpnat:0151 a brp:Nationaliteit ;
+    rdfs:label "Tanzaniaanse"@nl ;
+    skos:notation "0151" ;
+    brp:tabel "32" .
+
+brpnat:0152 a brp:Nationaliteit ;
+    rdfs:label "Togolese"@nl ;
+    skos:notation "0152" ;
+    brp:tabel "32" .
+
+brpnat:0154 a brp:Nationaliteit ;
+    rdfs:label "Tsjadische"@nl ;
+    skos:notation "0154" ;
+    brp:tabel "32" .
+
+brpnat:0155 a brp:Nationaliteit ;
+    rdfs:label "Tunesische"@nl ;
+    skos:notation "0155" ;
+    brp:tabel "32" .
+
+brpnat:0156 a brp:Nationaliteit ;
+    rdfs:label "Zambiaanse"@nl ;
+    skos:notation "0156" ;
+    brp:tabel "32" .
+
+brpnat:0157 a brp:Nationaliteit ;
+    rdfs:label "Zuid-Soedanese"@nl ;
+    dct:valid "2011-07-09"^^xsd:date ;
+    skos:notation "0157" ;
+    brp:tabel "32" .
+
+brpnat:0200 a brp:Nationaliteit ;
+    rdfs:label "Bahamaanse"@nl ;
+    skos:notation "0200" ;
+    brp:tabel "32" .
+
+brpnat:0202 a brp:Nationaliteit ;
+    rdfs:label "Belizaanse"@nl ;
+    skos:notation "0202" ;
+    brp:tabel "32" .
+
+brpnat:0204 a brp:Nationaliteit ;
+    rdfs:label "Canadese"@nl ;
+    skos:notation "0204" ;
+    brp:tabel "32" .
+
+brpnat:0205 a brp:Nationaliteit ;
+    rdfs:label "Costa Ricaanse"@nl ;
+    skos:notation "0205" ;
+    brp:tabel "32" .
+
+brpnat:0206 a brp:Nationaliteit ;
+    rdfs:label "Cubaanse"@nl ;
+    skos:notation "0206" ;
+    brp:tabel "32" .
+
+brpnat:0207 a brp:Nationaliteit ;
+    rdfs:label "Dominicaanse"@nl ;
+    skos:notation "0207" ;
+    brp:tabel "32" .
+
+brpnat:0208 a brp:Nationaliteit ;
+    rdfs:label "Salvadoraanse"@nl ;
+    skos:notation "0208" ;
+    brp:tabel "32" .
+
+brpnat:0211 a brp:Nationaliteit ;
+    rdfs:label "Guatemalaanse"@nl ;
+    skos:notation "0211" ;
+    brp:tabel "32" .
+
+brpnat:0212 a brp:Nationaliteit ;
+    rdfs:label "Haïtiaanse"@nl ;
+    skos:notation "0212" ;
+    brp:tabel "32" .
+
+brpnat:0213 a brp:Nationaliteit ;
+    rdfs:label "Hondurese"@nl ;
+    skos:notation "0213" ;
+    brp:tabel "32" .
+
+brpnat:0214 a brp:Nationaliteit ;
+    rdfs:label "Jamaicaanse"@nl ;
+    skos:notation "0214" ;
+    brp:tabel "32" .
+
+brpnat:0216 a brp:Nationaliteit ;
+    rdfs:label "Mexicaanse"@nl ;
+    skos:notation "0216" ;
+    brp:tabel "32" .
+
+brpnat:0218 a brp:Nationaliteit ;
+    rdfs:label "Nicaraguaanse"@nl ;
+    skos:notation "0218" ;
+    brp:tabel "32" .
+
+brpnat:0219 a brp:Nationaliteit ;
+    rdfs:label "Panamese"@nl ;
+    skos:notation "0219" ;
+    brp:tabel "32" .
+
+brpnat:0222 a brp:Nationaliteit ;
+    rdfs:label "Burger van Trinidad en Tobago"@nl ;
+    skos:notation "0222" ;
+    brp:tabel "32" .
+
+brpnat:0223 a brp:Nationaliteit ;
+    rdfs:label "Amerikaans burger"@nl ;
+    skos:notation "0223" ;
+    brp:tabel "32" .
+
+brpnat:0250 a brp:Nationaliteit ;
+    rdfs:label "Argentijnse"@nl ;
+    skos:notation "0250" ;
+    brp:tabel "32" .
+
+brpnat:0251 a brp:Nationaliteit ;
+    rdfs:label "Barbadaanse"@nl ;
+    skos:notation "0251" ;
+    brp:tabel "32" .
+
+brpnat:0252 a brp:Nationaliteit ;
+    rdfs:label "Boliviaanse"@nl ;
+    skos:notation "0252" ;
+    brp:tabel "32" .
+
+brpnat:0253 a brp:Nationaliteit ;
+    rdfs:label "Braziliaanse"@nl ;
+    skos:notation "0253" ;
+    brp:tabel "32" .
+
+brpnat:0254 a brp:Nationaliteit ;
+    rdfs:label "Chileense"@nl ;
+    skos:notation "0254" ;
+    brp:tabel "32" .
+
+brpnat:0255 a brp:Nationaliteit ;
+    rdfs:label "Colombiaanse"@nl ;
+    skos:notation "0255" ;
+    brp:tabel "32" .
+
+brpnat:0256 a brp:Nationaliteit ;
+    rdfs:label "Ecuadoraanse"@nl ;
+    skos:notation "0256" ;
+    brp:tabel "32" .
+
+brpnat:0259 a brp:Nationaliteit ;
+    rdfs:label "Guyaanse"@nl ;
+    skos:notation "0259" ;
+    brp:tabel "32" .
+
+brpnat:0261 a brp:Nationaliteit ;
+    rdfs:label "Paraguayaanse"@nl ;
+    skos:notation "0261" ;
+    brp:tabel "32" .
+
+brpnat:0262 a brp:Nationaliteit ;
+    rdfs:label "Peruaanse"@nl ;
+    skos:notation "0262" ;
+    brp:tabel "32" .
+
+brpnat:0263 a brp:Nationaliteit ;
+    rdfs:label "Surinaamse"@nl ;
+    skos:notation "0263" ;
+    brp:tabel "32" .
+
+brpnat:0264 a brp:Nationaliteit ;
+    rdfs:label "Uruguayaanse"@nl ;
+    skos:notation "0264" ;
+    brp:tabel "32" .
+
+brpnat:0265 a brp:Nationaliteit ;
+    rdfs:label "Venezolaanse"@nl ;
+    skos:notation "0265" ;
+    brp:tabel "32" .
+
+brpnat:0267 a brp:Nationaliteit ;
+    rdfs:label "Grenadaanse"@nl ;
+    skos:notation "0267" ;
+    brp:tabel "32" .
+
+brpnat:0268 a brp:Nationaliteit ;
+    rdfs:label "Burger van Saint Kitts en Nevis"@nl ;
+    skos:notation "0268" ;
+    brp:tabel "32" .
+
+brpnat:0300 a brp:Nationaliteit ;
+    rdfs:label "Afghaanse"@nl ;
+    skos:notation "0300" ;
+    brp:tabel "32" .
+
+brpnat:0301 a brp:Nationaliteit ;
+    rdfs:label "Bahreinse"@nl ;
+    skos:notation "0301" ;
+    brp:tabel "32" .
+
+brpnat:0302 a brp:Nationaliteit ;
+    rdfs:label "Bhutaanse"@nl ;
+    skos:notation "0302" ;
+    brp:tabel "32" .
+
+brpnat:0303 a brp:Nationaliteit ;
+    rdfs:label "Burmaanse"@nl ;
+    skos:notation "0303" ;
+    brp:datumEinde "1989-06-18"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0304 a brp:Nationaliteit ;
+    rdfs:label "Bruneise"@nl ;
+    skos:notation "0304" ;
+    brp:tabel "32" .
+
+brpnat:0305 a brp:Nationaliteit ;
+    rdfs:label "Cambodjaanse"@nl ;
+    skos:notation "0305" ;
+    brp:tabel "32" .
+
+brpnat:0306 a brp:Nationaliteit ;
+    rdfs:label "Sri Lankaanse"@nl ;
+    skos:notation "0306" ;
+    brp:tabel "32" .
+
+brpnat:0307 a brp:Nationaliteit ;
+    rdfs:label "Chinese"@nl ;
+    skos:notation "0307" ;
+    brp:tabel "32" .
+
+brpnat:0308 a brp:Nationaliteit ;
+    rdfs:label "Cyprische"@nl ;
+    skos:notation "0308" ;
+    brp:tabel "32" .
+
+brpnat:0309 a brp:Nationaliteit ;
+    rdfs:label "Filipijnse"@nl ;
+    skos:notation "0309" ;
+    brp:tabel "32" .
+
+brpnat:0310 a brp:Nationaliteit ;
+    rdfs:label "Taiwanese"@nl ;
+    skos:notation "0310" ;
+    brp:tabel "32" .
+
+brpnat:0312 a brp:Nationaliteit ;
+    rdfs:label "Indiase"@nl ;
+    skos:notation "0312" ;
+    brp:tabel "32" .
+
+brpnat:0313 a brp:Nationaliteit ;
+    rdfs:label "Indonesische"@nl ;
+    skos:notation "0313" ;
+    brp:tabel "32" .
+
+brpnat:0314 a brp:Nationaliteit ;
+    rdfs:label "Iraakse"@nl ;
+    skos:notation "0314" ;
+    brp:tabel "32" .
+
+brpnat:0315 a brp:Nationaliteit ;
+    rdfs:label "Iraanse"@nl ;
+    skos:notation "0315" ;
+    brp:tabel "32" .
+
+brpnat:0316 a brp:Nationaliteit ;
+    rdfs:label "Israëlische"@nl ;
+    skos:notation "0316" ;
+    brp:tabel "32" .
+
+brpnat:0317 a brp:Nationaliteit ;
+    rdfs:label "Japanse"@nl ;
+    skos:notation "0317" ;
+    brp:tabel "32" .
+
+brpnat:0318 a brp:Nationaliteit ;
+    rdfs:label "Noord-Jemenitische"@nl ;
+    skos:notation "0318" ;
+    brp:datumEinde "1990-05-22"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0319 a brp:Nationaliteit ;
+    rdfs:label "Jordaanse"@nl ;
+    skos:notation "0319" ;
+    brp:tabel "32" .
+
+brpnat:0320 a brp:Nationaliteit ;
+    rdfs:label "Koeweitse"@nl ;
+    skos:notation "0320" ;
+    brp:tabel "32" .
+
+brpnat:0321 a brp:Nationaliteit ;
+    rdfs:label "Laotiaanse"@nl ;
+    skos:notation "0321" ;
+    brp:tabel "32" .
+
+brpnat:0322 a brp:Nationaliteit ;
+    rdfs:label "Libanese"@nl ;
+    skos:notation "0322" ;
+    brp:tabel "32" .
+
+brpnat:0324 a brp:Nationaliteit ;
+    rdfs:label "Maldivische"@nl ;
+    skos:notation "0324" ;
+    brp:tabel "32" .
+
+brpnat:0325 a brp:Nationaliteit ;
+    rdfs:label "Maleisische"@nl ;
+    skos:notation "0325" ;
+    brp:tabel "32" .
+
+brpnat:0326 a brp:Nationaliteit ;
+    rdfs:label "Mongolische"@nl ;
+    skos:notation "0326" ;
+    brp:tabel "32" .
+
+brpnat:0327 a brp:Nationaliteit ;
+    rdfs:label "Omaanse"@nl ;
+    skos:notation "0327" ;
+    brp:tabel "32" .
+
+brpnat:0328 a brp:Nationaliteit ;
+    rdfs:label "Nepalese"@nl ;
+    skos:notation "0328" ;
+    brp:tabel "32" .
+
+brpnat:0329 a brp:Nationaliteit ;
+    rdfs:label "Noord-Koreaanse"@nl ;
+    skos:notation "0329" ;
+    brp:tabel "32" .
+
+brpnat:0331 a brp:Nationaliteit ;
+    rdfs:label "Pakistaanse"@nl ;
+    skos:notation "0331" ;
+    brp:tabel "32" .
+
+brpnat:0333 a brp:Nationaliteit ;
+    rdfs:label "Qatarese"@nl ;
+    skos:notation "0333" ;
+    brp:tabel "32" .
+
+brpnat:0334 a brp:Nationaliteit ;
+    rdfs:label "Saoedi-Arabische"@nl ;
+    skos:notation "0334" ;
+    brp:tabel "32" .
+
+brpnat:0335 a brp:Nationaliteit ;
+    rdfs:label "Singaporese"@nl ;
+    skos:notation "0335" ;
+    brp:tabel "32" .
+
+brpnat:0336 a brp:Nationaliteit ;
+    rdfs:label "Syrische"@nl ;
+    skos:notation "0336" ;
+    brp:tabel "32" .
+
+brpnat:0337 a brp:Nationaliteit ;
+    rdfs:label "Thaise"@nl ;
+    skos:notation "0337" ;
+    brp:tabel "32" .
+
+brpnat:0338 a brp:Nationaliteit ;
+    rdfs:label "Burger van de Verenigde Arabische Emiraten"@nl ;
+    skos:notation "0338" ;
+    brp:tabel "32" .
+
+brpnat:0339 a brp:Nationaliteit ;
+    rdfs:label "Turkse"@nl ;
+    skos:notation "0339" ;
+    brp:tabel "32" .
+
+brpnat:0340 a brp:Nationaliteit ;
+    rdfs:label "Zuid-Jemenitische"@nl ;
+    skos:notation "0340" ;
+    brp:datumEinde "1990-05-22"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0341 a brp:Nationaliteit ;
+    rdfs:label "Zuid-Koreaanse"@nl ;
+    skos:notation "0341" ;
+    brp:tabel "32" .
+
+brpnat:0342 a brp:Nationaliteit ;
+    rdfs:label "Vietnamese"@nl ;
+    skos:notation "0342" ;
+    brp:tabel "32" .
+
+brpnat:0345 a brp:Nationaliteit ;
+    rdfs:label "Bengalese"@nl ;
+    skos:notation "0345" ;
+    brp:tabel "32" .
+
+brpnat:0400 a brp:Nationaliteit ;
+    rdfs:label "Australische"@nl ;
+    skos:notation "0400" ;
+    brp:tabel "32" .
+
+brpnat:0401 a brp:Nationaliteit ;
+    rdfs:label "Papoea-Nieuw-Guinese"@nl ;
+    skos:notation "0401" ;
+    brp:tabel "32" .
+
+brpnat:0402 a brp:Nationaliteit ;
+    rdfs:label "Nieuw-Zeelandse"@nl ;
+    skos:notation "0402" ;
+    brp:tabel "32" .
+
+brpnat:0404 a brp:Nationaliteit ;
+    rdfs:label "West-Samoaanse"@nl ;
+    skos:notation "0404" ;
+    brp:datumEinde "1997-07-04"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0405 a brp:Nationaliteit ;
+    rdfs:label "Samoaanse"@nl ;
+    dct:valid "1997-07-04"^^xsd:date ;
+    skos:notation "0405" ;
+    brp:tabel "32" .
+
+brpnat:0421 a brp:Nationaliteit ;
+    rdfs:label "Burger van Antigua en Barbuda"@nl ;
+    skos:notation "0421" ;
+    brp:tabel "32" .
+
+brpnat:0424 a brp:Nationaliteit ;
+    rdfs:label "Vanuatuaanse"@nl ;
+    skos:notation "0424" ;
+    brp:tabel "32" .
+
+brpnat:0425 a brp:Nationaliteit ;
+    rdfs:label "Fijische"@nl ;
+    skos:notation "0425" ;
+    brp:tabel "32" .
+
+brpnat:0429 a brp:Nationaliteit ;
+    rdfs:label "Burger van Britse afhankelijke gebieden"@nl ;
+    skos:notation "0429" ;
+    brp:tabel "32" .
+
+brpnat:0430 a brp:Nationaliteit ;
+    rdfs:label "Tongaanse"@nl ;
+    skos:notation "0430" ;
+    brp:tabel "32" .
+
+brpnat:0431 a brp:Nationaliteit ;
+    rdfs:label "Nauruaanse"@nl ;
+    skos:notation "0431" ;
+    brp:tabel "32" .
+
+brpnat:0432 a brp:Nationaliteit ;
+    rdfs:label "Palause"@nl ;
+    dct:valid "1994-10-01"^^xsd:date ;
+    skos:notation "0432" ;
+    brp:tabel "32" .
+
+brpnat:0437 a brp:Nationaliteit ;
+    rdfs:label "Amerikaans onderdaan"@nl ;
+    skos:notation "0437" ;
+    brp:tabel "32" .
+
+brpnat:0442 a brp:Nationaliteit ;
+    rdfs:label "Salomonseilandse"@nl ;
+    skos:notation "0442" ;
+    brp:tabel "32" .
+
+brpnat:0443 a brp:Nationaliteit ;
+    rdfs:label "Micronesische"@nl ;
+    skos:notation "0443" ;
+    brp:tabel "32" .
+
+brpnat:0444 a brp:Nationaliteit ;
+    rdfs:label "Seychelse"@nl ;
+    skos:notation "0444" ;
+    brp:tabel "32" .
+
+brpnat:0445 a brp:Nationaliteit ;
+    rdfs:label "Kiribatische"@nl ;
+    skos:notation "0445" ;
+    brp:tabel "32" .
+
+brpnat:0446 a brp:Nationaliteit ;
+    rdfs:label "Tuvaluaanse"@nl ;
+    skos:notation "0446" ;
+    brp:tabel "32" .
+
+brpnat:0447 a brp:Nationaliteit ;
+    rdfs:label "Saint Luciaanse"@nl ;
+    skos:notation "0447" ;
+    brp:tabel "32" .
+
+brpnat:0448 a brp:Nationaliteit ;
+    rdfs:label "Burger van Dominica"@nl ;
+    skos:notation "0448" ;
+    brp:tabel "32" .
+
+brpnat:0449 a brp:Nationaliteit ;
+    rdfs:label "Burger van Saint Vincent en de Grenadines"@nl ;
+    skos:notation "0449" ;
+    brp:tabel "32" .
+
+brpnat:0450 a brp:Nationaliteit ;
+    rdfs:label "British National (overseas)"@nl ;
+    dct:valid "1987-07-01"^^xsd:date ;
+    skos:notation "0450" ;
+    brp:tabel "32" .
+
+brpnat:0451 a brp:Nationaliteit ;
+    rdfs:label "Burger van Democratische Republiek Congo"@nl ;
+    dct:valid "1997-05-17"^^xsd:date ;
+    skos:notation "0451" ;
+    brp:tabel "32" .
+
+brpnat:0452 a brp:Nationaliteit ;
+    rdfs:label "Burger van Timor Leste"@nl ;
+    dct:valid "2002-05-20"^^xsd:date ;
+    skos:notation "0452" ;
+    brp:tabel "32" .
+
+brpnat:0453 a brp:Nationaliteit ;
+    rdfs:label "Burger van Servië en Montenegro"@nl ;
+    dct:valid "2003-02-04"^^xsd:date ;
+    skos:notation "0453" ;
+    brp:datumEinde "2006-06-03"^^xsd:date ;
+    brp:tabel "32" .
+
+brpnat:0454 a brp:Nationaliteit ;
+    rdfs:label "Servische"@nl ;
+    dct:valid "2006-06-03"^^xsd:date ;
+    skos:notation "0454" ;
+    brp:tabel "32" .
+
+brpnat:0455 a brp:Nationaliteit ;
+    rdfs:label "Montenegrijnse"@nl ;
+    dct:valid "2006-06-03"^^xsd:date ;
+    skos:notation "0455" ;
+    brp:tabel "32" .
+
+brpnat:0499 a brp:Nationaliteit ;
+    rdfs:label "Staatloos"@nl ;
+    skos:notation "0499" ;
+    brp:tabel "32" .
+
+brpnat:0500 a brp:Nationaliteit ;
+    rdfs:label "Vastgesteld niet-Nederlander"@nl ;
+    dct:valid "2007-04-01"^^xsd:date ;
+    skos:notation "0500" ;
+    brp:datumEinde "2007-04-01"^^xsd:date ;
+    brp:tabel "32" .
+

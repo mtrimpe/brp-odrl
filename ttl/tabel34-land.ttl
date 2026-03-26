@@ -1,0 +1,3439 @@
+@prefix brp: <https://data.rijksoverheid.nl/brp/def#> .
+@prefix brpland: <https://data.rijksoverheid.nl/brp/land/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+brpland:0000 a brp:Land ;
+    rdfs:label "Onbekend"@nl ;
+    skos:notation "0000" ;
+    brp:isoAlpha3 "XXX" ;
+    brp:tabel "34" .
+
+brpland:5001 a brp:Land ;
+    rdfs:label "Canada"@en,
+        "Canada"@nl ;
+    dct:valid "1867-07-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CAN> ;
+    skos:notation "5001" ;
+    brp:isoAlpha2 "CA" ;
+    brp:isoAlpha3 "CAN" ;
+    brp:isoNumeric "124" ;
+    brp:tabel "34" .
+
+brpland:5002 a brp:Land ;
+    rdfs:label "France"@en,
+        "Frankrijk"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/FRA> ;
+    skos:notation "5002" ;
+    brp:isoAlpha2 "FR" ;
+    brp:isoAlpha3 "FRA" ;
+    brp:isoNumeric "250" ;
+    brp:tabel "34" .
+
+brpland:5003 a brp:Land ;
+    rdfs:label "Switzerland"@en,
+        "Zwitserland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CHE> ;
+    skos:notation "5003" ;
+    brp:isoAlpha2 "CH" ;
+    brp:isoAlpha3 "CHE" ;
+    brp:isoNumeric "756" ;
+    brp:tabel "34" .
+
+brpland:5004 a brp:Land ;
+    rdfs:label "Rhodesië"@nl ;
+    dct:valid "1965-11-11"^^xsd:date ;
+    skos:notation "5004" ;
+    brp:datumEinde "1979-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5005 a brp:Land ;
+    rdfs:label "Malawi"@en,
+        "Malawi"@nl ;
+    dct:valid "1964-07-06"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MWI> ;
+    skos:notation "5005" ;
+    brp:isoAlpha2 "MW" ;
+    brp:isoAlpha3 "MWI" ;
+    brp:isoNumeric "454" ;
+    brp:tabel "34" .
+
+brpland:5006 a brp:Land ;
+    rdfs:label "Cuba"@en,
+        "Cuba"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CUB> ;
+    skos:notation "5006" ;
+    brp:isoAlpha2 "CU" ;
+    brp:isoAlpha3 "CUB" ;
+    brp:isoNumeric "192" ;
+    brp:tabel "34" .
+
+brpland:5007 a brp:Land ;
+    rdfs:label "Suriname"@en,
+        "Suriname"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SUR> ;
+    skos:notation "5007" ;
+    brp:isoAlpha2 "SR" ;
+    brp:isoAlpha3 "SUR" ;
+    brp:isoNumeric "740" ;
+    brp:tabel "34" .
+
+brpland:5008 a brp:Land ;
+    rdfs:label "Tunisia"@en,
+        "Tunesië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TUN> ;
+    skos:notation "5008" ;
+    brp:isoAlpha2 "TN" ;
+    brp:isoAlpha3 "TUN" ;
+    brp:isoNumeric "788" ;
+    brp:tabel "34" .
+
+brpland:5009 a brp:Land ;
+    rdfs:label "Austria"@en,
+        "Oostenrijk"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AUT> ;
+    skos:notation "5009" ;
+    brp:isoAlpha2 "AT" ;
+    brp:isoAlpha3 "AUT" ;
+    brp:isoNumeric "040" ;
+    brp:tabel "34" .
+
+brpland:5010 a brp:Land ;
+    rdfs:label "Belgium"@en,
+        "België"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BEL> ;
+    skos:notation "5010" ;
+    brp:isoAlpha2 "BE" ;
+    brp:isoAlpha3 "BEL" ;
+    brp:isoNumeric "056" ;
+    brp:tabel "34" .
+
+brpland:5011 a brp:Land ;
+    rdfs:label "Botswana"@en,
+        "Botswana"@nl ;
+    dct:valid "1966-09-30"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BWA> ;
+    skos:notation "5011" ;
+    brp:isoAlpha2 "BW" ;
+    brp:isoAlpha3 "BWA" ;
+    brp:isoNumeric "072" ;
+    brp:tabel "34" .
+
+brpland:5012 a brp:Land ;
+    rdfs:label "Iran, Islamic Republic of"@en,
+        "Iran"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IRN> ;
+    skos:notation "5012" ;
+    brp:isoAlpha2 "IR" ;
+    brp:isoAlpha3 "IRN" ;
+    brp:isoNumeric "364" ;
+    brp:tabel "34" .
+
+brpland:5013 a brp:Land ;
+    rdfs:label "New Zealand"@en,
+        "Nieuw-Zeeland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NZL> ;
+    skos:notation "5013" ;
+    brp:isoAlpha2 "NZ" ;
+    brp:isoAlpha3 "NZL" ;
+    brp:isoNumeric "554" ;
+    brp:tabel "34" .
+
+brpland:5014 a brp:Land ;
+    rdfs:label "South Africa"@en,
+        "Zuid-Afrika"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ZAF> ;
+    skos:notation "5014" ;
+    brp:isoAlpha2 "ZA" ;
+    brp:isoAlpha3 "ZAF" ;
+    brp:isoNumeric "710" ;
+    brp:tabel "34" .
+
+brpland:5015 a brp:Land ;
+    rdfs:label "Denmark"@en,
+        "Denemarken"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/DNK> ;
+    skos:notation "5015" ;
+    brp:isoAlpha2 "DK" ;
+    brp:isoAlpha3 "DNK" ;
+    brp:isoNumeric "208" ;
+    brp:tabel "34" .
+
+brpland:5016 a brp:Land ;
+    rdfs:label "Noord-Jemen"@nl ;
+    skos:notation "5016" ;
+    brp:datumEinde "1990-05-22"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5017 a brp:Land ;
+    rdfs:label "Hungary"@en,
+        "Hongarije"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/HUN> ;
+    skos:notation "5017" ;
+    brp:isoAlpha2 "HU" ;
+    brp:isoAlpha3 "HUN" ;
+    brp:isoNumeric "348" ;
+    brp:tabel "34" .
+
+brpland:5018 a brp:Land ;
+    rdfs:label "Saudi Arabia"@en,
+        "Saoedi-Arabië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SAU> ;
+    skos:notation "5018" ;
+    brp:isoAlpha2 "SA" ;
+    brp:isoAlpha3 "SAU" ;
+    brp:isoNumeric "682" ;
+    brp:tabel "34" .
+
+brpland:5019 a brp:Land ;
+    rdfs:label "Liberia"@en,
+        "Liberia"@nl ;
+    dct:valid "1847-07-26"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LBR> ;
+    skos:notation "5019" ;
+    brp:isoAlpha2 "LR" ;
+    brp:isoAlpha3 "LBR" ;
+    brp:isoNumeric "430" ;
+    brp:tabel "34" .
+
+brpland:5020 a brp:Land ;
+    rdfs:label "Ethiopia"@en,
+        "Ethiopië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ETH> ;
+    skos:notation "5020" ;
+    brp:isoAlpha2 "ET" ;
+    brp:isoAlpha3 "ETH" ;
+    brp:isoNumeric "231" ;
+    brp:tabel "34" .
+
+brpland:5021 a brp:Land ;
+    rdfs:label "Chile"@en,
+        "Chili"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CHL> ;
+    skos:notation "5021" ;
+    brp:isoAlpha2 "CL" ;
+    brp:isoAlpha3 "CHL" ;
+    brp:isoNumeric "152" ;
+    brp:tabel "34" .
+
+brpland:5022 a brp:Land ;
+    rdfs:label "Morocco"@en,
+        "Marokko"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MAR> ;
+    skos:notation "5022" ;
+    brp:isoAlpha2 "MA" ;
+    brp:isoAlpha3 "MAR" ;
+    brp:isoNumeric "504" ;
+    brp:tabel "34" .
+
+brpland:5023 a brp:Land ;
+    rdfs:label "Togo"@en,
+        "Togo"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TGO> ;
+    skos:notation "5023" ;
+    brp:isoAlpha2 "TG" ;
+    brp:isoAlpha3 "TGO" ;
+    brp:isoNumeric "768" ;
+    brp:tabel "34" .
+
+brpland:5024 a brp:Land ;
+    rdfs:label "Ghana"@en,
+        "Ghana"@nl ;
+    dct:valid "1957-03-06"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GHA> ;
+    skos:notation "5024" ;
+    brp:isoAlpha2 "GH" ;
+    brp:isoAlpha3 "GHA" ;
+    brp:isoNumeric "288" ;
+    brp:tabel "34" .
+
+brpland:5025 a brp:Land ;
+    rdfs:label "Lao People's Democratic Republic"@en,
+        "Laos"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LAO> ;
+    skos:notation "5025" ;
+    brp:isoAlpha2 "LA" ;
+    brp:isoAlpha3 "LAO" ;
+    brp:isoNumeric "418" ;
+    brp:tabel "34" .
+
+brpland:5026 a brp:Land ;
+    rdfs:label "Angola"@en,
+        "Angola"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AGO> ;
+    skos:notation "5026" ;
+    brp:isoAlpha2 "AO" ;
+    brp:isoAlpha3 "AGO" ;
+    brp:isoNumeric "024" ;
+    brp:tabel "34" .
+
+brpland:5027 a brp:Land ;
+    rdfs:label "Philippines"@en,
+        "Filipijnen"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PHL> ;
+    skos:notation "5027" ;
+    brp:isoAlpha2 "PH" ;
+    brp:isoAlpha3 "PHL" ;
+    brp:isoNumeric "608" ;
+    brp:tabel "34" .
+
+brpland:5028 a brp:Land ;
+    rdfs:label "Zambia"@en,
+        "Zambia"@nl ;
+    dct:valid "1964-10-24"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ZMB> ;
+    skos:notation "5028" ;
+    brp:isoAlpha2 "ZM" ;
+    brp:isoAlpha3 "ZMB" ;
+    brp:isoNumeric "894" ;
+    brp:tabel "34" .
+
+brpland:5029 a brp:Land ;
+    rdfs:label "Mali"@en,
+        "Mali"@nl ;
+    dct:valid "1960-06-20"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MLI> ;
+    skos:notation "5029" ;
+    brp:isoAlpha2 "ML" ;
+    brp:isoAlpha3 "MLI" ;
+    brp:isoNumeric "466" ;
+    brp:tabel "34" .
+
+brpland:5030 a brp:Land ;
+    rdfs:label "Côte d'Ivoire"@en,
+        "Ivoorkust"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CIV> ;
+    skos:notation "5030" ;
+    brp:isoAlpha2 "CI" ;
+    brp:isoAlpha3 "CIV" ;
+    brp:isoNumeric "384" ;
+    brp:tabel "34" .
+
+brpland:5031 a brp:Land ;
+    rdfs:label "Burma"@nl ;
+    skos:notation "5031" ;
+    brp:datumEinde "1989-06-18"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5032 a brp:Land ;
+    rdfs:label "Monaco"@en,
+        "Monaco"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MCO> ;
+    skos:notation "5032" ;
+    brp:isoAlpha2 "MC" ;
+    brp:isoAlpha3 "MCO" ;
+    brp:isoNumeric "492" ;
+    brp:tabel "34" .
+
+brpland:5033 a brp:Land ;
+    rdfs:label "Colombia"@en,
+        "Colombia"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/COL> ;
+    skos:notation "5033" ;
+    brp:isoAlpha2 "CO" ;
+    brp:isoAlpha3 "COL" ;
+    brp:isoNumeric "170" ;
+    brp:tabel "34" .
+
+brpland:5034 a brp:Land ;
+    rdfs:label "Albania"@en,
+        "Albanië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ALB> ;
+    skos:notation "5034" ;
+    brp:isoAlpha2 "AL" ;
+    brp:isoAlpha3 "ALB" ;
+    brp:isoNumeric "008" ;
+    brp:tabel "34" .
+
+brpland:5035 a brp:Land ;
+    rdfs:label "Cameroon"@en,
+        "Kameroen"@nl ;
+    dct:valid "1960-01-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CMR> ;
+    skos:notation "5035" ;
+    brp:isoAlpha2 "CM" ;
+    brp:isoAlpha3 "CMR" ;
+    brp:isoNumeric "120" ;
+    brp:tabel "34" .
+
+brpland:5036 a brp:Land ;
+    rdfs:label "Zuid-Vietnam"@nl ;
+    skos:notation "5036" ;
+    brp:datumEinde "1976-07-02"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5037 a brp:Land ;
+    rdfs:label "Singapore"@en,
+        "Singapore"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SGP> ;
+    skos:notation "5037" ;
+    brp:isoAlpha2 "SG" ;
+    brp:isoAlpha3 "SGP" ;
+    brp:isoNumeric "702" ;
+    brp:tabel "34" .
+
+brpland:5038 a brp:Land ;
+    rdfs:label "Paraguay"@en,
+        "Paraguay"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PRY> ;
+    skos:notation "5038" ;
+    brp:isoAlpha2 "PY" ;
+    brp:isoAlpha3 "PRY" ;
+    brp:isoNumeric "600" ;
+    brp:tabel "34" .
+
+brpland:5039 a brp:Land ;
+    rdfs:label "Sweden"@en,
+        "Zweden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SWE> ;
+    skos:notation "5039" ;
+    brp:isoAlpha2 "SE" ;
+    brp:isoAlpha3 "SWE" ;
+    brp:isoNumeric "752" ;
+    brp:tabel "34" .
+
+brpland:5040 a brp:Land ;
+    rdfs:label "Cyprus"@en,
+        "Cyprus"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CYP> ;
+    skos:notation "5040" ;
+    brp:isoAlpha2 "CY" ;
+    brp:isoAlpha3 "CYP" ;
+    brp:isoNumeric "196" ;
+    brp:tabel "34" .
+
+brpland:5041 a brp:Land ;
+    rdfs:label "Australisch Nieuw-Guinea"@nl ;
+    skos:notation "5041" ;
+    brp:datumEinde "1975-09-16"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5042 a brp:Land ;
+    rdfs:label "Brunei Darussalam"@en,
+        "Brunei"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BRN> ;
+    skos:notation "5042" ;
+    brp:isoAlpha2 "BN" ;
+    brp:isoAlpha3 "BRN" ;
+    brp:isoNumeric "096" ;
+    brp:tabel "34" .
+
+brpland:5043 a brp:Land ;
+    rdfs:label "Iraq"@en,
+        "Irak"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IRQ> ;
+    skos:notation "5043" ;
+    brp:isoAlpha2 "IQ" ;
+    brp:isoAlpha3 "IRQ" ;
+    brp:isoNumeric "368" ;
+    brp:tabel "34" .
+
+brpland:5044 a brp:Land ;
+    rdfs:label "Mauritius"@en,
+        "Mauritius"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MUS> ;
+    skos:notation "5044" ;
+    brp:isoAlpha2 "MU" ;
+    brp:isoAlpha3 "MUS" ;
+    brp:isoNumeric "480" ;
+    brp:tabel "34" .
+
+brpland:5045 a brp:Land ;
+    rdfs:label "Holy See"@en,
+        "Vaticaanstad"@nl ;
+    dct:valid "1929-02-11"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VAT> ;
+    skos:notation "5045" ;
+    brp:isoAlpha2 "VA" ;
+    brp:isoAlpha3 "VAT" ;
+    brp:isoNumeric "336" ;
+    brp:tabel "34" .
+
+brpland:5046 a brp:Land ;
+    rdfs:label "Kashmir"@nl ;
+    skos:notation "5046" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5047 a brp:Land ;
+    rdfs:label "Myanmar"@en,
+        "Myanmar"@nl ;
+    dct:valid "1989-06-18"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MMR> ;
+    skos:notation "5047" ;
+    brp:isoAlpha2 "MM" ;
+    brp:isoAlpha3 "MMR" ;
+    brp:isoNumeric "104" ;
+    brp:tabel "34" .
+
+brpland:5048 a brp:Land ;
+    rdfs:label "Yemen"@en,
+        "Jemen"@nl ;
+    dct:valid "1990-05-22"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/YEM> ;
+    skos:notation "5048" ;
+    brp:isoAlpha2 "YE" ;
+    brp:isoAlpha3 "YEM" ;
+    brp:isoNumeric "887" ;
+    brp:tabel "34" .
+
+brpland:5049 a brp:Land ;
+    rdfs:label "Slovenia"@en,
+        "Slovenië"@nl ;
+    dct:valid "1992-01-15"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SVN> ;
+    skos:notation "5049" ;
+    brp:isoAlpha2 "SI" ;
+    brp:isoAlpha3 "SVN" ;
+    brp:isoNumeric "705" ;
+    brp:tabel "34" .
+
+brpland:5050 a brp:Land ;
+    rdfs:label "Zaire"@en,
+        "Zaïre"@nl ;
+    dct:valid "1971-10-27"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ZAR> ;
+    skos:notation "5050" ;
+    brp:datumEinde "1997-07-15"^^xsd:date ;
+    brp:isoAlpha2 "ZR" ;
+    brp:isoAlpha3 "ZAR" ;
+    brp:isoNumeric "180" ;
+    brp:tabel "34" .
+
+brpland:5051 a brp:Land ;
+    rdfs:label "Croatia"@en,
+        "Kroatië"@nl ;
+    dct:valid "1992-01-15"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/HRV> ;
+    skos:notation "5051" ;
+    brp:isoAlpha2 "HR" ;
+    brp:isoAlpha3 "HRV" ;
+    brp:isoNumeric "191" ;
+    brp:tabel "34" .
+
+brpland:5052 a brp:Land ;
+    rdfs:label "Taiwan, Province of China"@en,
+        "Taiwan"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TWN> ;
+    skos:notation "5052" ;
+    brp:isoAlpha2 "TW" ;
+    brp:isoAlpha3 "TWN" ;
+    brp:isoNumeric "158" ;
+    brp:tabel "34" .
+
+brpland:5053 a brp:Land ;
+    rdfs:label "Russian Federation"@en,
+        "Rusland"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/RUS> ;
+    skos:notation "5053" ;
+    brp:isoAlpha2 "RU" ;
+    brp:isoAlpha3 "RUS" ;
+    brp:isoNumeric "643" ;
+    brp:tabel "34" .
+
+brpland:5054 a brp:Land ;
+    rdfs:label "Armenia"@en,
+        "Armenië"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ARM> ;
+    skos:notation "5054" ;
+    brp:isoAlpha2 "AM" ;
+    brp:isoAlpha3 "ARM" ;
+    brp:isoNumeric "051" ;
+    brp:tabel "34" .
+
+brpland:5055 a brp:Land ;
+    rdfs:label "Ascension"@en,
+        "Ascension"@nl ;
+    skos:notation "5055" ;
+    brp:tabel "34" .
+
+brpland:5056 a brp:Land ;
+    rdfs:label "Região Autónoma dos Açores"@en,
+        "Azoren"@nl ;
+    skos:notation "5056" ;
+    brp:tabel "34" .
+
+brpland:5057 a brp:Land ;
+    rdfs:label "Bahrain"@en,
+        "Bahrein"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BHR> ;
+    skos:notation "5057" ;
+    brp:isoAlpha2 "BH" ;
+    brp:isoAlpha3 "BHR" ;
+    brp:isoNumeric "048" ;
+    brp:tabel "34" .
+
+brpland:5058 a brp:Land ;
+    rdfs:label "Bhutan"@en,
+        "Bhutan"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BTN> ;
+    skos:notation "5058" ;
+    brp:isoAlpha2 "BT" ;
+    brp:isoAlpha3 "BTN" ;
+    brp:isoNumeric "064" ;
+    brp:tabel "34" .
+
+brpland:5059 a brp:Land ;
+    rdfs:label "Britse Antillen"@nl ;
+    dct:valid "1962-02-01"^^xsd:date ;
+    skos:notation "5059" ;
+    brp:datumEinde "1981-11-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5060 a brp:Land ;
+    rdfs:label "Comoros"@en,
+        "Comoren"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/COM> ;
+    skos:notation "5060" ;
+    brp:isoAlpha2 "KM" ;
+    brp:isoAlpha3 "COM" ;
+    brp:isoNumeric "174" ;
+    brp:tabel "34" .
+
+brpland:5061 a brp:Land ;
+    rdfs:label "Falkland Islands (Malvinas)"@en,
+        "Falklandeilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/FLK> ;
+    skos:notation "5061" ;
+    brp:isoAlpha2 "FK" ;
+    brp:isoAlpha3 "FLK" ;
+    brp:isoNumeric "238" ;
+    brp:tabel "34" .
+
+brpland:5062 a brp:Land ;
+    rdfs:label "French Guiana"@en,
+        "Frans-Guyana"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GUF> ;
+    skos:notation "5062" ;
+    brp:isoAlpha2 "GF" ;
+    brp:isoAlpha3 "GUF" ;
+    brp:isoNumeric "254" ;
+    brp:tabel "34" .
+
+brpland:5063 a brp:Land ;
+    rdfs:label "Frans-Somaliland"@nl ;
+    skos:notation "5063" ;
+    brp:datumEinde "1977-06-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5064 a brp:Land ;
+    rdfs:label "Gilbert- en Ellice-eilanden"@nl ;
+    skos:notation "5064" ;
+    brp:datumEinde "1975-10-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5065 a brp:Land ;
+    rdfs:label "Greenland"@en,
+        "Groenland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GRL> ;
+    skos:notation "5065" ;
+    brp:isoAlpha2 "GL" ;
+    brp:isoAlpha3 "GRL" ;
+    brp:isoNumeric "304" ;
+    brp:tabel "34" .
+
+brpland:5066 a brp:Land ;
+    rdfs:label "Guadeloupe"@en,
+        "Guadeloupe"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GLP> ;
+    skos:notation "5066" ;
+    brp:isoAlpha2 "GP" ;
+    brp:isoAlpha3 "GLP" ;
+    brp:isoNumeric "312" ;
+    brp:tabel "34" .
+
+brpland:5067 a brp:Land ;
+    rdfs:label "Kaapverdische Eilanden"@nl ;
+    skos:notation "5067" ;
+    brp:datumEinde "1975-07-05"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5068 a brp:Land ;
+    rdfs:label "Macao"@en,
+        "Macau"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MAC> ;
+    skos:notation "5068" ;
+    brp:datumEinde "1999-12-20"^^xsd:date ;
+    brp:isoAlpha2 "MO" ;
+    brp:isoAlpha3 "MAC" ;
+    brp:isoNumeric "446" ;
+    brp:tabel "34" .
+
+brpland:5069 a brp:Land ;
+    rdfs:label "Martinique"@en,
+        "Martinique"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MTQ> ;
+    skos:notation "5069" ;
+    brp:isoAlpha2 "MQ" ;
+    brp:isoAlpha3 "MTQ" ;
+    brp:isoNumeric "474" ;
+    brp:tabel "34" .
+
+brpland:5070 a brp:Land ;
+    rdfs:label "Mozambique"@en,
+        "Mozambique"@nl ;
+    dct:valid "1975-06-25"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MOZ> ;
+    skos:notation "5070" ;
+    brp:isoAlpha2 "MZ" ;
+    brp:isoAlpha3 "MOZ" ;
+    brp:isoNumeric "508" ;
+    brp:tabel "34" .
+
+brpland:5071 a brp:Land ;
+    rdfs:label "Pitcairn"@en,
+        "Pitcairneilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PCN> ;
+    skos:notation "5071" ;
+    brp:isoAlpha2 "PN" ;
+    brp:isoAlpha3 "PCN" ;
+    brp:isoNumeric "612" ;
+    brp:tabel "34" .
+
+brpland:5072 a brp:Land ;
+    rdfs:label "Guinea-Bissau"@en,
+        "Guinee-Bissau"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GNB> ;
+    skos:notation "5072" ;
+    brp:isoAlpha2 "GW" ;
+    brp:isoAlpha3 "GNB" ;
+    brp:isoNumeric "624" ;
+    brp:tabel "34" .
+
+brpland:5073 a brp:Land ;
+    rdfs:label "Réunion"@en,
+        "Réunion"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/REU> ;
+    skos:notation "5073" ;
+    brp:isoAlpha2 "RE" ;
+    brp:isoAlpha3 "REU" ;
+    brp:isoNumeric "638" ;
+    brp:tabel "34" .
+
+brpland:5074 a brp:Land ;
+    rdfs:label "Saint Pierre and Miquelon"@en,
+        "Saint Pierre en Miquelon"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SPM> ;
+    skos:notation "5074" ;
+    brp:isoAlpha2 "PM" ;
+    brp:isoAlpha3 "SPM" ;
+    brp:isoNumeric "666" ;
+    brp:tabel "34" .
+
+brpland:5075 a brp:Land ;
+    rdfs:label "Seychellen en Amiranten"@nl ;
+    skos:notation "5075" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5076 a brp:Land ;
+    rdfs:label "Tonga"@en,
+        "Tonga"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TON> ;
+    skos:notation "5076" ;
+    brp:isoAlpha2 "TO" ;
+    brp:isoAlpha3 "TON" ;
+    brp:isoNumeric "776" ;
+    brp:tabel "34" .
+
+brpland:5077 a brp:Land ;
+    rdfs:label "Wallis and Futuna"@en,
+        "Wallis en Futuna"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/WLF> ;
+    skos:notation "5077" ;
+    brp:isoAlpha2 "WF" ;
+    brp:isoAlpha3 "WLF" ;
+    brp:isoNumeric "876" ;
+    brp:tabel "34" .
+
+brpland:5078 a brp:Land ;
+    rdfs:label "Zuidwest-Afrika"@nl ;
+    skos:notation "5078" ;
+    brp:datumEinde "1990-03-21"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5079 a brp:Land ;
+    rdfs:label "Frans-Indië"@nl ;
+    skos:notation "5079" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5080 a brp:Land ;
+    rdfs:label "Johnston Island"@en,
+        "Johnston"@nl ;
+    skos:notation "5080" ;
+    brp:tabel "34" .
+
+brpland:5081 a brp:Land ;
+    rdfs:label "Kedah"@nl ;
+    skos:notation "5081" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5082 a brp:Land ;
+    rdfs:label "Kelantan"@nl ;
+    skos:notation "5082" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5083 a brp:Land ;
+    rdfs:label "Malakka"@nl ;
+    skos:notation "5083" ;
+    brp:datumEinde "1963-09-16"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5084 a brp:Land ;
+    rdfs:label "Mayotte"@en,
+        "Mayotte"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MYT> ;
+    skos:notation "5084" ;
+    brp:isoAlpha2 "YT" ;
+    brp:isoAlpha3 "MYT" ;
+    brp:isoNumeric "175" ;
+    brp:tabel "34" .
+
+brpland:5085 a brp:Land ;
+    rdfs:label "Negri Sembilan"@nl ;
+    skos:notation "5085" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5086 a brp:Land ;
+    rdfs:label "Pahang"@nl ;
+    skos:notation "5086" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5087 a brp:Land ;
+    rdfs:label "Perak"@nl ;
+    skos:notation "5087" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5088 a brp:Land ;
+    rdfs:label "Perlis"@nl ;
+    skos:notation "5088" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5089 a brp:Land ;
+    rdfs:label "Portugees-Indië"@nl ;
+    skos:notation "5089" ;
+    brp:datumEinde "1961-12-18"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5090 a brp:Land ;
+    rdfs:label "Selangor"@nl ;
+    skos:notation "5090" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5091 a brp:Land ;
+    rdfs:label "Sikkim"@nl ;
+    skos:notation "5091" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5092 a brp:Land ;
+    rdfs:label "Saint Vincent and the Grenadines"@en,
+        "Saint Vincent en de Grenadines"@nl ;
+    dct:valid "1979-10-27"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VCT> ;
+    skos:notation "5092" ;
+    brp:isoAlpha2 "VC" ;
+    brp:isoAlpha3 "VCT" ;
+    brp:isoNumeric "670" ;
+    brp:tabel "34" .
+
+brpland:5093 a brp:Land ;
+    rdfs:label "Spitsbergen"@nl ;
+    skos:notation "5093" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5094 a brp:Land ;
+    rdfs:label "Trengganu"@nl ;
+    skos:notation "5094" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:5095 a brp:Land ;
+    rdfs:label "Aruba"@en,
+        "Aruba"@nl ;
+    dct:valid "1986-01-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ABW> ;
+    skos:notation "5095" ;
+    brp:isoAlpha2 "AW" ;
+    brp:isoAlpha3 "ABW" ;
+    brp:isoNumeric "533" ;
+    brp:tabel "34" .
+
+brpland:5096 a brp:Land ;
+    rdfs:label "Burkina Faso"@en,
+        "Burkina Faso"@nl ;
+    dct:valid "1984-08-04"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BFA> ;
+    skos:notation "5096" ;
+    brp:isoAlpha2 "BF" ;
+    brp:isoAlpha3 "BFA" ;
+    brp:isoNumeric "854" ;
+    brp:tabel "34" .
+
+brpland:5097 a brp:Land ;
+    rdfs:label "Azerbaijan"@en,
+        "Azerbeidzjan"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AZE> ;
+    skos:notation "5097" ;
+    brp:isoAlpha2 "AZ" ;
+    brp:isoAlpha3 "AZE" ;
+    brp:isoNumeric "031" ;
+    brp:tabel "34" .
+
+brpland:5098 a brp:Land ;
+    rdfs:label "Belarus"@en,
+        "Belarus"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BLR> ;
+    skos:notation "5098" ;
+    brp:isoAlpha2 "BY" ;
+    brp:isoAlpha3 "BLR" ;
+    brp:isoNumeric "112" ;
+    brp:tabel "34" .
+
+brpland:5099 a brp:Land ;
+    rdfs:label "Kazakhstan"@en,
+        "Kazachstan"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KAZ> ;
+    skos:notation "5099" ;
+    brp:isoAlpha2 "KZ" ;
+    brp:isoAlpha3 "KAZ" ;
+    brp:isoNumeric "398" ;
+    brp:tabel "34" .
+
+brpland:5100 a brp:Land ;
+    rdfs:label "Macedonia"@en,
+        "Macedonië"@nl ;
+    dct:valid "1993-04-19"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MKD> ;
+    skos:notation "5100" ;
+    brp:datumEinde "2019-02-12"^^xsd:date ;
+    brp:isoAlpha2 "MK" ;
+    brp:isoAlpha3 "MKD" ;
+    brp:isoNumeric "807" ;
+    brp:tabel "34" .
+
+brpland:5101 a brp:Land ;
+    rdfs:label "Timor-Leste"@en,
+        "Timor Leste"@nl ;
+    dct:valid "2002-05-20"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TLS> ;
+    skos:notation "5101" ;
+    brp:isoAlpha2 "TL" ;
+    brp:isoAlpha3 "TLS" ;
+    brp:isoNumeric "626" ;
+    brp:tabel "34" .
+
+brpland:5102 a brp:Land ;
+    rdfs:label "Serbia and Montenegro"@en,
+        "Servië en Montenegro"@nl ;
+    dct:valid "2003-02-04"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SCG> ;
+    skos:notation "5102" ;
+    brp:datumEinde "2006-06-03"^^xsd:date ;
+    brp:isoAlpha2 "CS" ;
+    brp:isoAlpha3 "SCG" ;
+    brp:isoNumeric "891" ;
+    brp:tabel "34" .
+
+brpland:5103 a brp:Land ;
+    rdfs:label "Serbia"@en,
+        "Servië"@nl ;
+    dct:valid "2006-06-03"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SRB> ;
+    skos:notation "5103" ;
+    brp:isoAlpha2 "RS" ;
+    brp:isoAlpha3 "SRB" ;
+    brp:isoNumeric "688" ;
+    brp:tabel "34" .
+
+brpland:5104 a brp:Land ;
+    rdfs:label "Montenegro"@en,
+        "Montenegro"@nl ;
+    dct:valid "2006-06-03"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MNE> ;
+    skos:notation "5104" ;
+    brp:isoAlpha2 "ME" ;
+    brp:isoAlpha3 "MNE" ;
+    brp:isoNumeric "499" ;
+    brp:tabel "34" .
+
+brpland:5105 a brp:Land ;
+    rdfs:label "Kosovo-Metohija"@en,
+        "Kosovo"@nl ;
+    dct:valid "2008-02-17"^^xsd:date ;
+    skos:notation "5105" ;
+    brp:tabel "34" .
+
+brpland:5106 a brp:Land ;
+    rdfs:label "Bonaire"@en,
+        "Bonaire"@nl ;
+    dct:valid "2010-10-10"^^xsd:date ;
+    skos:notation "5106" ;
+    brp:tabel "34" .
+
+brpland:5107 a brp:Land ;
+    rdfs:label "Curaçao"@en,
+        "Curaçao"@nl ;
+    dct:valid "2010-10-10"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CUW> ;
+    skos:notation "5107" ;
+    brp:isoAlpha2 "CW" ;
+    brp:isoAlpha3 "CUW" ;
+    brp:isoNumeric "531" ;
+    brp:tabel "34" .
+
+brpland:5108 a brp:Land ;
+    rdfs:label "Saba"@en,
+        "Saba"@nl ;
+    dct:valid "2010-10-10"^^xsd:date ;
+    skos:notation "5108" ;
+    brp:tabel "34" .
+
+brpland:5109 a brp:Land ;
+    rdfs:label "Sint Eustatius"@en,
+        "Sint Eustatius"@nl ;
+    dct:valid "2010-10-10"^^xsd:date ;
+    skos:notation "5109" ;
+    brp:tabel "34" .
+
+brpland:5110 a brp:Land ;
+    rdfs:label "Sint Maarten (Dutch part)"@en,
+        "Sint Maarten"@nl ;
+    dct:valid "2010-10-10"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SXM> ;
+    skos:notation "5110" ;
+    brp:isoAlpha2 "SX" ;
+    brp:isoAlpha3 "SXM" ;
+    brp:isoNumeric "534" ;
+    brp:tabel "34" .
+
+brpland:5111 a brp:Land ;
+    rdfs:label "South Sudan"@en,
+        "Zuid-Soedan"@nl ;
+    dct:valid "2011-07-09"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SSD> ;
+    skos:notation "5111" ;
+    brp:isoAlpha2 "SS" ;
+    brp:isoAlpha3 "SSD" ;
+    brp:isoNumeric "728" ;
+    brp:tabel "34" .
+
+brpland:5112 a brp:Land ;
+    rdfs:label "Palestine, State of"@en,
+        "Gazastrook en Westelijke Jordaanoever, met inbegrip van Oost-Jeruzalem"@nl ;
+    dct:valid "1948-05-15"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PSE> ;
+    skos:notation "5112" ;
+    brp:isoAlpha2 "PS" ;
+    brp:isoAlpha3 "PSE" ;
+    brp:isoNumeric "275" ;
+    brp:tabel "34" .
+
+brpland:5113 a brp:Land ;
+    rdfs:label "North Macedonia"@en,
+        "Republiek Noord-Macedonië"@nl ;
+    dct:valid "2019-02-12"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MKD> ;
+    skos:notation "5113" ;
+    brp:isoAlpha2 "MK" ;
+    brp:isoAlpha3 "MKD" ;
+    brp:isoNumeric "807" ;
+    brp:tabel "34" .
+
+brpland:6000 a brp:Land ;
+    rdfs:label "Moldova, Republic of"@en,
+        "Moldavië"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MDA> ;
+    skos:notation "6000" ;
+    brp:isoAlpha2 "MD" ;
+    brp:isoAlpha3 "MDA" ;
+    brp:isoNumeric "498" ;
+    brp:tabel "34" .
+
+brpland:6001 a brp:Land ;
+    rdfs:label "Burundi"@en,
+        "Burundi"@nl ;
+    dct:valid "1962-07-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BDI> ;
+    skos:notation "6001" ;
+    brp:isoAlpha2 "BI" ;
+    brp:isoAlpha3 "BDI" ;
+    brp:isoNumeric "108" ;
+    brp:tabel "34" .
+
+brpland:6002 a brp:Land ;
+    rdfs:label "Finland"@en,
+        "Finland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/FIN> ;
+    skos:notation "6002" ;
+    brp:isoAlpha2 "FI" ;
+    brp:isoAlpha3 "FIN" ;
+    brp:isoNumeric "246" ;
+    brp:tabel "34" .
+
+brpland:6003 a brp:Land ;
+    rdfs:label "Greece"@en,
+        "Griekenland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GRC> ;
+    skos:notation "6003" ;
+    brp:isoAlpha2 "GR" ;
+    brp:isoAlpha3 "GRC" ;
+    brp:isoNumeric "300" ;
+    brp:tabel "34" .
+
+brpland:6004 a brp:Land ;
+    rdfs:label "Guatemala"@en,
+        "Guatemala"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GTM> ;
+    skos:notation "6004" ;
+    brp:isoAlpha2 "GT" ;
+    brp:isoAlpha3 "GTM" ;
+    brp:isoNumeric "320" ;
+    brp:tabel "34" .
+
+brpland:6005 a brp:Land ;
+    rdfs:label "Nigeria"@en,
+        "Nigeria"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NGA> ;
+    skos:notation "6005" ;
+    brp:isoAlpha2 "NG" ;
+    brp:isoAlpha3 "NGA" ;
+    brp:isoNumeric "566" ;
+    brp:tabel "34" .
+
+brpland:6006 a brp:Land ;
+    rdfs:label "Libya"@en,
+        "Libië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LBY> ;
+    skos:notation "6006" ;
+    brp:isoAlpha2 "LY" ;
+    brp:isoAlpha3 "LBY" ;
+    brp:isoNumeric "434" ;
+    brp:tabel "34" .
+
+brpland:6007 a brp:Land ;
+    rdfs:label "Ireland"@en,
+        "Ierland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IRL> ;
+    skos:notation "6007" ;
+    brp:isoAlpha2 "IE" ;
+    brp:isoAlpha3 "IRL" ;
+    brp:isoNumeric "372" ;
+    brp:tabel "34" .
+
+brpland:6008 a brp:Land ;
+    rdfs:label "Brazil"@en,
+        "Brazilië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BRA> ;
+    skos:notation "6008" ;
+    brp:isoAlpha2 "BR" ;
+    brp:isoAlpha3 "BRA" ;
+    brp:isoNumeric "076" ;
+    brp:tabel "34" .
+
+brpland:6009 a brp:Land ;
+    rdfs:label "Rwanda"@en,
+        "Rwanda"@nl ;
+    dct:valid "1962-07-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/RWA> ;
+    skos:notation "6009" ;
+    brp:isoAlpha2 "RW" ;
+    brp:isoAlpha3 "RWA" ;
+    brp:isoNumeric "646" ;
+    brp:tabel "34" .
+
+brpland:6010 a brp:Land ;
+    rdfs:label "Venezuela, Bolivarian Republic of"@en,
+        "Venezuela"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VEN> ;
+    skos:notation "6010" ;
+    brp:isoAlpha2 "VE" ;
+    brp:isoAlpha3 "VEN" ;
+    brp:isoNumeric "862" ;
+    brp:tabel "34" .
+
+brpland:6011 a brp:Land ;
+    rdfs:label "Iceland"@en,
+        "IJsland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ISL> ;
+    skos:notation "6011" ;
+    brp:isoAlpha2 "IS" ;
+    brp:isoAlpha3 "ISL" ;
+    brp:isoNumeric "352" ;
+    brp:tabel "34" .
+
+brpland:6012 a brp:Land ;
+    rdfs:label "Liechtenstein"@en,
+        "Liechtenstein"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LIE> ;
+    skos:notation "6012" ;
+    brp:isoAlpha2 "LI" ;
+    brp:isoAlpha3 "LIE" ;
+    brp:isoNumeric "438" ;
+    brp:tabel "34" .
+
+brpland:6013 a brp:Land ;
+    rdfs:label "Somalia"@en,
+        "Somalië"@nl ;
+    dct:valid "1960-07-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SOM> ;
+    skos:notation "6013" ;
+    brp:isoAlpha2 "SO" ;
+    brp:isoAlpha3 "SOM" ;
+    brp:isoNumeric "706" ;
+    brp:tabel "34" .
+
+brpland:6014 a brp:Land ;
+    rdfs:label "United States of America"@en,
+        "Verenigde Staten van Amerika"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/USA> ;
+    skos:notation "6014" ;
+    brp:isoAlpha2 "US" ;
+    brp:isoAlpha3 "USA" ;
+    brp:isoNumeric "840" ;
+    brp:tabel "34" .
+
+brpland:6015 a brp:Land ;
+    rdfs:label "Bolivia, Plurinational State of"@en,
+        "Bolivia"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BOL> ;
+    skos:notation "6015" ;
+    brp:isoAlpha2 "BO" ;
+    brp:isoAlpha3 "BOL" ;
+    brp:isoNumeric "068" ;
+    brp:tabel "34" .
+
+brpland:6016 a brp:Land ;
+    rdfs:label "Australia"@en,
+        "Australië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AUS> ;
+    skos:notation "6016" ;
+    brp:isoAlpha2 "AU" ;
+    brp:isoAlpha3 "AUS" ;
+    brp:isoNumeric "036" ;
+    brp:tabel "34" .
+
+brpland:6017 a brp:Land ;
+    rdfs:label "Jamaica"@en,
+        "Jamaica"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/JAM> ;
+    skos:notation "6017" ;
+    brp:isoAlpha2 "JM" ;
+    brp:isoAlpha3 "JAM" ;
+    brp:isoNumeric "388" ;
+    brp:tabel "34" .
+
+brpland:6018 a brp:Land ;
+    rdfs:label "Luxembourg"@en,
+        "Luxemburg"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LUX> ;
+    skos:notation "6018" ;
+    brp:isoAlpha2 "LU" ;
+    brp:isoAlpha3 "LUX" ;
+    brp:isoNumeric "442" ;
+    brp:tabel "34" .
+
+brpland:6019 a brp:Land ;
+    rdfs:label "Chad"@en,
+        "Tsjaad"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TCD> ;
+    skos:notation "6019" ;
+    brp:isoAlpha2 "TD" ;
+    brp:isoAlpha3 "TCD" ;
+    brp:isoNumeric "148" ;
+    brp:tabel "34" .
+
+brpland:6020 a brp:Land ;
+    rdfs:label "Mauritania"@en,
+        "Mauritanië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MRT> ;
+    skos:notation "6020" ;
+    brp:isoAlpha2 "MR" ;
+    brp:isoAlpha3 "MRT" ;
+    brp:isoNumeric "478" ;
+    brp:tabel "34" .
+
+brpland:6021 a brp:Land ;
+    rdfs:label "Kyrgyzstan"@en,
+        "Kirgizië"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KGZ> ;
+    skos:notation "6021" ;
+    brp:isoAlpha2 "KG" ;
+    brp:isoAlpha3 "KGZ" ;
+    brp:isoNumeric "417" ;
+    brp:tabel "34" .
+
+brpland:6022 a brp:Land ;
+    rdfs:label "China"@en,
+        "China"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CHN> ;
+    skos:notation "6022" ;
+    brp:isoAlpha2 "CN" ;
+    brp:isoAlpha3 "CHN" ;
+    brp:isoNumeric "156" ;
+    brp:tabel "34" .
+
+brpland:6023 a brp:Land ;
+    rdfs:label "Afghanistan"@en,
+        "Afghanistan"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AFG> ;
+    skos:notation "6023" ;
+    brp:isoAlpha2 "AF" ;
+    brp:isoAlpha3 "AFG" ;
+    brp:isoNumeric "004" ;
+    brp:tabel "34" .
+
+brpland:6024 a brp:Land ;
+    rdfs:label "Indonesia"@en,
+        "Indonesië"@nl ;
+    dct:valid "1949-12-27"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IDN> ;
+    skos:notation "6024" ;
+    brp:isoAlpha2 "ID" ;
+    brp:isoAlpha3 "IDN" ;
+    brp:isoNumeric "360" ;
+    brp:tabel "34" .
+
+brpland:6025 a brp:Land ;
+    rdfs:label "Guyana"@en,
+        "Guyana"@nl ;
+    dct:valid "1966-05-26"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GUY> ;
+    skos:notation "6025" ;
+    brp:isoAlpha2 "GY" ;
+    brp:isoAlpha3 "GUY" ;
+    brp:isoNumeric "328" ;
+    brp:tabel "34" .
+
+brpland:6026 a brp:Land ;
+    rdfs:label "Noord-Vietnam"@nl ;
+    dct:valid "1945-09-02"^^xsd:date ;
+    skos:notation "6026" ;
+    brp:datumEinde "1976-07-02"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:6027 a brp:Land ;
+    rdfs:label "Norway"@en,
+        "Noorwegen"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NOR> ;
+    skos:notation "6027" ;
+    brp:isoAlpha2 "NO" ;
+    brp:isoAlpha3 "NOR" ;
+    brp:isoNumeric "578" ;
+    brp:tabel "34" .
+
+brpland:6028 a brp:Land ;
+    rdfs:label "San Marino"@en,
+        "San Marino"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SMR> ;
+    skos:notation "6028" ;
+    brp:isoAlpha2 "SM" ;
+    brp:isoAlpha3 "SMR" ;
+    brp:isoNumeric "674" ;
+    brp:tabel "34" .
+
+brpland:6029 a brp:Land ;
+    rdfs:label "Duitsland"@nl ;
+    skos:notation "6029" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:isoAlpha2 "DE" ;
+    brp:tabel "34" .
+
+brpland:6030 a brp:Land ;
+    rdfs:label "Netherlands, Kingdom of the"@en,
+        "Nederland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NLD> ;
+    skos:notation "6030" ;
+    brp:isoAlpha2 "NL" ;
+    brp:isoAlpha3 "NLD" ;
+    brp:isoNumeric "528" ;
+    brp:tabel "34" .
+
+brpland:6031 a brp:Land ;
+    rdfs:label "Cambodia"@en,
+        "Cambodja"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KHM> ;
+    skos:notation "6031" ;
+    brp:isoAlpha2 "KH" ;
+    brp:isoAlpha3 "KHM" ;
+    brp:isoNumeric "116" ;
+    brp:tabel "34" .
+
+brpland:6032 a brp:Land ;
+    rdfs:label "Fiji"@en,
+        "Fiji"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/FJI> ;
+    skos:notation "6032" ;
+    brp:isoAlpha2 "FJ" ;
+    brp:isoAlpha3 "FJI" ;
+    brp:isoNumeric "242" ;
+    brp:tabel "34" .
+
+brpland:6033 a brp:Land ;
+    rdfs:label "Bahamas"@en,
+        "Bahama's"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BHS> ;
+    skos:notation "6033" ;
+    brp:isoAlpha2 "BS" ;
+    brp:isoAlpha3 "BHS" ;
+    brp:isoNumeric "044" ;
+    brp:tabel "34" .
+
+brpland:6034 a brp:Land ;
+    rdfs:label "Israel"@en,
+        "Israël"@nl ;
+    dct:valid "1948-05-14"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ISR> ;
+    skos:notation "6034" ;
+    brp:isoAlpha2 "IL" ;
+    brp:isoAlpha3 "ISR" ;
+    brp:isoNumeric "376" ;
+    brp:tabel "34" .
+
+brpland:6035 a brp:Land ;
+    rdfs:label "Nepal"@en,
+        "Nepal"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NPL> ;
+    skos:notation "6035" ;
+    brp:isoAlpha2 "NP" ;
+    brp:isoAlpha3 "NPL" ;
+    brp:isoNumeric "524" ;
+    brp:tabel "34" .
+
+brpland:6036 a brp:Land ;
+    rdfs:label "Korea, Republic of"@en,
+        "Zuid-Korea"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KOR> ;
+    skos:notation "6036" ;
+    brp:isoAlpha2 "KR" ;
+    brp:isoAlpha3 "KOR" ;
+    brp:isoNumeric "410" ;
+    brp:tabel "34" .
+
+brpland:6037 a brp:Land ;
+    rdfs:label "Spain"@en,
+        "Spanje"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ESP> ;
+    skos:notation "6037" ;
+    brp:isoAlpha2 "ES" ;
+    brp:isoAlpha3 "ESP" ;
+    brp:isoNumeric "724" ;
+    brp:tabel "34" .
+
+brpland:6038 a brp:Land ;
+    rdfs:label "Ukraine"@en,
+        "Oekraïne"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/UKR> ;
+    skos:notation "6038" ;
+    brp:isoAlpha2 "UA" ;
+    brp:isoAlpha3 "UKR" ;
+    brp:isoNumeric "804" ;
+    brp:tabel "34" .
+
+brpland:6039 a brp:Land ;
+    rdfs:label "United Kingdom of Great Britain and Northern Ireland"@en,
+        "Verenigd Koninkrijk"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GBR> ;
+    skos:notation "6039" ;
+    brp:isoAlpha2 "GB" ;
+    brp:isoAlpha3 "GBR" ;
+    brp:isoNumeric "826" ;
+    brp:tabel "34" .
+
+brpland:6040 a brp:Land ;
+    rdfs:label "Niger"@en,
+        "Niger"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NER> ;
+    skos:notation "6040" ;
+    brp:isoAlpha2 "NE" ;
+    brp:isoAlpha3 "NER" ;
+    brp:isoNumeric "562" ;
+    brp:tabel "34" .
+
+brpland:6041 a brp:Land ;
+    rdfs:label "Haiti"@en,
+        "Haïti"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/HTI> ;
+    skos:notation "6041" ;
+    brp:isoAlpha2 "HT" ;
+    brp:isoAlpha3 "HTI" ;
+    brp:isoNumeric "332" ;
+    brp:tabel "34" .
+
+brpland:6042 a brp:Land ;
+    rdfs:label "Jordan"@en,
+        "Jordanië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/JOR> ;
+    skos:notation "6042" ;
+    brp:isoAlpha2 "JO" ;
+    brp:isoAlpha3 "JOR" ;
+    brp:isoNumeric "400" ;
+    brp:tabel "34" .
+
+brpland:6043 a brp:Land ;
+    rdfs:label "Türkiye"@en,
+        "Turkije"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TUR> ;
+    skos:notation "6043" ;
+    brp:isoAlpha2 "TR" ;
+    brp:isoAlpha3 "TUR" ;
+    brp:isoNumeric "792" ;
+    brp:tabel "34" .
+
+brpland:6044 a brp:Land ;
+    rdfs:label "Trinidad and Tobago"@en,
+        "Trinidad en Tobago"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TTO> ;
+    skos:notation "6044" ;
+    brp:isoAlpha2 "TT" ;
+    brp:isoAlpha3 "TTO" ;
+    brp:isoNumeric "780" ;
+    brp:tabel "34" .
+
+brpland:6045 a brp:Land ;
+    rdfs:label "Yugoslavia"@en,
+        "Joegoslavië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/YUG> ;
+    skos:notation "6045" ;
+    brp:datumEinde "1996-06-01"^^xsd:date ;
+    brp:isoAlpha2 "YU" ;
+    brp:isoAlpha3 "YUG" ;
+    brp:isoNumeric "891" ;
+    brp:tabel "34" .
+
+brpland:6046 a brp:Land ;
+    rdfs:label "Opper-Volta"@nl ;
+    skos:notation "6046" ;
+    brp:datumEinde "1984-08-04"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:6047 a brp:Land ;
+    rdfs:label "Algeria"@en,
+        "Algerije"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/DZA> ;
+    skos:notation "6047" ;
+    brp:isoAlpha2 "DZ" ;
+    brp:isoAlpha3 "DZA" ;
+    brp:isoNumeric "012" ;
+    brp:tabel "34" .
+
+brpland:6048 a brp:Land ;
+    rdfs:label "Gabon"@en,
+        "Gabon"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GAB> ;
+    skos:notation "6048" ;
+    brp:isoAlpha2 "GA" ;
+    brp:isoAlpha3 "GAB" ;
+    brp:isoNumeric "266" ;
+    brp:tabel "34" .
+
+brpland:6049 a brp:Land ;
+    rdfs:label "Korea, Democratic People's Republic of"@en,
+        "Noord-Korea"@nl ;
+    dct:valid "1945-09-06"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PRK> ;
+    skos:notation "6049" ;
+    brp:isoAlpha2 "KP" ;
+    brp:isoAlpha3 "PRK" ;
+    brp:isoNumeric "408" ;
+    brp:tabel "34" .
+
+brpland:6050 a brp:Land ;
+    rdfs:label "Uzbekistan"@en,
+        "Oezbekistan"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/UZB> ;
+    skos:notation "6050" ;
+    brp:isoAlpha2 "UZ" ;
+    brp:isoAlpha3 "UZB" ;
+    brp:isoNumeric "860" ;
+    brp:tabel "34" .
+
+brpland:6051 a brp:Land ;
+    rdfs:label "Sierra Leone"@en,
+        "Sierra Leone"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SLE> ;
+    skos:notation "6051" ;
+    brp:isoAlpha2 "SL" ;
+    brp:isoAlpha3 "SLE" ;
+    brp:isoNumeric "694" ;
+    brp:tabel "34" .
+
+brpland:6052 a brp:Land ;
+    rdfs:label "Brits-Honduras"@nl ;
+    skos:notation "6052" ;
+    brp:datumEinde "1973-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:6053 a brp:Land ;
+    rdfs:label "Canary Islands"@en,
+        "Canarische Eilanden"@nl ;
+    skos:notation "6053" ;
+    brp:tabel "34" .
+
+brpland:6054 a brp:Land ;
+    rdfs:label "French Polynesia"@en,
+        "Frans-Polynesië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PYF> ;
+    skos:notation "6054" ;
+    brp:isoAlpha2 "PF" ;
+    brp:isoAlpha3 "PYF" ;
+    brp:isoNumeric "258" ;
+    brp:tabel "34" .
+
+brpland:6055 a brp:Land ;
+    rdfs:label "Gibraltar"@en,
+        "Gibraltar"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GIB> ;
+    skos:notation "6055" ;
+    brp:isoAlpha2 "GI" ;
+    brp:isoAlpha3 "GIB" ;
+    brp:isoNumeric "292" ;
+    brp:tabel "34" .
+
+brpland:6056 a brp:Land ;
+    rdfs:label "Portugees-Timor"@nl ;
+    skos:notation "6056" ;
+    brp:datumEinde "1976-07-17"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:6057 a brp:Land ;
+    rdfs:label "Tajikistan"@en,
+        "Tadzjikistan"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TJK> ;
+    skos:notation "6057" ;
+    brp:isoAlpha2 "TJ" ;
+    brp:isoAlpha3 "TJK" ;
+    brp:isoNumeric "762" ;
+    brp:tabel "34" .
+
+brpland:6058 a brp:Land ;
+    rdfs:label "Britse Salomonseilanden"@nl ;
+    skos:notation "6058" ;
+    brp:datumEinde "1978-07-07"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:6059 a brp:Land ;
+    rdfs:label "Sao Tome and Principe"@en,
+        "São Tomé en Principe"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/STP> ;
+    skos:notation "6059" ;
+    brp:isoAlpha2 "ST" ;
+    brp:isoAlpha3 "STP" ;
+    brp:isoNumeric "678" ;
+    brp:tabel "34" .
+
+brpland:6060 a brp:Land ;
+    rdfs:label "Saint Helena"@en,
+        "Sint-Helena"@nl ;
+    skos:notation "6060" ;
+    brp:tabel "34" .
+
+brpland:6061 a brp:Land ;
+    rdfs:label "Tristan da Cunha"@en,
+        "Tristan Da Cunha"@nl ;
+    skos:notation "6061" ;
+    brp:tabel "34" .
+
+brpland:6062 a brp:Land ;
+    rdfs:label "Western Samoa"@en,
+        "West-Samoa"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/WSM> ;
+    skos:notation "6062" ;
+    brp:datumEinde "1997-07-04"^^xsd:date ;
+    brp:isoAlpha2 "WS" ;
+    brp:isoAlpha3 "WSM" ;
+    brp:isoNumeric "882" ;
+    brp:tabel "34" .
+
+brpland:6063 a brp:Land ;
+    rdfs:label "Turkmenistan"@en,
+        "Turkmenistan"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TKM> ;
+    skos:notation "6063" ;
+    brp:isoAlpha2 "TM" ;
+    brp:isoAlpha3 "TKM" ;
+    brp:isoNumeric "795" ;
+    brp:tabel "34" .
+
+brpland:6064 a brp:Land ;
+    rdfs:label "Georgia"@en,
+        "Georgië"@nl ;
+    dct:valid "1991-12-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GEO> ;
+    skos:notation "6064" ;
+    brp:isoAlpha2 "GE" ;
+    brp:isoAlpha3 "GEO" ;
+    brp:isoNumeric "268" ;
+    brp:tabel "34" .
+
+brpland:6065 a brp:Land ;
+    rdfs:label "Bosnia and Herzegovina"@en,
+        "Bosnië-Herzegovina"@nl ;
+    dct:valid "1992-04-06"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BIH> ;
+    skos:notation "6065" ;
+    brp:isoAlpha2 "BA" ;
+    brp:isoAlpha3 "BIH" ;
+    brp:isoNumeric "070" ;
+    brp:tabel "34" .
+
+brpland:6066 a brp:Land ;
+    rdfs:label "Czechia"@en,
+        "Tsjechië"@nl ;
+    dct:valid "1993-01-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CZE> ;
+    skos:notation "6066" ;
+    brp:isoAlpha2 "CZ" ;
+    brp:isoAlpha3 "CZE" ;
+    brp:isoNumeric "203" ;
+    brp:tabel "34" .
+
+brpland:6067 a brp:Land ;
+    rdfs:label "Slovakia"@en,
+        "Slowakije"@nl ;
+    dct:valid "1993-01-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SVK> ;
+    skos:notation "6067" ;
+    brp:isoAlpha2 "SK" ;
+    brp:isoAlpha3 "SVK" ;
+    brp:isoNumeric "703" ;
+    brp:tabel "34" .
+
+brpland:6068 a brp:Land ;
+    rdfs:label "Yugoslavia"@en,
+        "Federale Republiek Joegoslavië"@nl ;
+    dct:valid "1992-04-27"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/YUG> ;
+    skos:notation "6068" ;
+    brp:datumEinde "2004-02-01"^^xsd:date ;
+    brp:isoAlpha2 "YU" ;
+    brp:isoAlpha3 "YUG" ;
+    brp:isoNumeric "891" ;
+    brp:tabel "34" .
+
+brpland:6069 a brp:Land ;
+    rdfs:label "Congo, Democratic Republic of the"@en,
+        "Democratische Republiek Congo"@nl ;
+    dct:valid "1997-05-17"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/COD> ;
+    skos:notation "6069" ;
+    brp:isoAlpha2 "CD" ;
+    brp:isoAlpha3 "COD" ;
+    brp:isoNumeric "180" ;
+    brp:tabel "34" .
+
+brpland:7001 a brp:Land ;
+    rdfs:label "Uganda"@en,
+        "Uganda"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/UGA> ;
+    skos:notation "7001" ;
+    brp:isoAlpha2 "UG" ;
+    brp:isoAlpha3 "UGA" ;
+    brp:isoNumeric "800" ;
+    brp:tabel "34" .
+
+brpland:7002 a brp:Land ;
+    rdfs:label "Kenya"@en,
+        "Kenya"@nl ;
+    dct:valid "1963-12-12"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KEN> ;
+    skos:notation "7002" ;
+    brp:isoAlpha2 "KE" ;
+    brp:isoAlpha3 "KEN" ;
+    brp:isoNumeric "404" ;
+    brp:tabel "34" .
+
+brpland:7003 a brp:Land ;
+    rdfs:label "Malta"@en,
+        "Malta"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MLT> ;
+    skos:notation "7003" ;
+    brp:isoAlpha2 "MT" ;
+    brp:isoAlpha3 "MLT" ;
+    brp:isoNumeric "470" ;
+    brp:tabel "34" .
+
+brpland:7004 a brp:Land ;
+    rdfs:label "Barbados"@en,
+        "Barbados"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BRB> ;
+    skos:notation "7004" ;
+    brp:isoAlpha2 "BB" ;
+    brp:isoAlpha3 "BRB" ;
+    brp:isoNumeric "052" ;
+    brp:tabel "34" .
+
+brpland:7005 a brp:Land ;
+    rdfs:label "Andorra"@en,
+        "Andorra"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AND> ;
+    skos:notation "7005" ;
+    brp:isoAlpha2 "AD" ;
+    brp:isoAlpha3 "AND" ;
+    brp:isoNumeric "020" ;
+    brp:tabel "34" .
+
+brpland:7006 a brp:Land ;
+    rdfs:label "Mexico"@en,
+        "Mexico"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MEX> ;
+    skos:notation "7006" ;
+    brp:isoAlpha2 "MX" ;
+    brp:isoAlpha3 "MEX" ;
+    brp:isoNumeric "484" ;
+    brp:tabel "34" .
+
+brpland:7007 a brp:Land ;
+    rdfs:label "Costa Rica"@en,
+        "Costa Rica"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CRI> ;
+    skos:notation "7007" ;
+    brp:isoAlpha2 "CR" ;
+    brp:isoAlpha3 "CRI" ;
+    brp:isoNumeric "188" ;
+    brp:tabel "34" .
+
+brpland:7008 a brp:Land ;
+    rdfs:label "Gambia"@en,
+        "Gambia"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GMB> ;
+    skos:notation "7008" ;
+    brp:isoAlpha2 "GM" ;
+    brp:isoAlpha3 "GMB" ;
+    brp:isoNumeric "270" ;
+    brp:tabel "34" .
+
+brpland:7009 a brp:Land ;
+    rdfs:label "Syrian Arab Republic"@en,
+        "Syrië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SYR> ;
+    skos:notation "7009" ;
+    brp:isoAlpha2 "SY" ;
+    brp:isoAlpha3 "SYR" ;
+    brp:isoNumeric "760" ;
+    brp:tabel "34" .
+
+brpland:7011 a brp:Land ;
+    rdfs:label "Netherlands Antilles"@en,
+        "Nederlandse Antillen"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ANT> ;
+    skos:notation "7011" ;
+    brp:datumEinde "2010-10-10"^^xsd:date ;
+    brp:isoAlpha2 "AN" ;
+    brp:isoAlpha3 "ANT" ;
+    brp:isoNumeric "530" ;
+    brp:tabel "34" .
+
+brpland:7012 a brp:Land ;
+    rdfs:label "Zuid-Jemen"@nl ;
+    dct:valid "1967-11-27"^^xsd:date ;
+    skos:notation "7012" ;
+    brp:datumEinde "1990-05-22"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7014 a brp:Land ;
+    rdfs:label "Egypt"@en,
+        "Egypte"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/EGY> ;
+    skos:notation "7014" ;
+    brp:isoAlpha2 "EG" ;
+    brp:isoAlpha3 "EGY" ;
+    brp:isoNumeric "818" ;
+    brp:tabel "34" .
+
+brpland:7015 a brp:Land ;
+    rdfs:label "Argentina"@en,
+        "Argentinië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ARG> ;
+    skos:notation "7015" ;
+    brp:isoAlpha2 "AR" ;
+    brp:isoAlpha3 "ARG" ;
+    brp:isoNumeric "032" ;
+    brp:tabel "34" .
+
+brpland:7016 a brp:Land ;
+    rdfs:label "Lesotho"@en,
+        "Lesotho"@nl ;
+    dct:valid "1966-10-04"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LSO> ;
+    skos:notation "7016" ;
+    brp:isoAlpha2 "LS" ;
+    brp:isoAlpha3 "LSO" ;
+    brp:isoNumeric "426" ;
+    brp:tabel "34" .
+
+brpland:7017 a brp:Land ;
+    rdfs:label "Honduras"@en,
+        "Honduras"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/HND> ;
+    skos:notation "7017" ;
+    brp:isoAlpha2 "HN" ;
+    brp:isoAlpha3 "HND" ;
+    brp:isoNumeric "340" ;
+    brp:tabel "34" .
+
+brpland:7018 a brp:Land ;
+    rdfs:label "Nicaragua"@en,
+        "Nicaragua"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NIC> ;
+    skos:notation "7018" ;
+    brp:isoAlpha2 "NI" ;
+    brp:isoAlpha3 "NIC" ;
+    brp:isoNumeric "558" ;
+    brp:tabel "34" .
+
+brpland:7020 a brp:Land ;
+    rdfs:label "Pakistan"@en,
+        "Pakistan"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PAK> ;
+    skos:notation "7020" ;
+    brp:isoAlpha2 "PK" ;
+    brp:isoAlpha3 "PAK" ;
+    brp:isoNumeric "586" ;
+    brp:tabel "34" .
+
+brpland:7021 a brp:Land ;
+    rdfs:label "Senegal"@en,
+        "Senegal"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SEN> ;
+    skos:notation "7021" ;
+    brp:isoAlpha2 "SN" ;
+    brp:isoAlpha3 "SEN" ;
+    brp:isoNumeric "686" ;
+    brp:tabel "34" .
+
+brpland:7023 a brp:Land ;
+    rdfs:label "Dahomey"@nl ;
+    skos:notation "7023" ;
+    brp:datumEinde "1975-11-30"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7024 a brp:Land ;
+    rdfs:label "Bulgaria"@en,
+        "Bulgarije"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BGR> ;
+    skos:notation "7024" ;
+    brp:isoAlpha2 "BG" ;
+    brp:isoAlpha3 "BGR" ;
+    brp:isoNumeric "100" ;
+    brp:tabel "34" .
+
+brpland:7026 a brp:Land ;
+    rdfs:label "Malaysia"@en,
+        "Maleisië"@nl ;
+    dct:valid "1963-09-16"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MYS> ;
+    skos:notation "7026" ;
+    brp:isoAlpha2 "MY" ;
+    brp:isoAlpha3 "MYS" ;
+    brp:isoNumeric "458" ;
+    brp:tabel "34" .
+
+brpland:7027 a brp:Land ;
+    rdfs:label "Dominican Republic"@en,
+        "Dominicaanse Republiek"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/DOM> ;
+    skos:notation "7027" ;
+    brp:isoAlpha2 "DO" ;
+    brp:isoAlpha3 "DOM" ;
+    brp:isoNumeric "214" ;
+    brp:tabel "34" .
+
+brpland:7028 a brp:Land ;
+    rdfs:label "Poland"@en,
+        "Polen"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/POL> ;
+    skos:notation "7028" ;
+    brp:isoAlpha2 "PL" ;
+    brp:isoAlpha3 "POL" ;
+    brp:isoNumeric "616" ;
+    brp:tabel "34" .
+
+brpland:7029 a brp:Land ;
+    rdfs:label "Rusland (oud)"@nl ;
+    skos:notation "7029" ;
+    brp:datumEinde "1917-11-07"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7030 a brp:Land ;
+    rdfs:label "Virgin Islands (British)"@en,
+        "Britse Maagdeneilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VGB> ;
+    skos:notation "7030" ;
+    brp:isoAlpha2 "VG" ;
+    brp:isoAlpha3 "VGB" ;
+    brp:isoNumeric "092" ;
+    brp:tabel "34" .
+
+brpland:7031 a brp:Land ;
+    rdfs:label "Tanzania, United Republic of"@en,
+        "Tanzania"@nl ;
+    dct:valid "1964-04-27"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TZA> ;
+    skos:notation "7031" ;
+    brp:isoAlpha2 "TZ" ;
+    brp:isoAlpha3 "TZA" ;
+    brp:isoNumeric "834" ;
+    brp:tabel "34" .
+
+brpland:7032 a brp:Land ;
+    rdfs:label "El Salvador"@en,
+        "El Salvador"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SLV> ;
+    skos:notation "7032" ;
+    brp:isoAlpha2 "SV" ;
+    brp:isoAlpha3 "SLV" ;
+    brp:isoNumeric "222" ;
+    brp:tabel "34" .
+
+brpland:7033 a brp:Land ;
+    rdfs:label "Sri Lanka"@en,
+        "Sri Lanka"@nl ;
+    dct:valid "1972-05-22"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LKA> ;
+    skos:notation "7033" ;
+    brp:isoAlpha2 "LK" ;
+    brp:isoAlpha3 "LKA" ;
+    brp:isoNumeric "144" ;
+    brp:tabel "34" .
+
+brpland:7034 a brp:Land ;
+    rdfs:label "Sudan"@en,
+        "Soedan"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SDN> ;
+    skos:notation "7034" ;
+    brp:isoAlpha2 "SD" ;
+    brp:isoAlpha3 "SDN" ;
+    brp:isoNumeric "736" ;
+    brp:tabel "34" .
+
+brpland:7035 a brp:Land ;
+    rdfs:label "Japan"@en,
+        "Japan"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/JPN> ;
+    skos:notation "7035" ;
+    brp:isoAlpha2 "JP" ;
+    brp:isoAlpha3 "JPN" ;
+    brp:isoNumeric "392" ;
+    brp:tabel "34" .
+
+brpland:7036 a brp:Land ;
+    rdfs:label "Hong Kong"@en,
+        "Hongkong"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/HKG> ;
+    skos:notation "7036" ;
+    brp:datumEinde "1997-07-01"^^xsd:date ;
+    brp:isoAlpha2 "HK" ;
+    brp:isoAlpha3 "HKG" ;
+    brp:isoNumeric "344" ;
+    brp:tabel "34" .
+
+brpland:7037 a brp:Land ;
+    rdfs:label "Panama"@en,
+        "Panama"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PAN> ;
+    skos:notation "7037" ;
+    brp:isoAlpha2 "PA" ;
+    brp:isoAlpha3 "PAN" ;
+    brp:isoNumeric "591" ;
+    brp:tabel "34" .
+
+brpland:7038 a brp:Land ;
+    rdfs:label "Uruguay"@en,
+        "Uruguay"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/URY> ;
+    skos:notation "7038" ;
+    brp:isoAlpha2 "UY" ;
+    brp:isoAlpha3 "URY" ;
+    brp:isoNumeric "858" ;
+    brp:tabel "34" .
+
+brpland:7039 a brp:Land ;
+    rdfs:label "Ecuador"@en,
+        "Ecuador"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ECU> ;
+    skos:notation "7039" ;
+    brp:isoAlpha2 "EC" ;
+    brp:isoAlpha3 "ECU" ;
+    brp:isoNumeric "218" ;
+    brp:tabel "34" .
+
+brpland:7040 a brp:Land ;
+    rdfs:label "Guinea"@en,
+        "Guinee"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GIN> ;
+    skos:notation "7040" ;
+    brp:isoAlpha2 "GN" ;
+    brp:isoAlpha3 "GIN" ;
+    brp:isoNumeric "324" ;
+    brp:tabel "34" .
+
+brpland:7041 a brp:Land ;
+    rdfs:label "Maldives"@en,
+        "Maldiven"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MDV> ;
+    skos:notation "7041" ;
+    brp:isoAlpha2 "MV" ;
+    brp:isoAlpha3 "MDV" ;
+    brp:isoNumeric "462" ;
+    brp:tabel "34" .
+
+brpland:7042 a brp:Land ;
+    rdfs:label "Thailand"@en,
+        "Thailand"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/THA> ;
+    skos:notation "7042" ;
+    brp:isoAlpha2 "TH" ;
+    brp:isoAlpha3 "THA" ;
+    brp:isoNumeric "764" ;
+    brp:tabel "34" .
+
+brpland:7043 a brp:Land ;
+    rdfs:label "Lebanon"@en,
+        "Libanon"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LBN> ;
+    skos:notation "7043" ;
+    brp:isoAlpha2 "LB" ;
+    brp:isoAlpha3 "LBN" ;
+    brp:isoNumeric "422" ;
+    brp:tabel "34" .
+
+brpland:7044 a brp:Land ;
+    rdfs:label "Italy"@en,
+        "Italië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ITA> ;
+    skos:notation "7044" ;
+    brp:isoAlpha2 "IT" ;
+    brp:isoAlpha3 "ITA" ;
+    brp:isoNumeric "380" ;
+    brp:tabel "34" .
+
+brpland:7045 a brp:Land ;
+    rdfs:label "Kuwait"@en,
+        "Koeweit"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KWT> ;
+    skos:notation "7045" ;
+    brp:isoAlpha2 "KW" ;
+    brp:isoAlpha3 "KWT" ;
+    brp:isoNumeric "414" ;
+    brp:tabel "34" .
+
+brpland:7046 a brp:Land ;
+    rdfs:label "India"@en,
+        "India"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IND> ;
+    skos:notation "7046" ;
+    brp:isoAlpha2 "IN" ;
+    brp:isoAlpha3 "IND" ;
+    brp:isoNumeric "356" ;
+    brp:tabel "34" .
+
+brpland:7047 a brp:Land ;
+    rdfs:label "Romania"@en,
+        "Roemenië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ROU> ;
+    skos:notation "7047" ;
+    brp:isoAlpha2 "RO" ;
+    brp:isoAlpha3 "ROU" ;
+    brp:isoNumeric "642" ;
+    brp:tabel "34" .
+
+brpland:7048 a brp:Land ;
+    rdfs:label "Tsjecho-Slowakije"@nl ;
+    skos:notation "7048" ;
+    brp:datumEinde "1993-01-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7049 a brp:Land ;
+    rdfs:label "Peru"@en,
+        "Peru"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PER> ;
+    skos:notation "7049" ;
+    brp:isoAlpha2 "PE" ;
+    brp:isoAlpha3 "PER" ;
+    brp:isoNumeric "604" ;
+    brp:tabel "34" .
+
+brpland:7050 a brp:Land ;
+    rdfs:label "Portugal"@en,
+        "Portugal"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PRT> ;
+    skos:notation "7050" ;
+    brp:isoAlpha2 "PT" ;
+    brp:isoAlpha3 "PRT" ;
+    brp:isoNumeric "620" ;
+    brp:tabel "34" .
+
+brpland:7051 a brp:Land ;
+    rdfs:label "Oman"@en,
+        "Oman"@nl ;
+    dct:valid "1970-08-09"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/OMN> ;
+    skos:notation "7051" ;
+    brp:isoAlpha2 "OM" ;
+    brp:isoAlpha3 "OMN" ;
+    brp:isoNumeric "512" ;
+    brp:tabel "34" .
+
+brpland:7052 a brp:Land ;
+    rdfs:label "Mongolia"@en,
+        "Mongolië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MNG> ;
+    skos:notation "7052" ;
+    brp:isoAlpha2 "MN" ;
+    brp:isoAlpha3 "MNG" ;
+    brp:isoNumeric "496" ;
+    brp:tabel "34" .
+
+brpland:7053 a brp:Land ;
+    rdfs:label "Samoa"@en,
+        "Samoa"@nl ;
+    dct:valid "1997-07-04"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/WSM> ;
+    skos:notation "7053" ;
+    brp:isoAlpha2 "WS" ;
+    brp:isoAlpha3 "WSM" ;
+    brp:isoNumeric "882" ;
+    brp:tabel "34" .
+
+brpland:7054 a brp:Land ;
+    rdfs:label "United Arab Emirates"@en,
+        "Verenigde Arabische Emiraten"@nl ;
+    dct:valid "1971-12-02"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ARE> ;
+    skos:notation "7054" ;
+    brp:isoAlpha2 "AE" ;
+    brp:isoAlpha3 "ARE" ;
+    brp:isoNumeric "784" ;
+    brp:tabel "34" .
+
+brpland:7055 a brp:Land ;
+    rdfs:label "Xizang Zizhiqu"@en,
+        "Tibet"@nl ;
+    skos:notation "7055" ;
+    brp:tabel "34" .
+
+brpland:7057 a brp:Land ;
+    rdfs:label "Nauru"@en,
+        "Nauru"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NRU> ;
+    skos:notation "7057" ;
+    brp:isoAlpha2 "NR" ;
+    brp:isoAlpha3 "NRU" ;
+    brp:isoNumeric "520" ;
+    brp:tabel "34" .
+
+brpland:7058 a brp:Land ;
+    rdfs:label "Nederlands Nieuw-Guinea"@nl ;
+    skos:notation "7058" ;
+    brp:datumEinde "1962-10-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7059 a brp:Land ;
+    rdfs:label "Tanganyika"@nl ;
+    skos:notation "7059" ;
+    brp:datumEinde "1964-04-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7060 a brp:Land ;
+    rdfs:label "Palestina"@nl ;
+    skos:notation "7060" ;
+    brp:datumEinde "1948-05-15"^^xsd:date ;
+    brp:isoAlpha2 "PS" ;
+    brp:tabel "34" .
+
+brpland:7062 a brp:Land ;
+    rdfs:label "Brits West-Indië"@nl ;
+    skos:notation "7062" ;
+    brp:datumEinde "1962-02-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7063 a brp:Land ;
+    rdfs:label "Portugees-Afrika"@nl ;
+    skos:notation "7063" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7064 a brp:Land ;
+    rdfs:label "Latvia"@en,
+        "Letland"@nl ;
+    dct:valid "1918-11-18"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LVA> ;
+    skos:notation "7064" ;
+    brp:isoAlpha2 "LV" ;
+    brp:isoAlpha3 "LVA" ;
+    brp:isoNumeric "428" ;
+    brp:tabel "34" .
+
+brpland:7065 a brp:Land ;
+    rdfs:label "Estonia"@en,
+        "Estland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/EST> ;
+    skos:notation "7065" ;
+    brp:isoAlpha2 "EE" ;
+    brp:isoAlpha3 "EST" ;
+    brp:isoNumeric "233" ;
+    brp:tabel "34" .
+
+brpland:7066 a brp:Land ;
+    rdfs:label "Lithuania"@en,
+        "Litouwen"@nl ;
+    dct:valid "1918-02-16"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LTU> ;
+    skos:notation "7066" ;
+    brp:isoAlpha2 "LT" ;
+    brp:isoAlpha3 "LTU" ;
+    brp:isoNumeric "440" ;
+    brp:tabel "34" .
+
+brpland:7067 a brp:Land ;
+    rdfs:label "Brits-Afrika"@nl ;
+    skos:notation "7067" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7068 a brp:Land ;
+    rdfs:label "Belgisch-Congo"@nl ;
+    skos:notation "7068" ;
+    brp:datumEinde "1960-06-30"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7070 a brp:Land ;
+    rdfs:label "Brits-Indië"@nl ;
+    skos:notation "7070" ;
+    brp:datumEinde "1947-08-15"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7071 a brp:Land ;
+    rdfs:label "Noord-Rhodesië"@nl ;
+    skos:notation "7071" ;
+    brp:datumEinde "1964-10-24"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7072 a brp:Land ;
+    rdfs:label "Zuid-Rhodesië"@nl ;
+    skos:notation "7072" ;
+    brp:datumEinde "1965-11-11"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7073 a brp:Land ;
+    rdfs:label "Saarland"@nl ;
+    skos:notation "7073" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7074 a brp:Land ;
+    rdfs:label "Frans Indochina"@nl ;
+    skos:notation "7074" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7075 a brp:Land ;
+    rdfs:label "Brits West-Borneo"@nl ;
+    skos:notation "7075" ;
+    brp:datumEinde "1963-09-16"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7076 a brp:Land ;
+    rdfs:label "Goudkust"@nl ;
+    skos:notation "7076" ;
+    brp:datumEinde "1957-03-06"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7077 a brp:Land ;
+    rdfs:label "Ras al-Khaimah"@nl ;
+    skos:notation "7077" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7079 a brp:Land ;
+    rdfs:label "Frans-Congo"@nl ;
+    skos:notation "7079" ;
+    brp:datumEinde "1960-08-15"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7080 a brp:Land ;
+    rdfs:label "Siam"@nl ;
+    skos:notation "7080" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7082 a brp:Land ;
+    rdfs:label "Brits Oost-Afrika"@nl ;
+    skos:notation "7082" ;
+    brp:datumEinde "1963-12-12"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7083 a brp:Land ;
+    rdfs:label "Brits Noord-Borneo"@nl ;
+    skos:notation "7083" ;
+    brp:datumEinde "1963-09-16"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7084 a brp:Land ;
+    rdfs:label "Bangladesh"@en,
+        "Bangladesh"@nl ;
+    dct:valid "1971-12-16"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BGD> ;
+    skos:notation "7084" ;
+    brp:isoAlpha2 "BD" ;
+    brp:isoAlpha3 "BGD" ;
+    brp:isoNumeric "050" ;
+    brp:tabel "34" .
+
+brpland:7085 a brp:Land ;
+    rdfs:label "Duitse Democratische Republiek"@nl ;
+    dct:valid "1949-10-07"^^xsd:date ;
+    skos:notation "7085" ;
+    brp:datumEinde "1990-10-03"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7087 a brp:Land ;
+    rdfs:label "Região Autónoma da Madeira"@en,
+        "Madeira-eilanden"@nl ;
+    skos:notation "7087" ;
+    brp:tabel "34" .
+
+brpland:7088 a brp:Land ;
+    rdfs:label "Virgin Islands (U.S.)"@en,
+        "Amerikaanse Maagdeneilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VIR> ;
+    skos:notation "7088" ;
+    brp:isoAlpha2 "VI" ;
+    brp:isoAlpha3 "VIR" ;
+    brp:isoNumeric "850" ;
+    brp:tabel "34" .
+
+brpland:7089 a brp:Land ;
+    rdfs:label "Australische Salomonseilanden"@nl ;
+    skos:notation "7089" ;
+    brp:datumEinde "1975-09-16"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7091 a brp:Land ;
+    rdfs:label "Spaanse Sahara"@nl ;
+    skos:notation "7091" ;
+    brp:datumEinde "1976-02-26"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7092 a brp:Land ;
+    rdfs:label "Cayman Islands"@en,
+        "Caymaneilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CYM> ;
+    skos:notation "7092" ;
+    brp:isoAlpha2 "KY" ;
+    brp:isoAlpha3 "CYM" ;
+    brp:isoNumeric "136" ;
+    brp:tabel "34" .
+
+brpland:7093 a brp:Land ;
+    rdfs:label "Caicoseilanden"@nl ;
+    skos:notation "7093" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7094 a brp:Land ;
+    rdfs:label "Turkseilanden"@nl ;
+    skos:notation "7094" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:7095 a brp:Land ;
+    rdfs:label "Antarctica"@en,
+        "Brits Antarctisch Territorium"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ATA> ;
+    skos:notation "7095" ;
+    brp:isoAlpha2 "AQ" ;
+    brp:isoAlpha3 "ATA" ;
+    brp:isoNumeric "010" ;
+    brp:tabel "34" .
+
+brpland:7096 a brp:Land ;
+    rdfs:label "British Indian Ocean Territory"@en,
+        "Brits Indische Oceaanterritorium"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IOT> ;
+    skos:notation "7096" ;
+    brp:isoAlpha2 "IO" ;
+    brp:isoAlpha3 "IOT" ;
+    brp:isoNumeric "086" ;
+    brp:tabel "34" .
+
+brpland:7097 a brp:Land ;
+    rdfs:label "Cook Islands"@en,
+        "Cookeilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/COK> ;
+    skos:notation "7097" ;
+    brp:isoAlpha2 "CK" ;
+    brp:isoAlpha3 "COK" ;
+    brp:isoNumeric "184" ;
+    brp:tabel "34" .
+
+brpland:7098 a brp:Land ;
+    rdfs:label "Tokelau"@en,
+        "Tokelau"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TKL> ;
+    skos:notation "7098" ;
+    brp:isoAlpha2 "TK" ;
+    brp:isoAlpha3 "TKL" ;
+    brp:isoNumeric "772" ;
+    brp:tabel "34" .
+
+brpland:7099 a brp:Land ;
+    rdfs:label "New Caledonia"@en,
+        "Nieuw-Caledonië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NCL> ;
+    skos:notation "7099" ;
+    brp:isoAlpha2 "NC" ;
+    brp:isoAlpha3 "NCL" ;
+    brp:isoNumeric "540" ;
+    brp:tabel "34" .
+
+brpland:8000 a brp:Land ;
+    rdfs:label "Hawaii-eilanden"@nl ;
+    skos:notation "8000" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8001 a brp:Land ;
+    rdfs:label "Guam"@en,
+        "Guam"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GUM> ;
+    skos:notation "8001" ;
+    brp:isoAlpha2 "GU" ;
+    brp:isoAlpha3 "GUM" ;
+    brp:isoNumeric "316" ;
+    brp:tabel "34" .
+
+brpland:8002 a brp:Land ;
+    rdfs:label "American Samoa"@en,
+        "Amerikaans-Samoa"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ASM> ;
+    skos:notation "8002" ;
+    brp:isoAlpha2 "AS" ;
+    brp:isoAlpha3 "ASM" ;
+    brp:isoNumeric "016" ;
+    brp:tabel "34" .
+
+brpland:8003 a brp:Land ;
+    rdfs:label "Midway Islands"@en,
+        "Midway"@nl ;
+    skos:notation "8003" ;
+    brp:tabel "34" .
+
+brpland:8004 a brp:Land ;
+    rdfs:label "Riukiu-eilanden"@nl ;
+    skos:notation "8004" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8005 a brp:Land ;
+    rdfs:label "Wake Island"@en,
+        "Wake"@nl ;
+    skos:notation "8005" ;
+    brp:tabel "34" .
+
+brpland:8006 a brp:Land ;
+    rdfs:label "Pacific-eilanden"@nl ;
+    skos:notation "8006" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8008 a brp:Land ;
+    rdfs:label "Grenada"@en,
+        "Grenada"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GRD> ;
+    skos:notation "8008" ;
+    brp:isoAlpha2 "GD" ;
+    brp:isoAlpha3 "GRD" ;
+    brp:isoNumeric "308" ;
+    brp:tabel "34" .
+
+brpland:8009 a brp:Land ;
+    rdfs:label "Northern Mariana Islands"@en,
+        "Marianen"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MNP> ;
+    skos:notation "8009" ;
+    brp:isoAlpha2 "MP" ;
+    brp:isoAlpha3 "MNP" ;
+    brp:isoNumeric "580" ;
+    brp:tabel "34" .
+
+brpland:8010 a brp:Land ;
+    rdfs:label "Cabinda"@nl ;
+    skos:notation "8010" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8011 a brp:Land ;
+    rdfs:label "Canton en Enderbury"@nl ;
+    skos:notation "8011" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8012 a brp:Land ;
+    rdfs:label "Christmas Island"@en,
+        "Christmaseiland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CXR> ;
+    skos:notation "8012" ;
+    brp:isoAlpha2 "CX" ;
+    brp:isoAlpha3 "CXR" ;
+    brp:isoNumeric "162" ;
+    brp:tabel "34" .
+
+brpland:8013 a brp:Land ;
+    rdfs:label "Cocos (Keeling) Islands"@en,
+        "Cocoseilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CCK> ;
+    skos:notation "8013" ;
+    brp:isoAlpha2 "CC" ;
+    brp:isoAlpha3 "CCK" ;
+    brp:isoNumeric "166" ;
+    brp:tabel "34" .
+
+brpland:8014 a brp:Land ;
+    rdfs:label "Faroe Islands"@en,
+        "Faeröer"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/FRO> ;
+    skos:notation "8014" ;
+    brp:isoAlpha2 "FO" ;
+    brp:isoAlpha3 "FRO" ;
+    brp:isoNumeric "234" ;
+    brp:tabel "34" .
+
+brpland:8015 a brp:Land ;
+    rdfs:label "Montserrat"@en,
+        "Montserrat"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MSR> ;
+    skos:notation "8015" ;
+    brp:isoAlpha2 "MS" ;
+    brp:isoAlpha3 "MSR" ;
+    brp:isoNumeric "500" ;
+    brp:tabel "34" .
+
+brpland:8016 a brp:Land ;
+    rdfs:label "Norfolk Island"@en,
+        "Norfolk"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NFK> ;
+    skos:notation "8016" ;
+    brp:isoAlpha2 "NF" ;
+    brp:isoAlpha3 "NFK" ;
+    brp:isoNumeric "574" ;
+    brp:tabel "34" .
+
+brpland:8017 a brp:Land ;
+    rdfs:label "Belize"@en,
+        "Belize"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BLZ> ;
+    skos:notation "8017" ;
+    brp:isoAlpha2 "BZ" ;
+    brp:isoAlpha3 "BLZ" ;
+    brp:isoNumeric "084" ;
+    brp:tabel "34" .
+
+brpland:8018 a brp:Land ;
+    rdfs:label "Tasmanië"@nl ;
+    skos:notation "8018" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8019 a brp:Land ;
+    rdfs:label "Turks and Caicos Islands"@en,
+        "Turks- en Caicoseilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TCA> ;
+    skos:notation "8019" ;
+    brp:isoAlpha2 "TC" ;
+    brp:isoAlpha3 "TCA" ;
+    brp:isoNumeric "796" ;
+    brp:tabel "34" .
+
+brpland:8020 a brp:Land ;
+    rdfs:label "Puerto Rico"@en,
+        "Puerto Rico"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PRI> ;
+    skos:notation "8020" ;
+    brp:isoAlpha2 "PR" ;
+    brp:isoAlpha3 "PRI" ;
+    brp:isoNumeric "630" ;
+    brp:tabel "34" .
+
+brpland:8021 a brp:Land ;
+    rdfs:label "Papua New Guinea"@en,
+        "Papoea-Nieuw-Guinea"@nl ;
+    dct:valid "1975-09-16"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PNG> ;
+    skos:notation "8021" ;
+    brp:isoAlpha2 "PG" ;
+    brp:isoAlpha3 "PNG" ;
+    brp:isoNumeric "598" ;
+    brp:tabel "34" .
+
+brpland:8022 a brp:Land ;
+    rdfs:label "Solomon Islands"@en,
+        "Salomonseilanden"@nl ;
+    dct:valid "1978-07-07"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SLB> ;
+    skos:notation "8022" ;
+    brp:isoAlpha2 "SB" ;
+    brp:isoAlpha3 "SLB" ;
+    brp:isoNumeric "090" ;
+    brp:tabel "34" .
+
+brpland:8023 a brp:Land ;
+    rdfs:label "Benin"@en,
+        "Benin"@nl ;
+    dct:valid "1975-11-30"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BEN> ;
+    skos:notation "8023" ;
+    brp:isoAlpha2 "BJ" ;
+    brp:isoAlpha3 "BEN" ;
+    brp:isoNumeric "204" ;
+    brp:tabel "34" .
+
+brpland:8024 a brp:Land ;
+    rdfs:label "Viet Nam"@en,
+        "Vietnam"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VNM> ;
+    skos:notation "8024" ;
+    brp:isoAlpha2 "VN" ;
+    brp:isoAlpha3 "VNM" ;
+    brp:isoNumeric "704" ;
+    brp:tabel "34" .
+
+brpland:8025 a brp:Land ;
+    rdfs:label "Cabo Verde"@en,
+        "Kaapverdië"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CPV> ;
+    skos:notation "8025" ;
+    brp:isoAlpha2 "CV" ;
+    brp:isoAlpha3 "CPV" ;
+    brp:isoNumeric "132" ;
+    brp:tabel "34" .
+
+brpland:8026 a brp:Land ;
+    rdfs:label "Seychelles"@en,
+        "Seychellen"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SYC> ;
+    skos:notation "8026" ;
+    brp:isoAlpha2 "SC" ;
+    brp:isoAlpha3 "SYC" ;
+    brp:isoNumeric "690" ;
+    brp:tabel "34" .
+
+brpland:8027 a brp:Land ;
+    rdfs:label "Kiribati"@en,
+        "Kiribati"@nl ;
+    dct:valid "1979-07-12"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KIR> ;
+    skos:notation "8027" ;
+    brp:isoAlpha2 "KI" ;
+    brp:isoAlpha3 "KIR" ;
+    brp:isoNumeric "296" ;
+    brp:tabel "34" .
+
+brpland:8028 a brp:Land ;
+    rdfs:label "Tuvalu"@en,
+        "Tuvalu"@nl ;
+    dct:valid "1975-10-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/TUV> ;
+    skos:notation "8028" ;
+    brp:isoAlpha2 "TV" ;
+    brp:isoAlpha3 "TUV" ;
+    brp:isoNumeric "798" ;
+    brp:tabel "34" .
+
+brpland:8029 a brp:Land ;
+    rdfs:label "Saint Lucia"@en,
+        "Saint Lucia"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/LCA> ;
+    skos:notation "8029" ;
+    brp:isoAlpha2 "LC" ;
+    brp:isoAlpha3 "LCA" ;
+    brp:isoNumeric "662" ;
+    brp:tabel "34" .
+
+brpland:8030 a brp:Land ;
+    rdfs:label "Dominica"@en,
+        "Dominica"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/DMA> ;
+    skos:notation "8030" ;
+    brp:isoAlpha2 "DM" ;
+    brp:isoAlpha3 "DMA" ;
+    brp:isoNumeric "212" ;
+    brp:tabel "34" .
+
+brpland:8031 a brp:Land ;
+    rdfs:label "Zimbabwe"@en,
+        "Zimbabwe"@nl ;
+    dct:valid "1979-06-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ZWE> ;
+    skos:notation "8031" ;
+    brp:isoAlpha2 "ZW" ;
+    brp:isoAlpha3 "ZWE" ;
+    brp:isoNumeric "716" ;
+    brp:tabel "34" .
+
+brpland:8032 a brp:Land ;
+    rdfs:label "Dubai"@nl ;
+    skos:notation "8032" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8033 a brp:Land ;
+    rdfs:label "Nieuwe Hebriden"@nl ;
+    skos:notation "8033" ;
+    brp:datumEinde "1980-07-30"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8034 a brp:Land ;
+    rdfs:label "Kanaaleilanden"@nl ;
+    skos:notation "8034" ;
+    brp:tabel "34" .
+
+brpland:8035 a brp:Land ;
+    rdfs:label "Isle of Man"@en,
+        "Man"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/IMN> ;
+    skos:notation "8035" ;
+    brp:isoAlpha2 "IM" ;
+    brp:isoAlpha3 "IMN" ;
+    brp:isoNumeric "833" ;
+    brp:tabel "34" .
+
+brpland:8036 a brp:Land ;
+    rdfs:label "Anguilla"@en,
+        "Anguilla"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/AIA> ;
+    skos:notation "8036" ;
+    brp:isoAlpha2 "AI" ;
+    brp:isoAlpha3 "AIA" ;
+    brp:isoNumeric "660" ;
+    brp:tabel "34" .
+
+brpland:8037 a brp:Land ;
+    rdfs:label "Saint Kitts and Nevis"@en,
+        "Saint Kitts en Nevis"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/KNA> ;
+    skos:notation "8037" ;
+    brp:isoAlpha2 "KN" ;
+    brp:isoAlpha3 "KNA" ;
+    brp:isoNumeric "659" ;
+    brp:tabel "34" .
+
+brpland:8038 a brp:Land ;
+    rdfs:label "Antigua"@nl ;
+    skos:notation "8038" ;
+    brp:datumEinde "1981-11-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8039 a brp:Land ;
+    rdfs:label "Saint Vincent"@nl ;
+    skos:notation "8039" ;
+    brp:datumEinde "1979-10-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8040 a brp:Land ;
+    rdfs:label "Gilberteilanden"@nl ;
+    skos:notation "8040" ;
+    brp:datumEinde "1979-07-12"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8041 a brp:Land ;
+    rdfs:label "Panama Canal Zone"@en,
+        "Panamakanaalzone"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PCZ> ;
+    skos:notation "8041" ;
+    brp:isoAlpha2 "PZ" ;
+    brp:isoAlpha3 "PCZ" ;
+    brp:tabel "34" .
+
+brpland:8042 a brp:Land ;
+    rdfs:label "Saint Kitts, Nevis en Anguilla"@nl ;
+    dct:valid "1967-02-27"^^xsd:date ;
+    skos:notation "8042" ;
+    brp:datumEinde "1980-12-19"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:8043 a brp:Land ;
+    rdfs:label "Palau"@en,
+        "Belau"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PLW> ;
+    skos:notation "8043" ;
+    brp:datumEinde "1994-10-01"^^xsd:date ;
+    brp:isoAlpha2 "PW" ;
+    brp:isoAlpha3 "PLW" ;
+    brp:isoNumeric "585" ;
+    brp:tabel "34" .
+
+brpland:8044 a brp:Land ;
+    rdfs:label "Palau"@en,
+        "Palau"@nl ;
+    dct:valid "1994-10-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/PLW> ;
+    skos:notation "8044" ;
+    brp:isoAlpha2 "PW" ;
+    brp:isoAlpha3 "PLW" ;
+    brp:isoNumeric "585" ;
+    brp:tabel "34" .
+
+brpland:8045 a brp:Land ;
+    rdfs:label "Antigua and Barbuda"@en,
+        "Antigua en Barbuda"@nl ;
+    dct:valid "1981-11-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ATG> ;
+    skos:notation "8045" ;
+    brp:isoAlpha2 "AG" ;
+    brp:isoAlpha3 "ATG" ;
+    brp:isoNumeric "028" ;
+    brp:tabel "34" .
+
+brpland:9000 a brp:Land ;
+    rdfs:label "Newfoundland"@nl ;
+    skos:notation "9000" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9001 a brp:Land ;
+    rdfs:label "Nyasaland"@nl ;
+    skos:notation "9001" ;
+    brp:datumEinde "1964-07-06"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9003 a brp:Land ;
+    rdfs:label "Eritrea"@en,
+        "Eritrea"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ERI> ;
+    skos:notation "9003" ;
+    brp:isoAlpha2 "ER" ;
+    brp:isoAlpha3 "ERI" ;
+    brp:isoNumeric "232" ;
+    brp:tabel "34" .
+
+brpland:9005 a brp:Land ;
+    rdfs:label "Ifni"@nl ;
+    skos:notation "9005" ;
+    brp:datumEinde "1969-01-06"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9006 a brp:Land ;
+    rdfs:label "Brits-Kameroen"@nl ;
+    skos:notation "9006" ;
+    brp:datumEinde "1961-10-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9007 a brp:Land ;
+    rdfs:label "Keizer Wilhelmsland"@nl ;
+    skos:notation "9007" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9008 a brp:Land ;
+    rdfs:label "Congo"@en,
+        "Congo"@nl ;
+    dct:valid "1960-08-15"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/COG> ;
+    skos:notation "9008" ;
+    brp:isoAlpha2 "CG" ;
+    brp:isoAlpha3 "COG" ;
+    brp:isoNumeric "178" ;
+    brp:tabel "34" .
+
+brpland:9009 a brp:Land ;
+    rdfs:label "Congo-Kinshasa"@nl ;
+    skos:notation "9009" ;
+    brp:datumEinde "1971-10-27"^^xsd:date ;
+    brp:isoAlpha2 "CD" ;
+    brp:tabel "34" .
+
+brpland:9010 a brp:Land ;
+    rdfs:label "Madagascar"@en,
+        "Madagaskar"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MDG> ;
+    skos:notation "9010" ;
+    brp:isoAlpha2 "MG" ;
+    brp:isoAlpha3 "MDG" ;
+    brp:isoNumeric "450" ;
+    brp:tabel "34" .
+
+brpland:9013 a brp:Land ;
+    rdfs:label "Congo-Brazzaville"@nl ;
+    skos:notation "9013" ;
+    brp:datumEinde "1960-08-15"^^xsd:date ;
+    brp:isoAlpha2 "CG" ;
+    brp:tabel "34" .
+
+brpland:9014 a brp:Land ;
+    rdfs:label "Leewardeilanden"@nl ;
+    skos:notation "9014" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9015 a brp:Land ;
+    rdfs:label "Windwardeilanden"@nl ;
+    skos:notation "9015" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9016 a brp:Land ;
+    rdfs:label "Frans Territorium voor Afars en Issa's"@nl ;
+    skos:notation "9016" ;
+    brp:datumEinde "1977-06-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9017 a brp:Land ;
+    rdfs:label "Phoenixeilanden"@nl ;
+    skos:notation "9017" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9020 a brp:Land ;
+    rdfs:label "Portugees-Guinee"@nl ;
+    skos:notation "9020" ;
+    brp:datumEinde "1974-09-10"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9022 a brp:Land ;
+    rdfs:label "Duits Zuidwest-Afrika"@nl ;
+    skos:notation "9022" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9023 a brp:Land ;
+    rdfs:label "Namibia"@en,
+        "Namibië"@nl ;
+    dct:valid "1968-01-31"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NAM> ;
+    skos:notation "9023" ;
+    brp:isoAlpha2 "NA" ;
+    brp:isoAlpha3 "NAM" ;
+    brp:isoNumeric "516" ;
+    brp:tabel "34" .
+
+brpland:9027 a brp:Land ;
+    rdfs:label "Brits-Somaliland"@nl ;
+    skos:notation "9027" ;
+    brp:datumEinde "1960-07-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9028 a brp:Land ;
+    rdfs:label "Italiaans-Somaliland"@nl ;
+    skos:notation "9028" ;
+    brp:datumEinde "1960-07-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9030 a brp:Land ;
+    rdfs:label "Nederlands-Indië"@nl ;
+    skos:notation "9030" ;
+    brp:datumEinde "1949-12-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9031 a brp:Land ;
+    rdfs:label "Brits-Guyana"@nl ;
+    skos:notation "9031" ;
+    brp:datumEinde "1966-05-26"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9036 a brp:Land ;
+    rdfs:label "Swaziland"@en,
+        "Swaziland"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SWZ> ;
+    skos:notation "9036" ;
+    brp:datumEinde "2018-04-19"^^xsd:date ;
+    brp:isoAlpha2 "SZ" ;
+    brp:isoAlpha3 "SWZ" ;
+    brp:isoNumeric "748" ;
+    brp:tabel "34" .
+
+brpland:9037 a brp:Land ;
+    rdfs:label "Qatar"@en,
+        "Qatar"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/QAT> ;
+    skos:notation "9037" ;
+    brp:isoAlpha2 "QA" ;
+    brp:isoAlpha3 "QAT" ;
+    brp:isoNumeric "634" ;
+    brp:tabel "34" .
+
+brpland:9038 a brp:Land ;
+    rdfs:label "Eswatini"@en,
+        "Eswatini"@nl ;
+    dct:valid "2018-04-19"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SWZ> ;
+    skos:notation "9038" ;
+    brp:isoAlpha2 "SZ" ;
+    brp:isoAlpha3 "SWZ" ;
+    brp:isoNumeric "748" ;
+    brp:tabel "34" .
+
+brpland:9041 a brp:Land ;
+    rdfs:label "Aden"@nl ;
+    skos:notation "9041" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9042 a brp:Land ;
+    rdfs:label "Zuid-Arabische Federatie"@nl ;
+    dct:valid "1959-02-11"^^xsd:date ;
+    skos:notation "9042" ;
+    brp:datumEinde "1967-11-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9043 a brp:Land ;
+    rdfs:label "Equatorial Guinea"@en,
+        "Equatoriaal-Guinea"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/GNQ> ;
+    skos:notation "9043" ;
+    brp:isoAlpha2 "GQ" ;
+    brp:isoAlpha3 "GNQ" ;
+    brp:isoNumeric "226" ;
+    brp:tabel "34" .
+
+brpland:9044 a brp:Land ;
+    rdfs:label "Spaans-Guinee"@nl ;
+    skos:notation "9044" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9047 a brp:Land ;
+    rdfs:label "Verenigde Arabische Republiek"@nl ;
+    dct:valid "1958-02-22"^^xsd:date ;
+    skos:notation "9047" ;
+    brp:datumEinde "1961-09-28"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9048 a brp:Land ;
+    rdfs:label "Bermuda"@en,
+        "Bermuda"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/BMU> ;
+    skos:notation "9048" ;
+    brp:isoAlpha2 "BM" ;
+    brp:isoAlpha3 "BMU" ;
+    brp:isoNumeric "060" ;
+    brp:tabel "34" .
+
+brpland:9049 a brp:Land ;
+    rdfs:label "Sovjet-Unie"@nl ;
+    dct:valid "1917-11-07"^^xsd:date ;
+    skos:notation "9049" ;
+    brp:datumEinde "1991-12-31"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9050 a brp:Land ;
+    rdfs:label "Duits Oost-Afrika"@nl ;
+    skos:notation "9050" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9051 a brp:Land ;
+    rdfs:label "Zanzibar"@nl ;
+    skos:notation "9051" ;
+    brp:datumEinde "1964-04-27"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9052 a brp:Land ;
+    rdfs:label "Ceylon"@nl ;
+    skos:notation "9052" ;
+    brp:datumEinde "1972-05-22"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9053 a brp:Land ;
+    rdfs:label "Muscat en Oman"@nl ;
+    skos:notation "9053" ;
+    brp:datumEinde "1970-08-09"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9054 a brp:Land ;
+    rdfs:label "Trucial Oman"@nl ;
+    skos:notation "9054" ;
+    brp:datumEinde "1971-12-02"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9055 a brp:Land ;
+    rdfs:label "Indochina"@nl ;
+    skos:notation "9055" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9056 a brp:Land ;
+    rdfs:label "Marshall Islands"@en,
+        "Marshalleilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/MHL> ;
+    skos:notation "9056" ;
+    brp:isoAlpha2 "MH" ;
+    brp:isoAlpha3 "MHL" ;
+    brp:isoNumeric "584" ;
+    brp:tabel "34" .
+
+brpland:9057 a brp:Land ;
+    rdfs:label "Sarawak"@nl ;
+    skos:notation "9057" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9058 a brp:Land ;
+    rdfs:label "Brits-Borneo"@nl ;
+    skos:notation "9058" ;
+    brp:datumEinde "1963-09-16"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9060 a brp:Land ;
+    rdfs:label "Sabah"@nl ;
+    skos:notation "9060" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9061 a brp:Land ;
+    rdfs:label "Abu Dhabi"@nl ;
+    skos:notation "9061" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9062 a brp:Land ;
+    rdfs:label "Ajman"@nl ;
+    skos:notation "9062" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9063 a brp:Land ;
+    rdfs:label "Basutoland"@nl ;
+    skos:notation "9063" ;
+    brp:datumEinde "1966-10-04"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9064 a brp:Land ;
+    rdfs:label "Bechuanaland"@nl ;
+    skos:notation "9064" ;
+    brp:datumEinde "1966-09-30"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9065 a brp:Land ;
+    rdfs:label "Fujairah"@nl ;
+    skos:notation "9065" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9066 a brp:Land ;
+    rdfs:label "Frans-Kameroen"@nl ;
+    skos:notation "9066" ;
+    brp:datumEinde "1960-01-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9067 a brp:Land ;
+    rdfs:label "Johore"@nl ;
+    skos:notation "9067" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9068 a brp:Land ;
+    rdfs:label "Korea"@nl ;
+    skos:notation "9068" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9069 a brp:Land ;
+    rdfs:label "Labuan"@nl ;
+    skos:notation "9069" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9070 a brp:Land ;
+    rdfs:label "Umm Al-Qaiwain"@nl ;
+    skos:notation "9070" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9071 a brp:Land ;
+    rdfs:label "Oostenrijk-Hongarije"@nl ;
+    skos:notation "9071" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9072 a brp:Land ;
+    rdfs:label "Portugees Oost-Afrika"@nl ;
+    skos:notation "9072" ;
+    brp:datumEinde "1975-06-25"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9073 a brp:Land ;
+    rdfs:label "Portugees West-Afrika"@nl ;
+    skos:notation "9073" ;
+    brp:datumEinde "1975-11-11"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9074 a brp:Land ;
+    rdfs:label "Sharjah"@nl ;
+    skos:notation "9074" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9075 a brp:Land ;
+    rdfs:label "Straits Settlements"@nl ;
+    skos:notation "9075" ;
+    brp:datumEinde "1946-04-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9076 a brp:Land ;
+    rdfs:label "Abessinië"@nl ;
+    skos:notation "9076" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9077 a brp:Land ;
+    rdfs:label "Frans West-Afrika"@nl ;
+    skos:notation "9077" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9078 a brp:Land ;
+    rdfs:label "Frans Equatoriaal-Afrika"@nl ;
+    skos:notation "9078" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9081 a brp:Land ;
+    rdfs:label "Urundi"@nl ;
+    skos:notation "9081" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9082 a brp:Land ;
+    rdfs:label "Ruanda-Urundi"@nl ;
+    skos:notation "9082" ;
+    brp:datumEinde "1962-07-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9084 a brp:Land ;
+    rdfs:label "Goa"@nl ;
+    skos:notation "9084" ;
+    brp:datumEinde "1961-12-18"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9085 a brp:Land ;
+    rdfs:label "Dantzig"@nl ;
+    skos:notation "9085" ;
+    brp:datumEinde "1939-09-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9086 a brp:Land ;
+    rdfs:label "Central African Republic"@en,
+        "Centraal-Afrikaanse Republiek"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/CAF> ;
+    skos:notation "9086" ;
+    brp:isoAlpha2 "CF" ;
+    brp:isoAlpha3 "CAF" ;
+    brp:isoNumeric "140" ;
+    brp:tabel "34" .
+
+brpland:9087 a brp:Land ;
+    rdfs:label "Djibouti"@en,
+        "Djibouti"@nl ;
+    dct:valid "1977-06-27"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/DJI> ;
+    skos:notation "9087" ;
+    brp:isoAlpha2 "DJ" ;
+    brp:isoAlpha3 "DJI" ;
+    brp:isoNumeric "262" ;
+    brp:tabel "34" .
+
+brpland:9088 a brp:Land ;
+    rdfs:label "Transjordanië"@nl ;
+    dct:valid "1923-05-15"^^xsd:date ;
+    skos:notation "9088" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9089 a brp:Land ;
+    rdfs:label "Germany"@en,
+        "Bondsrepubliek Duitsland"@nl ;
+    dct:valid "1949-08-01"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/DEU> ;
+    skos:notation "9089" ;
+    brp:isoAlpha2 "DE" ;
+    brp:isoAlpha3 "DEU" ;
+    brp:isoNumeric "276" ;
+    brp:tabel "34" .
+
+brpland:9090 a brp:Land ;
+    rdfs:label "Vanuatu"@en,
+        "Vanuatu"@nl ;
+    dct:valid "1980-07-30"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/VUT> ;
+    skos:notation "9090" ;
+    brp:isoAlpha2 "VU" ;
+    brp:isoAlpha3 "VUT" ;
+    brp:isoNumeric "548" ;
+    brp:tabel "34" .
+
+brpland:9091 a brp:Land ;
+    rdfs:label "Niue"@en,
+        "Niue"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/NIU> ;
+    skos:notation "9091" ;
+    brp:isoAlpha2 "NU" ;
+    brp:isoAlpha3 "NIU" ;
+    brp:isoNumeric "570" ;
+    brp:tabel "34" .
+
+brpland:9092 a brp:Land ;
+    rdfs:label "Spaans Noord-Afrika"@nl ;
+    skos:notation "9092" ;
+    brp:datumEinde "1991-06-01"^^xsd:date ;
+    brp:tabel "34" .
+
+brpland:9093 a brp:Land ;
+    rdfs:label "Western Sahara"@en,
+        "Westelijke Sahara"@nl ;
+    dct:valid "1976-02-26"^^xsd:date ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/ESH> ;
+    skos:notation "9093" ;
+    brp:isoAlpha2 "EH" ;
+    brp:isoAlpha3 "ESH" ;
+    brp:isoNumeric "732" ;
+    brp:tabel "34" .
+
+brpland:9094 a brp:Land ;
+    rdfs:label "Micronesia, Federated States of"@en,
+        "Micronesia"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/FSM> ;
+    skos:notation "9094" ;
+    brp:isoAlpha2 "FM" ;
+    brp:isoAlpha3 "FSM" ;
+    brp:isoNumeric "583" ;
+    brp:tabel "34" .
+
+brpland:9095 a brp:Land ;
+    rdfs:label "Svalbard and Jan Mayen"@en,
+        "Svalbardeilanden"@nl ;
+    skos:exactMatch <http://publications.europa.eu/resource/authority/country/SJM> ;
+    skos:notation "9095" ;
+    brp:isoAlpha2 "SJ" ;
+    brp:isoAlpha3 "SJM" ;
+    brp:isoNumeric "744" ;
+    brp:tabel "34" .
+
+brpland:9999 a brp:Land ;
+    rdfs:label "Internationaal gebied"@nl ;
+    skos:notation "9999" ;
+    brp:tabel "34" .
+

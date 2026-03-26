@@ -1,0 +1,257 @@
+@prefix brp: <https://data.rijksoverheid.nl/brp/def#> .
+@prefix brpvbt: <https://data.rijksoverheid.nl/brp/verblijfstitel/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+brpvbt:00 a brp:VerblijfstitelType ;
+    rdfs:label "Onbekend"@nl ;
+    skos:notation "00" ;
+    brp:tabel "56" .
+
+brpvbt:09 a brp:VerblijfstitelType ;
+    rdfs:label "Art. 9 van de Vreemdelingenwet"@nl ;
+    skos:notation "09" ;
+    brp:datumEinde "1994-10-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:10 a brp:VerblijfstitelType ;
+    rdfs:label "Art. 10 van de Vreemdelingenwet"@nl ;
+    skos:notation "10" ;
+    brp:datumEinde "1994-10-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:11 a brp:VerblijfstitelType ;
+    rdfs:label "Vergunning art. 9 Vw, zonder beperking, dan wel gerechtigd krachtens art. 10 Vw"@nl ;
+    dct:valid "1967-01-01"^^xsd:date ;
+    skos:notation "11" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:12 a brp:VerblijfstitelType ;
+    rdfs:label "Vergunning art. 9 Vw, met beperking, die elke vorm arbeid in loondienst toestaat"@nl ;
+    dct:valid "1967-01-01"^^xsd:date ;
+    skos:notation "12" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:13 a brp:VerblijfstitelType ;
+    rdfs:label "Vergunning art. 9 Vw, met beperking, die arbeid in loondienst niet toestaat"@nl ;
+    dct:valid "1967-01-01"^^xsd:date ;
+    skos:notation "13" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:14 a brp:VerblijfstitelType ;
+    rdfs:label "Voorwaardelijke vergunning art. 9a Vw"@nl ;
+    dct:valid "1994-01-01"^^xsd:date ;
+    skos:notation "14" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:15 a brp:VerblijfstitelType ;
+    rdfs:label "Benelux of EG richtl nrs 68/360/EEG, 73/148/EEG 75/34/EEG, verord nr 1251/70/EEG"@nl ;
+    dct:valid "1952-07-23"^^xsd:date ;
+    skos:notation "15" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:16 a brp:VerblijfstitelType ;
+    rdfs:label "EG-richtlijnen nrs. 90/364/EEG, 90/365/EEG en 90/366/EEG"@nl ;
+    dct:valid "1952-07-23"^^xsd:date ;
+    skos:notation "16" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:17 a brp:VerblijfstitelType ;
+    rdfs:label "Verzoek tot toelating als vluchteling, uitzetting blijft achterwege"@nl ;
+    dct:valid "1954-04-21"^^xsd:date ;
+    skos:notation "17" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:18 a brp:VerblijfstitelType ;
+    rdfs:label "Gemeld bij VD, geen verzoek toelating als vluchteling, geen uitzetting"@nl ;
+    dct:valid "1946-01-01"^^xsd:date ;
+    skos:notation "18" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:19 a brp:VerblijfstitelType ;
+    rdfs:label "Vergunning art. 9 Vw, met andere beperking dan hierboven"@nl ;
+    dct:valid "1967-01-01"^^xsd:date ;
+    skos:notation "19" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:20 a brp:VerblijfstitelType ;
+    rdfs:label "Ander verdrag dan hierboven"@nl ;
+    dct:valid "1946-01-01"^^xsd:date ;
+    skos:notation "20" ;
+    brp:datumEinde "2001-04-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:21 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder a, vergunning regulier bepaalde tijd, arbeid vrij"@nl ;
+    skos:notation "21" ;
+    brp:tabel "56" .
+
+brpvbt:22 a brp:VerblijfstitelType ;
+    rdfs:label "Vw2000 art. 8, sub a, VVR bep tijd arbeid mits TWV, VVR bep tijd verblijf&arbeid"@nl ;
+    skos:notation "22" ;
+    brp:tabel "56" .
+
+brpvbt:23 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder a, vergunning regulier bepaalde tijd, arbeid specifiek"@nl ;
+    skos:notation "23" ;
+    brp:tabel "56" .
+
+brpvbt:24 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder a, vergunning regulier bepaalde tijd, geen arbeid"@nl ;
+    skos:notation "24" ;
+    brp:tabel "56" .
+
+brpvbt:25 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, sub b, verg. reg. onbep. tijd of langdurig ingez., arbeid vrij"@nl ;
+    skos:notation "25" ;
+    brp:tabel "56" .
+
+brpvbt:26 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder c, vergunning asiel bepaalde tijd, arbeid vrij"@nl ;
+    skos:notation "26" ;
+    brp:tabel "56" .
+
+brpvbt:27 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, sub d, verg. asiel onbep. tijd of langdurig ingez., arbeid vrij"@nl ;
+    skos:notation "27" ;
+    brp:tabel "56" .
+
+brpvbt:28 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, gemeenschapsonderdaan econ. actief, arbeid vrij"@nl ;
+    skos:notation "28" ;
+    brp:tabel "56" .
+
+brpvbt:29 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, gemeenschapsonderdaan econ. niet-actief, arbeid vrij"@nl ;
+    skos:notation "29" ;
+    brp:tabel "56" .
+
+brpvbt:30 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, toetsing aan het gemeenschapsrecht, arbeid vrij"@nl ;
+    skos:notation "30" ;
+    brp:tabel "56" .
+
+brpvbt:31 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder f en h, in procedure voor vergunning art. 14 Vw 2000"@nl ;
+    skos:notation "31" ;
+    brp:tabel "56" .
+
+brpvbt:32 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder f en h, in procedure voor vergunning art. 28 Vw 2000"@nl ;
+    skos:notation "32" ;
+    brp:tabel "56" .
+
+brpvbt:33 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder g en h, in procedure voortgezet verblijf, tijdige aanvr."@nl ;
+    skos:notation "33" ;
+    brp:tabel "56" .
+
+brpvbt:34 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder g en h, in procedure voortgezet verblijf, ontijdige aanvr."@nl ;
+    skos:notation "34" ;
+    brp:tabel "56" .
+
+brpvbt:35 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder l, Associatiebesluit 1/80 EEG/Turkije, arbeid specifiek"@nl ;
+    skos:notation "35" ;
+    brp:tabel "56" .
+
+brpvbt:36 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, gemeenschapsonderdaan econ. actief, arbeid specifiek"@nl ;
+    dct:valid "2004-05-01"^^xsd:date ;
+    skos:notation "36" ;
+    brp:tabel "56" .
+
+brpvbt:37 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, gemeenschapsonderdaan econ. niet-actief, arbeid spec."@nl ;
+    dct:valid "2004-05-01"^^xsd:date ;
+    skos:notation "37" ;
+    brp:tabel "56" .
+
+brpvbt:38 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, toetsing aan het gemeenschapsrecht, arbeid specifiek"@nl ;
+    dct:valid "2004-05-01"^^xsd:date ;
+    skos:notation "38" ;
+    brp:tabel "56" .
+
+brpvbt:39 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder m, in afwachting indiening asielaanvraag, geen arbeid"@nl ;
+    dct:valid "2000-01-01"^^xsd:date ;
+    skos:notation "39" ;
+    brp:datumEinde "2014-01-01"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:40 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder e, gemeenschapsonderdaan duurzaam verblijf, arbeid vrij"@nl ;
+    skos:notation "40" ;
+    brp:tabel "56" .
+
+brpvbt:41 a brp:VerblijfstitelType ;
+    rdfs:label "Rechtmatig verblijf Vw 2000 art. 8, onder e, is beëindigd"@nl ;
+    dct:valid "2000-01-01"^^xsd:date ;
+    skos:notation "41" ;
+    brp:tabel "56" .
+
+brpvbt:42 a brp:VerblijfstitelType ;
+    rdfs:label "Rechtmatig verblijf op grond van voorlopige maatregel EHRM, geen arbeid"@nl ;
+    dct:valid "2000-01-01"^^xsd:date ;
+    skos:notation "42" ;
+    brp:tabel "56" .
+
+brpvbt:43 a brp:VerblijfstitelType ;
+    rdfs:label "Rechtmatig verblijf op aanwijzing Minister van Justitie, geen arbeid"@nl ;
+    dct:valid "2000-01-01"^^xsd:date ;
+    skos:notation "43" ;
+    brp:tabel "56" .
+
+brpvbt:44 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder m, Dublinclaimant, wacht op overdracht, rva, geen arbeid"@nl ;
+    dct:valid "2014-01-01"^^xsd:date ;
+    skos:notation "44" ;
+    brp:tabel "56" .
+
+brpvbt:45 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 8, onder i, onderzoeker/student, verblijfsrecht in EU-land"@nl ;
+    dct:valid "2018-05-23"^^xsd:date ;
+    skos:notation "45" ;
+    brp:tabel "56" .
+
+brpvbt:46 a brp:VerblijfstitelType ;
+    rdfs:label "Vw2000 art 8, onder f en h, EU-richtl 2001/55, in proc art 28, arbeid loondienst"@nl ;
+    skos:notation "46" ;
+    brp:tabel "56" .
+
+brpvbt:91 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 115, lid 4, vergunning onbepaalde tijd, arbeid vrij"@nl ;
+    skos:notation "91" ;
+    brp:datumEinde "2014-01-06"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:92 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 115, lid 6, vergunning asiel bepaalde tijd, arbeid vrij"@nl ;
+    skos:notation "92" ;
+    brp:datumEinde "2014-01-06"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:93 a brp:VerblijfstitelType ;
+    rdfs:label "Vw 2000 art. 115, lid 2, verg. regulier bepaalde tijd, arbeid nader te bepalen"@nl ;
+    skos:notation "93" ;
+    brp:datumEinde "2014-01-06"^^xsd:date ;
+    brp:tabel "56" .
+
+brpvbt:98 a brp:VerblijfstitelType ;
+    rdfs:label "geen verblijfstitel (meer)"@nl ;
+    skos:notation "98" ;
+    brp:tabel "56" .
+
